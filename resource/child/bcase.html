@@ -3283,6 +3283,17 @@ Supervise the Risks </textarea><label class="expander"></label></div>
 
         <div class="row" id="caseSectionDivPart"></div>
 
-      
+         <script>
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+         </script>
     </div>
 </div>
