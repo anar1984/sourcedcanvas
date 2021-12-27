@@ -5019,7 +5019,11 @@ ul.mtree {
   }
   ul.mtree li.mtree-node > a {
     font-weight: bold;
+    background: #e9e9f1;
     color: #525596;
+  }
+  ul.mtree li.mtree-node > a {
+      cursor: pointer;
   }
   
   ul.mtree.transit ul {
@@ -5034,6 +5038,17 @@ ul.mtree {
     width: 33.333%;
     padding: 0 10px;
   }
+  ul.mtree.transit li.mtree-node .mtree-level-1{
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease-in-out;
+  }
+  ul.mtree.transit li.mtree-node.mtree-open .mtree-level-1 {
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+  }
   ul.mtree.transit li.mtree-node > a:before {
     color: #525596;
     font-weight: normal;
@@ -5044,12 +5059,14 @@ ul.mtree {
   ul.mtree.transit li.mtree-node > a:hover:before{
       color: #fff;
   }
-  ul.mtree.transit li.mtree-open > a:before {
+  ul.mtree.transit.mtree-active:before {
     content: "-";
-    color: #fff;
+    color: #525596;
   }
-  ul.mtree.transit li.mtree-closed > a:before {
+  ul.mtree.transit:before {
     content: "+";
+    position: absolute;
+    right: 28px;
   }
   ul.mtree.transit ul > li:first-child {
     margin-top: 1px;
@@ -5182,6 +5199,7 @@ ul.mtree {
   }
   .title-text {
       vertical-align: middle;
+      font-size:30px;
   } 
   .nav-scroll-page {
     position: absolute;
@@ -5203,4 +5221,9 @@ ul.mtree {
   }
   .nav-scroll-page ul li a {
     color: #525596;
+  }
+  ul.mtree.transit li.mtree-node .mtree-level-1 .inf {
+    font-size: 20px;
+    color: #525596;
+    padding-left: 20px;
   }

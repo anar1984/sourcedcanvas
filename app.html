@@ -1422,41 +1422,47 @@
 
                                     <div class="row">
                                         <div class="col-12">
-                                            <ul class="mtree" >
+                                            <div class="mtree-demo">
+                                                <ul class="mtree transit" >
                                     
-                                                <li class=""><a href="#"><h5 class="text-center"><span class="title-num">1</span> <span class="title-text">Revenue Generator</span></h5></a>
-                                                    <ul>
-                                                        <li><p>1. How to create new digital product, </p></li>
-                                                        <li><p>2. How to generate niche customer segmentation, </p></li>
-                                                        <li><p>3. How to create new digital services for individual marketing, </p></li>
-                                                        <li><p>4. How to determine customer pain and requirements</p></li>
-                                                        <li><p>5. How to do market research to figure out potential and real customers,  </p></li>
-                                                        <li><p>6. How to propose a better digital services as a solution,  </p></li>
-                                                        <li><p>7. How to analyze competitors behavior,  </p></li>
-                                                        <li><p>8. How to prepare business model,  </p></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#"><h5 class="text-center "><span class="title-num">2</span> <span class="title-text">Cost Reducer </span> </h5></a>
-                                                    <ul>
-                                                        <li><p>1. How to optimize business process management, </p></li>
-                                                        <li><p>2. How to determine customer dissatisfaction criterias, </p></li>
-                                                        <li><p>3. How to determine revenue stoppers, </p></li>
-                                                        <li><p>4. How to analyse financial projections,</p></li>
-                                                        <li><p>5. How to determine communication channel stoppers with customers, </p></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#"><h5 class="text-center"><span class="title-num">3</span> <span class="title-text">Data Leader </span></h5></a>
-                                                    <ul>
-                                                        <li><p>1. How to set hypothesis and manage data scientist, </p></li>
-                                                        <li><p>2. How to work with master data, </p></li>
-                                                        <li><p>3. How to analyse risks based on data, </p></li>
-                                                        <li><p>4. How to analyse customer satisfactions based on data,</p></li>
-                                                        <li><p>5. How to analyse success rate of provided services based on data, </p></li>
-                                                        <li><p>6. How to analyse losses and damages in business process based on data, </p></li>
-                                                        <li><p>7. How to manage people's mind with data, </p></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
+                                                    <li class="mtree-node"><a><h5 class="text-center"><span class="title-num">1</span> <span class="title-text">Revenue Generator</span></h5></a>
+                                                        <ul class="mtree-level-1">
+                                                            <li class="inf"> who knows</li>
+                                                            <li><p>1. How to create new digital product, </p></li>
+                                                            <li><p>2. How to generate niche customer segmentation, </p></li>
+                                                            <li><p>3. How to create new digital services for individual marketing, </p></li>
+                                                            <li><p>4. How to determine customer pain and requirements</p></li>
+                                                            <li><p>5. How to do market research to figure out potential and real customers,  </p></li>
+                                                            <li><p>6. How to propose a better digital services as a solution,  </p></li>
+                                                            <li><p>7. How to analyze competitors behavior,  </p></li>
+                                                            <li><p>8. How to prepare business model,  </p></li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li class="mtree-node"><a><h5 class="text-center "><span class="title-num">2</span> <span class="title-text">Cost Reducer </span> </h5></a>
+                                                        <ul class="mtree-level-1">
+                                                            <li class="inf"> who knows</li>
+                                                            <li><p>1. How to optimize business process management, </p></li>
+                                                            <li><p>2. How to determine customer dissatisfaction criterias, </p></li>
+                                                            <li><p>3. How to determine revenue stoppers, </p></li>
+                                                            <li><p>4. How to analyse financial projections,</p></li>
+                                                            <li><p>5. How to determine communication channel stoppers with customers, </p></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="mtree-node"><a><h5 class="text-center"><span class="title-num">3</span> <span class="title-text">Data Leader </span></h5></a>
+                                                        <ul class="mtree-level-1">
+                                                            <li class="inf"> who knows</li>
+                                                            <li><p>1. How to set hypothesis and manage data scientist, </p></li>
+                                                            <li><p>2. How to work with master data, </p></li>
+                                                            <li><p>3. How to analyse risks based on data, </p></li>
+                                                            <li><p>4. How to analyse customer satisfactions based on data,</p></li>
+                                                            <li><p>5. How to analyse success rate of provided services based on data, </p></li>
+                                                            <li><p>6. How to analyse losses and damages in business process based on data, </p></li>
+                                                            <li><p>7. How to manage people's mind with data, </p></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                     
@@ -10050,7 +10056,10 @@
                 <a href="#hello-history" class="">Intro</a>
             </li>
             <li>
-                <a href="#mainBodyDivForAll" class="">General Description</a>
+                <a href="#general-description" class="">General Description</a>
+            </li>
+            <li>
+                <a href="#bcase_problem_statement" class="">Problem Statement</a>
             </li>
             <li>
                 <a href="#bcase_provided_services" class="">Provided Services as a Solution(s)</a>
@@ -10072,133 +10081,14 @@
 </html>
 
 <script>
-(function ($, window, document, undefined) {
-  if($('ul.mtree').length) {
-  var collapsed = true;
-  var close_same_level = false;
-  var duration = 400;
-  var listAnim = true;
-  var easing = 'easeOutQuart';
-  $('.mtree ul').css({'overflow':'hidden', 'height': (collapsed) ? 0 : 'auto', 'display': (collapsed) ? 'none' : 'block' });
-  var node = $('.mtree li:has(ul)');  
-  node.each(function(index, val) {
-    $(this).children(':first-child').css('cursor', 'pointer')
-    $(this).addClass('mtree-node mtree-' + ((collapsed) ? 'closed' : 'open'));
-    $(this).children('ul').addClass('mtree-level-' + ($(this).parentsUntil($('ul.mtree'), 'ul').length + 1));
-  });
-  $('.mtree li > *:first-child').on('click.mtree-active', function(e){
-    if($(this).parent().hasClass('mtree-closed')) {
-      $('.mtree-active').not($(this).parent()).removeClass('mtree-active');
-      $(this).parent().addClass('mtree-active');
-    } else if($(this).parent().hasClass('mtree-open')){
-      $(this).parent().removeClass('mtree-active'); 
-    } else {
-      $('.mtree-active').not($(this).parent()).removeClass('mtree-active');
-      $(this).parent().toggleClass('mtree-active'); 
-    }
-  });
-  node.children(':first-child').on('click.mtree', function(e){
-    
-    var el = $(this).parent().children('ul').first();
-    var isOpen = $(this).parent().hasClass('mtree-open');
-    
-    if((close_same_level || $('.csl').hasClass('active')) && !isOpen) {
-      var close_items = $(this).closest('ul').children('.mtree-open').not($(this).parent()).children('ul');
-      
-      if($.Velocity) {
-        close_items.velocity({
-          height: 0
-        }, {
-          duration: duration,
-          easing: easing,
-          display: 'none',
-          delay: 100,
-          complete: function(){
-            setNodeClass($(this).parent(), true)
-          }
-        });
-      } else {
-        close_items.delay(100).slideToggle(duration, function(){
-          setNodeClass($(this).parent(), true);
-        });
-      }
-    }
-    el.css({'height': 'auto'}); 
-    if(!isOpen && $.Velocity && listAnim) el.find(' > li, li.mtree-open > ul > li').css({'opacity':0}).velocity('stop').velocity('list');
-    
-    if($.Velocity) {
-      el.velocity('stop').velocity({
-        height: isOpen ? [0, el.outerHeight()] : [el.outerHeight(), 0]
-      },{
-        queue: false,
-        duration: duration,
-        easing: easing,
-        display: isOpen ? 'none' : 'block',
-        begin: setNodeClass($(this).parent(), isOpen),
-        complete: function(){
-          if(!isOpen) $(this).css('height', 'auto');
-        }
-      });
-    } else {
-      setNodeClass($(this).parent(), isOpen);
-      el.slideToggle(duration);
-    }
-    e.preventDefault();
-  });
-  
-  // Function for updating node class
-  function setNodeClass(el, isOpen) {
-    if(isOpen) {
-      el.removeClass('mtree-open').addClass('mtree-closed');
-    } else {
-      el.removeClass('mtree-closed').addClass('mtree-open');
-    }
-  }
-  
-  // List animation sequence
-  if($.Velocity && listAnim) {
-    $.Velocity.Sequences.list = function (element, options, index, size) {
-      $.Velocity.animate(element, { 
-        opacity: [1,0],
-        translateY: [0, -(index+1)]
-      }, {
-        delay: index*(duration/size/2),
-        duration: duration,
-        easing: easing
-      });
-    };
-  }
-    if($('.mtree').css('opacity') == 0) {
-      if($.Velocity) {
-        $('.mtree').css('opacity', 1).children().css('opacity', 0).velocity('list');
-      } else {
-        $('.mtree').show(200);
-      }
-    }
-  }
-}(jQuery, this, this.document));
-$(document).ready(function() {
-  var mtree = $('ul.mtree');
-  mtree.wrap('<div class=mtree-demo></div>');
-  var skins = ['transit','jet'];
-  mtree.addClass(skins[0]);
 
-  var s = $('.mtree-skin-selector');
-  $.each(skins, function(index, val) {
-    s.find('ul').append('<li><button class="small skin">' + val + '</button></li>');
+
+
+
+  $(document).on('click', '.mtree .mtree-node a', function (e) {
+    $('.mtree .mtree-node').toggleClass('mtree-open');
+    $(this).closest('.mtree').toggleClass('mtree-active');
   });
-  s.find('button.skin').each(function(index){
-    $(this).on('click.mtree-skin-selector', function(){
-      s.find('button.skin.active').removeClass('active');
-      $(this).addClass('active');
-      mtree.removeClass(skins.join(' ')).addClass(skins[index]);
-    });
-  })
-  s.find('button:first').addClass('active');
-  s.find('.csl').on('click.mtree-close-same-level', function(){
-    $(this).toggleClass('active'); 
-  });
-});
 
 </script>
 <script>
