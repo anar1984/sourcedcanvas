@@ -3989,6 +3989,11 @@ img.sc-IbsAh.kqHqhS {
             float: left;
             height: auto;
             width: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center center;
+            height: 100%;
+            padding-bottom: 16px;
         }
         .about__left-adv {
           height: 12rem;
