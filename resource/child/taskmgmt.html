@@ -1,0 +1,511 @@
+ <div class="row" style="padding:4px 10px 30px 10px;">
+
+     <div class="col-12 text-center">
+
+         <h4>Task Management</h4>
+     </div>
+
+     <!--By G.R-->
+     <div class="TaskPanel container" style="max-width: 90%;">
+
+         <div class="category-kanban col-12" style="display: flex;">
+
+
+             <div class="col-2">
+                
+                 <select onchange="loadStoryCardByProject4TaskMgmt(this)"
+                     class="form-control projectList_liveprototype_taskmgmt form-control-sm" data-live-search="true" multiple name="" id="">
+                 </select>
+             </div>
+             <div class="col-lg-2">
+          
+               <select onchange="getTaskList4TaskMgmt(this)"  class="form-control form-control-sm " data-live-search="true" data-actions-box="true"
+                   style="text-overflow: ellipsis"  id='story_mn_filter_backlog_id'
+                   data-type="backlog_id" title="Backlog"></select>
+           </div>
+
+             <div class="col-2">
+                
+                 <input onchange="getTaskList4TaskMgmt(this)"
+                     class="form-control projectList_liveprototype_taskmgmt_search form-control-sm" data-live-search="true" placeholder="search" name=""
+                     id="projectList_liveprototype_taskmgmt_search">
+
+             </div>
+           
+            <div class="col-lg-2">
+          
+               <select class="form-control form-control-sm "multiple onchange="getTaskList4TaskMgmt(this)" data-live-search="true" data-actions-box="true"
+                   style="text-overflow: ellipsis"  id='story_mn_filter_assigne_id_mng'
+                   data-type="assigne_id" title="Assigne"></select>
+           </div>
+            <div class="col-lg-2">
+          
+               <select class="form-control form-control-sm " multiple onchange="getTaskList4TaskMgmt(this)" data-live-search="true" data-actions-box="true"
+                   style="text-overflow: ellipsis"  id='story_mn_filter_created_id'
+                   data-type="created_id" title="Created By"></select>
+           </div>
+
+
+             <div class="col-1 " style="max-width: 7.333%;">
+              
+                 <div class="dropdown task-sprint-show">
+                     <!-- btn btn-primary   sildim -->
+                     <span class="dropdown-toggle1 btn btn-sm btn-light task-sprint-show" data-toggle="dropdown"
+                         style="cursor: pointer;padding-left:10px;margin-left1: -6px;">
+                         Sprint</span>
+                     <i>
+                         <span class=" bug-filter-badge" style="display:none;">0</span>
+                     </i>
+
+                     <div class="dropdown-menu drop-label-menu sprint-show-4-task">
+                         <span>
+
+                             <a class="dropdown-item" data-toggle="modal" href="#" data-target="#insertNewSprint4Task"
+                                 style="padding:0px;width: 20px;font-weight: 600;vertical-align: -webkit-baseline-middle; 
+                       font-size: 12px; color:#727D91; margin-top: 5px;">
+                                 New Sprint</a>
+                         </span>
+                         <span class="newlabelspan" style="cursor: pointer;"
+                             onclick="new UserStory().clearAndShowAll(this)">Clear</span>
+                         <div class="dropdown-divider" style="padding:0px;">
+                         </div>
+                         <div id="sprintlist4Task" class="sprintlist4Task"
+                             style='height: 250px;overflow-y: auto; overflow-x: hidden;'>
+
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-1" style="max-width: 4.333%; padding: 0;">
+           
+                 <div class="dropdown">
+                    <span class="dropdown-toggle1 btn btn-sm btn-light" style="width: 100%;" data-toggle="dropdown" aria-expanded="false">Label</span>
+                    <i>
+                        <span class="bug-filter-badge-label" style="display:none;">0</span>
+                    </i>
+        
+        
+                    <div class="dropdown-menu drop-label-menu label-show-4-task" style="min-width: 475px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);" x-placement="bottom-start">
+                        <span>
+                            <a class="new-label-modal" title="New Label" data-toggle="modal" href="#" style="padding:10px;width: 20px;font-weight: 600;vertical-align: -webkit-baseline-middle; 
+                               font-size: 12px; color:#727D91; margin-top: 5px;    " data-target="#insertNewLabel4Task">
+        
+                                Add Label
+        
+                            </a>
+                        </span>
+                        <span class="newlabelspan" style="cursor: pointer;margin-top: 10px; padding-right: 20px;" onclick="new UserStory().clearAndShowAll(this)">Clear</span>
+        
+        
+                        <div class="dropdown-divider" style="padding:0px;">
+        
+                        </div>
+                        <div id="tasklabellist4Task" class="tasklabellist4Task" style="height: 250px;overflow-y: auto; padding:10px 10px; overflow-x: hidden;"><table class="lbl-list-table"><tr class="lbl-list-tr"><td class="lbl-list-td" id="21071508150802919009"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21071508150802919009" taskids="21072610055707517694, 21081209305507074152, 21081209333501345056, 210806185325014010645, 21080618551808031979, 21081209373603384978, 21081209343402647226, 21081209415309786266, 21081209315508734950, 21081209335209949179, 21081209360006648831, 21081209381805589279, 21081909323305059899, 21081909332304535290, 21073111424003292033, 21073111443901287120, 21073111444700629463, 210731114456003910234, 21073111444201794219, 21073111445101694243, 21073112112308745883, 21073112140002972612, 21073111450108434555, 21073112135908081195, 21073112491709456782, 210731114622070810766, 21080210122802235734, 21073114104006003449, 21073112562006497287, 21080212523402189853, 21080212240600303986, 21080213160604328791, 21080216410802026805, 21073111424507772149, 21073112390608609695, 21073112564009214207, 21073116273105037711, 21080212200603691324, 21073116401703004605, 21071511010404159599, 21071508172103788604, 21071508184502899716, 21071508193909809536, 210715082220086910835, 21071508241205992599"></td><td class="lbl-item" style="color:#7e1616">15iyul tasklar (<b>45</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="15iyul tasklar" value="21071508150802919009" id="21071508150802919009" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21071508150802919009" data-toggle="modal" onclick="new Label().select('21071508150802919009')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21071508150802919009" onclick="new Label().delete('21071508150802919009')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21071710070209112479"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21071710070209112479" taskids="21073116401703004605, 21073112491709456782, 21073112140002972612, 21073112562006497287, 210731114622070810766, 21073111445101694243, 21073112564009214207, 21080210122802235734, 21073112112308745883, 21080212200603691324, 21073111443901287120, 21073111444700629463, 210731114456003910234, 21080212523402189853, 21080213160604328791, 21073111424003292033, 21073112390608609695, 21080212240600303986, 21073112135908081195, 21080216410802026805, 21073111424507772149, 21073114104006003449, 21073111450108434555, 21073116273105037711, 21073111444201794219, 21071712044003717650, 21071712044007526127, 21071712453404006847, 21071712462603713556, 21071711155706373673, 21071711162609326265, 21071711164909663322, 21071711173000463660, 21071710264007063369, 21071710283000778730, 21071710310604492304, 21071710421900627438, 21071710493204942344, 21071711083303343287, 21071711094704685988, 21071710243409898389, 21071710133306591511, 210717101904015510540, 21071710193904854344, 21071710204609819968, 21071710213306357093"></td><td class="lbl-item" style="color:#dfc8c8">17 iyul tasklar (<b>46</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="17 iyul tasklar" value="21071710070209112479" id="21071710070209112479" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21071710070209112479" data-toggle="modal" onclick="new Label().select('21071710070209112479')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21071710070209112479" onclick="new Label().delete('21071710070209112479')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21072209304001106498"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21072209304001106498" taskids="21072209512106302450, 21072209512200002116, 21072209514908799821, 21072209515002551127, 21072209531400922517, 21072209531404552948, 21072209352406229591, 21072209352503262667, 21072209244603257051, 21072209244606865920, 21072209295903535457"></td><td class="lbl-item" style="color:#ea0b0b">22 iyul (<b>11</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="22 iyul" value="21072209304001106498" id="21072209304001106498" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21072209304001106498" data-toggle="modal" onclick="new Label().select('21072209304001106498')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21072209304001106498" onclick="new Label().delete('21072209304001106498')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21072308500500332540"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21072308500500332540" taskids="21072309092707258030, 21072309092800168844, 21072309245109015835, 21072309270706459903, 21072309375603782965, 21072214364801633920, 21072308523201706146, 21072308523206245986, 21072308585202829952, 21072308585206439288"></td><td class="lbl-item" style="color:#1153ee">23 iyul (<b>10</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="23 iyul" value="21072308500500332540" id="21072308500500332540" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21072308500500332540" data-toggle="modal" onclick="new Label().select('21072308500500332540')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21072308500500332540" onclick="new Label().delete('21072308500500332540')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21072409204603957344"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21072409204603957344" taskids=""></td><td class="lbl-item" style="color:#b51717">24 iyul (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="24 iyul" value="21072409204603957344" id="21072409204603957344" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21072409204603957344" data-toggle="modal" onclick="new Label().select('21072409204603957344')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21072409204603957344" onclick="new Label().delete('21072409204603957344')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21080214003205803669"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21080214003205803669" taskids=""></td><td class="lbl-item" style="color:#bda3a3">efgwegwgwegweg (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="efgwegwgwegweg" value="21080214003205803669" id="21080214003205803669" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21080214003205803669" data-toggle="modal" onclick="new Label().select('21080214003205803669')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21080214003205803669" onclick="new Label().delete('21080214003205803669')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="210802140101006810687"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="210802140101006810687" taskids="21080212523402189853, 21080213160604328791"></td><td class="lbl-item" style="color:#c09696">Salam (<b>2</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Salam" value="210802140101006810687" id="210802140101006810687" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="210802140101006810687" data-toggle="modal" onclick="new Label().select('210802140101006810687')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="210802140101006810687" onclick="new Label().delete('210802140101006810687')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21082011453502108148"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21082011453502108148" taskids="21082009300302892857, 21082009220700145387, 21082009223203666201, 21082009112905638100, 21081710504505333368, 21082009105803082026, 21081710535701618816, 21082009211705831214, 21082009112509742179, 210820091852024110427, 21082009285208583248, 21082009275204649623, 21082009292001829876, 21082009225501367757, 21082009282101705912, 21082004042404854347, 21073110402101765841, 21072609294601695240, 21082004060802976992, 210820040116015610054, 21071712044007526127, 21071911402403056193, 21082004243700617110, 21082010383905065380, 21082004433206155696, 21082004332507393918, 21082004003101365846, 21080610155600874325, 21082004343208466541, 21082004123300331233, 21082004113301345623, 21082004283709212149, 21082004151604911254, 21082004365300176168, 21082004130206084139, 21082010574406123150, 21082004340605547470, 21082004093306911910, 21082010393209387240, 21082004370807359969, 21082004281605413359, 21082010400304882997"></td><td class="lbl-item" style="color:#000000">Techizat Alish prosesi (<b>42</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Techizat Alish prosesi" value="21082011453502108148" id="21082011453502108148" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21082011453502108148" data-toggle="modal" onclick="new Label().select('21082011453502108148')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21082011453502108148" onclick="new Label().delete('21082011453502108148')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21071411151105919100"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21071411151105919100" taskids="21071508172103788604, 21071412315303955836, 210714122501082110238, 21071412053506158239, 21071412101008001910, 21071412101008891207, 21070212174200722014"></td><td class="lbl-item" style="color:#2042bc">Today s Task By Süleyman (<b>7</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Today s Task By Süleyman" value="21071411151105919100" id="21071411151105919100" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21071411151105919100" data-toggle="modal" onclick="new Label().select('21071411151105919100')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21071411151105919100" onclick="new Label().delete('21071411151105919100')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="19120318463308214245"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="19120318463308214245" taskids=""></td><td class="lbl-item" style="color:#000000">Demo Label (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Demo Label" value="19120318463308214245" id="19120318463308214245" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="19120318463308214245" data-toggle="modal" onclick="new Label().select('19120318463308214245')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="19120318463308214245" onclick="new Label().delete('19120318463308214245')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="19120323290300203178"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="19120323290300203178" taskids=""></td><td class="lbl-item" style="color:#000000">(Menu)-Main Menu (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Main Menu" value="19120323290300203178" id="19120323290300203178" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="19120323290300203178" data-toggle="modal" onclick="new Label().select('19120323290300203178')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="19120323290300203178" onclick="new Label().delete('19120323290300203178')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21083118112705242283"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21083118112705242283" taskids=""></td><td class="lbl-item" style="color:#000000">release1 (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="release1" value="21083118112705242283" id="21083118112705242283" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21083118112705242283" data-toggle="modal" onclick="new Label().select('21083118112705242283')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21083118112705242283" onclick="new Label().delete('21083118112705242283')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122809284403526081"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122809284403526081" taskids=""></td><td class="lbl-item" style="color:#000000">Akt Qaimə Sənəd Müqavilə (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Akt Qaimə Sənəd Müqavilə" value="20122809284403526081" id="20122809284403526081" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122809284403526081" data-toggle="modal" onclick="new Label().select('20122809284403526081')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122809284403526081" onclick="new Label().delete('20122809284403526081')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122210055108531082"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122210055108531082" taskids=""></td><td class="lbl-item" style="color:#000000">Bank (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Bank" value="20122210055108531082" id="20122210055108531082" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122210055108531082" data-toggle="modal" onclick="new Label().select('20122210055108531082')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122210055108531082" onclick="new Label().delete('20122210055108531082')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122115295903649819"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122115295903649819" taskids=""></td><td class="lbl-item" style="color:#000000">Bonus (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Bonus" value="20122115295903649819" id="20122115295903649819" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122115295903649819" data-toggle="modal" onclick="new Label().select('20122115295903649819')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122115295903649819" onclick="new Label().delete('20122115295903649819')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121623131600123203"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121623131600123203" taskids=""></td><td class="lbl-item" style="color:#000000">Davamiyyət (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Davamiyyət" value="20121623131600123203" id="20121623131600123203" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121623131600123203" data-toggle="modal" onclick="new Label().select('20121623131600123203')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121623131600123203" onclick="new Label().delete('20121623131600123203')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122210223100741863"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122210223100741863" taskids=""></td><td class="lbl-item" style="color:#000000">Depozit (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Depozit" value="20122210223100741863" id="20122210223100741863" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122210223100741863" data-toggle="modal" onclick="new Label().select('20122210223100741863')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122210223100741863" onclick="new Label().delete('20122210223100741863')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121610130104269546"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121610130104269546" taskids=""></td><td class="lbl-item" style="color:#080db5">Elan (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Elan" value="20121610130104269546" id="20121610130104269546" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121610130104269546" data-toggle="modal" onclick="new Label().select('20121610130104269546')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121610130104269546" onclick="new Label().delete('20121610130104269546')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121610294209308769"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121610294209308769" taskids=""></td><td class="lbl-item" style="color:#000000">Görüş (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Görüş" value="20121610294209308769" id="20121610294209308769" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121610294209308769" data-toggle="modal" onclick="new Label().select('20121610294209308769')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121610294209308769" onclick="new Label().delete('20121610294209308769')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="201225130124090810345"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="201225130124090810345" taskids=""></td><td class="lbl-item" style="color:#000000">İmtina (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="İmtina" value="201225130124090810345" id="201225130124090810345" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="201225130124090810345" data-toggle="modal" onclick="new Label().select('201225130124090810345')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="201225130124090810345" onclick="new Label().delete('201225130124090810345')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122114280809519421"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122114280809519421" taskids=""></td><td class="lbl-item" style="color:#000000">İstehsal (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="İstehsal" value="20122114280809519421" id="20122114280809519421" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122114280809519421" data-toggle="modal" onclick="new Label().select('20122114280809519421')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122114280809519421" onclick="new Label().delete('20122114280809519421')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122209315402669458"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122209315402669458" taskids=""></td><td class="lbl-item" style="color:#000000">Kassa (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Kassa" value="20122209315402669458" id="20122209315402669458" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122209315402669458" data-toggle="modal" onclick="new Label().select('20122209315402669458')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122209315402669458" onclick="new Label().delete('20122209315402669458')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="201215150507004010368"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="201215150507004010368" taskids=""></td><td class="lbl-item" style="color:#dc0909">Kontragent (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Kontragent" value="201215150507004010368" id="201215150507004010368" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="201215150507004010368" data-toggle="modal" onclick="new Label().select('201215150507004010368')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="201215150507004010368" onclick="new Label().delete('201215150507004010368')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121115385204313292"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121115385204313292" taskids=""></td><td class="lbl-item" style="color:#000000">Layihə (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Layihə" value="20121115385204313292" id="20121115385204313292" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121115385204313292" data-toggle="modal" onclick="new Label().select('20121115385204313292')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121115385204313292" onclick="new Label().delete('20121115385204313292')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122512532901146295"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122512532901146295" taskids=""></td><td class="lbl-item" style="color:#000000">Ləğv (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Ləğv" value="20122512532901146295" id="20122512532901146295" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122512532901146295" data-toggle="modal" onclick="new Label().select('20122512532901146295')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122512532901146295" onclick="new Label().delete('20122512532901146295')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121516522108898379"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121516522108898379" taskids=""></td><td class="lbl-item" style="color:#9f0909">Mal (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Mal" value="20121516522108898379" id="20121516522108898379" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121516522108898379" data-toggle="modal" onclick="new Label().select('20121516522108898379')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121516522108898379" onclick="new Label().delete('20121516522108898379')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121115492500007414"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121115492500007414" taskids=""></td><td class="lbl-item" style="color:#000000">Mal Qrupu (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Mal Qrupu" value="20121115492500007414" id="20121115492500007414" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121115492500007414" data-toggle="modal" onclick="new Label().select('20121115492500007414')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121115492500007414" onclick="new Label().delete('20121115492500007414')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122116064203855795"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122116064203855795" taskids=""></td><td class="lbl-item" style="color:#000000">Marketinq (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Marketinq" value="20122116064203855795" id="20122116064203855795" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122116064203855795" data-toggle="modal" onclick="new Label().select('20122116064203855795')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122116064203855795" onclick="new Label().delete('20122116064203855795')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21010417461901839634"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21010417461901839634" taskids=""></td><td class="lbl-item" style="color:#000000">Prosedurlar (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Prosedurlar" value="21010417461901839634" id="21010417461901839634" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21010417461901839634" data-toggle="modal" onclick="new Label().select('21010417461901839634')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21010417461901839634" onclick="new Label().delete('21010417461901839634')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121012025903146281"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121012025903146281" taskids=""></td><td class="lbl-item" style="color:#fb0909">Request (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Request" value="20121012025903146281" id="20121012025903146281" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121012025903146281" data-toggle="modal" onclick="new Label().select('20121012025903146281')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121012025903146281" onclick="new Label().delete('20121012025903146281')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20120818521206963763"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20120818521206963763" taskids=""></td><td class="lbl-item" style="color:#000000">Request Category (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Request Category" value="20120818521206963763" id="20120818521206963763" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20120818521206963763" data-toggle="modal" onclick="new Label().select('20120818521206963763')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20120818521206963763" onclick="new Label().delete('20120818521206963763')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20120818520200817210"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20120818520200817210" taskids=""></td><td class="lbl-item" style="color:#000000">Request Type (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Request Type" value="20120818520200817210" id="20120818520200817210" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20120818520200817210" data-toggle="modal" onclick="new Label().select('20120818520200817210')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20120818520200817210" onclick="new Label().delete('20120818520200817210')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121512100203577085"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121512100203577085" taskids=""></td><td class="lbl-item" style="color:#000000">Resept (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Resept" value="20121512100203577085" id="20121512100203577085" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121512100203577085" data-toggle="modal" onclick="new Label().select('20121512100203577085')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121512100203577085" onclick="new Label().delete('20121512100203577085')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121617171806678427"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121617171806678427" taskids=""></td><td class="lbl-item" style="color:#791b1b">Sorğu (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Sorğu" value="20121617171806678427" id="20121617171806678427" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121617171806678427" data-toggle="modal" onclick="new Label().select('20121617171806678427')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121617171806678427" onclick="new Label().delete('20121617171806678427')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121522323903428275"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121522323903428275" taskids=""></td><td class="lbl-item" style="color:#000000">Struktur (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Struktur" value="20121522323903428275" id="20121522323903428275" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121522323903428275" data-toggle="modal" onclick="new Label().select('20121522323903428275')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121522323903428275" onclick="new Label().delete('20121522323903428275')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121616212605596624"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121616212605596624" taskids=""></td><td class="lbl-item" style="color:#000000">Tapşırıq (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Tapşırıq" value="20121616212605596624" id="20121616212605596624" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121616212605596624" data-toggle="modal" onclick="new Label().select('20121616212605596624')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121616212605596624" onclick="new Label().delete('20121616212605596624')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20120818515403763691"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20120818515403763691" taskids=""></td><td class="lbl-item" style="color:#000000">Task Type (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Task Type" value="20120818515403763691" id="20120818515403763691" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20120818515403763691" data-toggle="modal" onclick="new Label().select('20120818515403763691')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20120818515403763691" onclick="new Label().delete('20120818515403763691')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20120918313706979710"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20120918313706979710" taskids=""></td><td class="lbl-item" style="color:#143af5">Task Type and Request Type (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Task Type and Request Type" value="20120918313706979710" id="20120918313706979710" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20120918313706979710" data-toggle="modal" onclick="new Label().select('20120918313706979710')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20120918313706979710" onclick="new Label().delete('20120918313706979710')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20120823372806301048"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20120823372806301048" taskids=""></td><td class="lbl-item" style="color:#e41b1b">Task Type Relation (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Task Type Relation" value="20120823372806301048" id="20120823372806301048" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20120823372806301048" data-toggle="modal" onclick="new Label().select('20120823372806301048')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20120823372806301048" onclick="new Label().delete('20120823372806301048')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122210353704235615"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122210353704235615" taskids=""></td><td class="lbl-item" style="color:#000000">Təhtəl (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Təhtəl" value="20122210353704235615" id="20122210353704235615" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122210353704235615" data-toggle="modal" onclick="new Label().select('20122210353704235615')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122210353704235615" onclick="new Label().delete('20122210353704235615')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122111121104374330"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122111121104374330" taskids=""></td><td class="lbl-item" style="color:#000000">Təklif (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Təklif" value="20122111121104374330" id="20122111121104374330" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122111121104374330" data-toggle="modal" onclick="new Label().select('20122111121104374330')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122111121104374330" onclick="new Label().delete('20122111121104374330')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="201216174246040410196"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="201216174246040410196" taskids=""></td><td class="lbl-item" style="color:#cd2d2d">Tələb (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Tələb" value="201216174246040410196" id="201216174246040410196" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="201216174246040410196" data-toggle="modal" onclick="new Label().select('201216174246040410196')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="201216174246040410196" onclick="new Label().delete('201216174246040410196')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122212504500726497"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122212504500726497" taskids=""></td><td class="lbl-item" style="color:#000000">Üzləşmə (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Üzləşmə" value="20122212504500726497" id="20122212504500726497" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122212504500726497" data-toggle="modal" onclick="new Label().select('20122212504500726497')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122212504500726497" onclick="new Label().delete('20122212504500726497')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122210554909351482"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122210554909351482" taskids=""></td><td class="lbl-item" style="color:#000000">Valyuta (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Valyuta" value="20122210554909351482" id="20122210554909351482" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122210554909351482" data-toggle="modal" onclick="new Label().select('20122210554909351482')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122210554909351482" onclick="new Label().delete('20122210554909351482')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121717460300559426"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121717460300559426" taskids=""></td><td class="lbl-item" style="color:#000000">Xidmət (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Xidmət" value="20121717460300559426" id="20121717460300559426" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121717460300559426" data-toggle="modal" onclick="new Label().select('20121717460300559426')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121717460300559426" onclick="new Label().delete('20121717460300559426')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121715295802674804"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121715295802674804" taskids=""></td><td class="lbl-item" style="color:#000000">Xəta (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Xəta" value="20121715295802674804" id="20121715295802674804" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121715295802674804" data-toggle="modal" onclick="new Label().select('20121715295802674804')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121715295802674804" onclick="new Label().delete('20121715295802674804')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122212002402166392"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122212002402166392" taskids=""></td><td class="lbl-item" style="color:#000000">Əməkhaqqı (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Əməkhaqqı" value="20122212002402166392" id="20122212002402166392" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122212002402166392" data-toggle="modal" onclick="new Label().select('20122212002402166392')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122212002402166392" onclick="new Label().delete('20122212002402166392')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20121809471101316494"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20121809471101316494" taskids=""></td><td class="lbl-item" style="color:#000000">Əsas Vəsait (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Əsas Vəsait" value="20121809471101316494" id="20121809471101316494" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20121809471101316494" data-toggle="modal" onclick="new Label().select('20121809471101316494')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20121809471101316494" onclick="new Label().delete('20121809471101316494')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122811412706318832"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122811412706318832" taskids=""></td><td class="lbl-item" style="color:#000000">Bolme (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Bolme" value="20122811412706318832" id="20122811412706318832" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122811412706318832" data-toggle="modal" onclick="new Label().select('20122811412706318832')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122811412706318832" onclick="new Label().delete('20122811412706318832')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122715131807612621"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122715131807612621" taskids=""></td><td class="lbl-item" style="color:#000000">Direction (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Direction" value="20122715131807612621" id="20122715131807612621" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122715131807612621" data-toggle="modal" onclick="new Label().select('20122715131807612621')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122715131807612621" onclick="new Label().delete('20122715131807612621')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122814282509246068"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122814282509246068" taskids=""></td><td class="lbl-item" style="color:#000000">Employee (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Employee" value="20122814282509246068" id="20122814282509246068" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122814282509246068" data-toggle="modal" onclick="new Label().select('20122814282509246068')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122814282509246068" onclick="new Label().delete('20122814282509246068')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122714333501003342"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122714333501003342" taskids=""></td><td class="lbl-item" style="color:#000000">Şöbə (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Şöbə" value="20122714333501003342" id="20122714333501003342" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122714333501003342" data-toggle="modal" onclick="new Label().select('20122714333501003342')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122714333501003342" onclick="new Label().delete('20122714333501003342')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122611415004372565"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122611415004372565" taskids=""></td><td class="lbl-item" style="color:#000000">Struktur (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Struktur" value="20122611415004372565" id="20122611415004372565" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122611415004372565" data-toggle="modal" onclick="new Label().select('20122611415004372565')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122611415004372565" onclick="new Label().delete('20122611415004372565')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122611420201791311"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122611420201791311" taskids=""></td><td class="lbl-item" style="color:#000000">Vəzifə (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Vəzifə" value="20122611420201791311" id="20122611420201791311" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122611420201791311" data-toggle="modal" onclick="new Label().select('20122611420201791311')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122611420201791311" onclick="new Label().delete('20122611420201791311')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122912550700124639"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122912550700124639" taskids=""></td><td class="lbl-item" style="color:#000000">Mal Qrupu (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Mal Qrupu" value="20122912550700124639" id="20122912550700124639" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122912550700124639" data-toggle="modal" onclick="new Label().select('20122912550700124639')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122912550700124639" onclick="new Label().delete('20122912550700124639')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122912283001201214"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122912283001201214" taskids=""></td><td class="lbl-item" style="color:#000000">Mal Tipi (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Mal Tipi" value="20122912283001201214" id="20122912283001201214" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122912283001201214" data-toggle="modal" onclick="new Label().select('20122912283001201214')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122912283001201214" onclick="new Label().delete('20122912283001201214')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122912251808287106"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122912251808287106" taskids=""></td><td class="lbl-item" style="color:#000000">Mallar (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Mallar" value="20122912251808287106" id="20122912251808287106" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122912251808287106" data-toggle="modal" onclick="new Label().select('20122912251808287106')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122912251808287106" onclick="new Label().delete('20122912251808287106')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="20122917264302675833"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="20122917264302675833" taskids=""></td><td class="lbl-item" style="color:#000000">Kontraagentlər (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Kontraagentlər" value="20122917264302675833" id="20122917264302675833" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="20122917264302675833" data-toggle="modal" onclick="new Label().select('20122917264302675833')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="20122917264302675833" onclick="new Label().delete('20122917264302675833')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="201229204953072610088"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="201229204953072610088" taskids=""></td><td class="lbl-item" style="color:#000000">Kontragent Qrup (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Kontragent Qrup" value="201229204953072610088" id="201229204953072610088" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="201229204953072610088" data-toggle="modal" onclick="new Label().select('201229204953072610088')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="201229204953072610088" onclick="new Label().delete('201229204953072610088')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="201229172923018310557"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="201229172923018310557" taskids=""></td><td class="lbl-item" style="color:#000000">Əlaqədar Şəxs (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Əlaqədar Şəxs" value="201229172923018310557" id="201229172923018310557" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="201229172923018310557" data-toggle="modal" onclick="new Label().select('201229172923018310557')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="201229172923018310557" onclick="new Label().delete('201229172923018310557')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="210108072056066910109"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="210108072056066910109" taskids=""></td><td class="lbl-item" style="color:#000000">Admin Pages (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Admin Pages" value="210108072056066910109" id="210108072056066910109" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="210108072056066910109" data-toggle="modal" onclick="new Label().select('210108072056066910109')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="210108072056066910109" onclick="new Label().delete('210108072056066910109')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21010300594007087469"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21010300594007087469" taskids=""></td><td class="lbl-item" style="color:#000000">Core Action (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Core Action" value="21010300594007087469" id="21010300594007087469" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21010300594007087469" data-toggle="modal" onclick="new Label().select('21010300594007087469')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21010300594007087469" onclick="new Label().delete('21010300594007087469')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21011113515208104884"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21011113515208104884" taskids=""></td><td class="lbl-item" style="color:#000000">İstiqamət (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="İstiqamət" value="21011113515208104884" id="21011113515208104884" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21011113515208104884" data-toggle="modal" onclick="new Label().select('21011113515208104884')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21011113515208104884" onclick="new Label().delete('21011113515208104884')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="210903173228066610793"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="210903173228066610793" taskids=""></td><td class="lbl-item" style="color:#000000">Label of Anar for Cheweek (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Label of Anar for Cheweek" value="210903173228066610793" id="210903173228066610793" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="210903173228066610793" data-toggle="modal" onclick="new Label().select('210903173228066610793')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="210903173228066610793" onclick="new Label().delete('210903173228066610793')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21010500593005052836"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21010500593005052836" taskids=""></td><td class="lbl-item" style="color:#000000">Layihe Qrupu (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Layihe Qrupu" value="21010500593005052836" id="21010500593005052836" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21010500593005052836" data-toggle="modal" onclick="new Label().select('21010500593005052836')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21010500593005052836" onclick="new Label().delete('21010500593005052836')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21010311384007357214"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21010311384007357214" taskids=""></td><td class="lbl-item" style="color:#000000">Layihe Sorgusu (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Layihe Sorgusu" value="21010311384007357214" id="21010311384007357214" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21010311384007357214" data-toggle="modal" onclick="new Label().select('21010311384007357214')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21010311384007357214" onclick="new Label().delete('21010311384007357214')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21010500533308204788"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21010500533308204788" taskids=""></td><td class="lbl-item" style="color:#000000">Planlama-Bölgü (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Planlama-Bölgü" value="21010500533308204788" id="21010500533308204788" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21010500533308204788" data-toggle="modal" onclick="new Label().select('21010500533308204788')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21010500533308204788" onclick="new Label().delete('21010500533308204788')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21010409183509025448"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21010409183509025448" taskids=""></td><td class="lbl-item" style="color:#000000">Task Type and User Relation (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Task Type and User Relation" value="21010409183509025448" id="21010409183509025448" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21010409183509025448" data-toggle="modal" onclick="new Label().select('21010409183509025448')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21010409183509025448" onclick="new Label().delete('21010409183509025448')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21090317561600982517"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21090317561600982517" taskids=""></td><td class="lbl-item" style="color:#f00f0f">Tasks by Anar S (03.09.2021) (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="Tasks by Anar S (03.09.2021)" value="21090317561600982517" id="21090317561600982517" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21090317561600982517" data-toggle="modal" onclick="new Label().select('21090317561600982517')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21090317561600982517" onclick="new Label().delete('21090317561600982517')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21021910144208777383"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21021910144208777383" taskids=""></td><td class="lbl-item" style="color:#000000">gggg (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="gggg" value="21021910144208777383" id="21021910144208777383" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21021910144208777383" data-toggle="modal" onclick="new Label().select('21021910144208777383')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21021910144208777383" onclick="new Label().delete('21021910144208777383')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21021910143008146051"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21021910143008146051" taskids=""></td><td class="lbl-item" style="color:#000000">hhhh (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="hhhh" value="21021910143008146051" id="21021910143008146051" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21021910143008146051" data-toggle="modal" onclick="new Label().select('21021910143008146051')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21021910143008146051" onclick="new Label().delete('21021910143008146051')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="210901152051057710139"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="210901152051057710139" taskids=""></td><td class="lbl-item" style="color:#000000">sdcsdcsdcsdcscscd (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="sdcsdcsdcsdcscscd" value="210901152051057710139" id="210901152051057710139" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="210901152051057710139" data-toggle="modal" onclick="new Label().select('210901152051057710139')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="210901152051057710139" onclick="new Label().delete('210901152051057710139')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21090414345501524930"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21090414345501524930" taskids=""></td><td class="lbl-item" style="color:#000000">ascascascasc (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="ascascascasc" value="21090414345501524930" id="21090414345501524930" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21090414345501524930" data-toggle="modal" onclick="new Label().select('21090414345501524930')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21090414345501524930" onclick="new Label().delete('21090414345501524930')" aria-hidden="true"></i></td></tr><tr class="lbl-list-tr"><td class="lbl-list-td" id="21082310403909982814"><input type="checkbox" class="us-filter-checkbox-label prManag-task-filter-checkbox-label" value="21082310403909982814" taskids=""></td><td class="lbl-item" style="color:#000000">(Menu)-jkhsdhfsdf (<b>0</b>)</td><td class="lbl-list-td"><button class="  story-card-label-assign prManag-task-label-assign btn btn-primary" sname="jkhsdhfsdf" value="21082310403909982814" id="21082310403909982814" style="padding: 0px 6px; display: none;">Assign</button></td><td class="lbl-list-td"><i class="fa fa-edit lbl-action" style="display: none;" id="21082310403909982814" data-toggle="modal" onclick="new Label().select('21082310403909982814')" data-target="#updateLabel" aria-hidden="true"></i><i class="fa fa-trash lbl-action" style="display: none;" id="21082310403909982814" onclick="new Label().delete('21082310403909982814')" aria-hidden="true"></i></td></tr></table></div>
+                    </div>
+                </div>
+             </div>
+
+
+             <div class="col-2">
+                 <span class="" style="font-size: 10px;position: absolute;top: -15px;">Group By</span>
+                 <div class="dropdown">
+                     <button class="categorybtn btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         <span class="category-noneAktiv">User Story</span>
+
+                     </button>
+                     <div class="dropdown-menu" style="z-index: 2000;" aria-labelledby="dropdownMenuButton">
+                         <a class="dropdown-item none " href="#">None</a>
+                         <a class="dropdown-item assignee" href="#">Assignee</a>
+                         <a class="dropdown-item userStoryTab" href="#">User Story</a>
+
+                     </div>
+                 </div>
+             </div>
+
+
+         </div>
+         <div class="task-panel-tsk-manage" >
+             <div class="task-panel-header  sticky-top">
+                 <div class="task-column-mng  new " status='new'>
+
+                     <div class="task-column-header">
+                         <span class="headerInputColumn">New <b><span class="counterkanban"
+                                     id="kanban_view_new_count_4_task">0</span></b></span>
+                     </div>
+                 </div>
+
+                 <div class="task-column-mng  on-going" status='ongoing'>
+                     <div class="task-column-header">
+                         <span class="headerInputColumn">Ongoing <b><span class="counterkanban"
+                                     id="kanban_view_ongoing_count_4_task">0</span></b></span>
+                     </div>
+                 </div>
+                 <div class="task-column-mng  closed" stats='closed'>
+                    <div class="task-column-header">
+                        <span class="headerInputColumn">Closed <b><span class="counterkanban"
+                                    id="kanban_view_closed_count_4_task">0</span></b></span>
+                    </div>
+                </div>
+                <div class="task-column-mng  UAT" stats='UAT'>
+                    <div class="task-column-header">
+                        <span class="headerInputColumn">UAT <b><span class="counterkanban"
+                                    id="kanban_view_UAT_count_4_task">0</span></b></span>
+                    </div>
+                </div>
+                 <div class="task-column-mng  waiting" stats='waiting'>
+                    <div class="task-column-header">
+                        <span class="headerInputColumn">waiting <b><span class="counterkanban"
+                                    id="kanban_view_waiting_count_4_task">0</span></b></span>
+                    </div>
+                </div>
+
+                 <div class="task-column-mng  Canceled" stats='Canceled'>
+                     <div class="task-column-header">
+                         <span class="headerInputColumn">Canceled <b><span class="counterkanban"
+                                     id="kanban_view_Canceled_count_4_task">0</span></b></span>
+                     </div>
+                 </div>
+                 <div class="task-column-mng  rejected" stats='rejected'>
+                     <div class="task-column-header">
+                         <span class="headerInputColumn">Rejected <b><span class="counterkanban"
+                                     id="kanban_view_rejected_count_4_task">0</span></b></span>
+                     </div>
+                 </div>
+                 
+             </div>
+
+             <div class="d-flex  p-0">
+
+                <div class="task-column-mng new-body  column-body-none " style="display:none" status='new'>
+
+                    <div class="task-column-body task-kanban-view-new task_main_div_of_backlog_info_kanban_view_table_new"
+                        id="new">
+                        <div draggable="true" class="content-drag"></div>
+                    </div>
+                    <div class="TaskMiniStoryCard">
+                        <h5>New Task</h5>
+                        <input class="TaskMiniStoryInput form-control" type="text">
+                        <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'new')"
+                            style="color: green;">
+                            <i class="fas fa-check"></i>
+   
+                        </div>
+                        <div class="TextHeader " id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+   
+                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="task-column-mng on-going-body  column-body-none " style="display:none" status='ongoing'>
+   
+                    <div class="task-column-body  task-kanban-view-ongoing task_main_div_of_backlog_info_kanban_view_table_new"
+                        id="new">
+                        <div draggable="true" class="content-drag"></div>
+                    </div>
+                    <div class="TaskMiniStoryCard">
+                        <h5>New Task</h5>
+                        <input class="TaskMiniStoryInput form-control" type="text">
+                        <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'ongoing')"
+                            style="color: green;">
+                            <i class="fas fa-check"></i>
+   
+                        </div>
+                        <div class="TextHeader " id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="task-column-mng Closed-body  column-body-none" style="display:none" status='closed'>
+   
+                    <div class="task-column-body task-kanban-view-closed task_column-body-none main_div_of_backlog_info_kanban_view_table_closed"
+                        id="closed">
+                        <div class="content-drag"></div>
+   
+   
+                    </div>
+                    <div class="TaskMiniStoryCard">
+                        <h5>New Task</h5>
+                        <input class="TaskMiniStoryInput form-control" type="text">
+                        <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'closed')"
+                            style="color: green;">
+                            <i class="fas fa-check"></i>
+   
+                        </div>
+                        <div class="TextHeader " id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="task-column-mng UAT-body  column-body-none" style="display:none" status='UAT'>
+   
+                    <div class="task-column-body task-kanban-view-UAT task_column-body-none main_div_of_backlog_info_kanban_view_table_UAT"
+                        id="UAT">
+                        <div class="content-drag"></div>
+   
+   
+                    </div>
+                    <div class="TaskMiniStoryCard">
+                        <h5>New Task</h5>
+                        <input class="TaskMiniStoryInput form-control" type="text">
+                        <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'UAT')"
+                            style="color: green;">
+                            <i class="fas fa-check"></i>
+   
+                        </div>
+                        <div class="TextHeader " id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="task-column-mng waiting-body  column-body-none" style="display:none" status='waiting'>
+   
+                    <div class="task-column-body task-kanban-view-waiting task_column-body-none main_div_of_backlog_info_kanban_view_table_waiting"
+                        id="waiting">
+                        <div class="content-drag"></div>
+   
+   
+                    </div>
+                    <div class="TaskMiniStoryCard">
+                        <h5>New Task</h5>
+                        <input class="TaskMiniStoryInput form-control" type="text">
+                        <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'waiting')"
+                            style="color: green;">
+                            <i class="fas fa-check"></i>
+   
+                        </div>
+                        <div class="TextHeader " id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="task-column-mng Canceled-body  column-body-none" style="display:none" status='Canceled'>
+   
+                    <div class="task-column-body task-kanban-view-Canceled task_column-body-none main_div_of_backlog_info_kanban_view_table_Canceled"
+                        id="Canceled">
+                        <div class="content-drag"></div>
+   
+   
+                    </div>
+                    <div class="TaskMiniStoryCard">
+                        <h5>New Task</h5>
+                        <input class="TaskMiniStoryInput form-control" type="text">
+                        <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'Canceled')"
+                            style="color: green;">
+                            <i class="fas fa-check"></i>
+   
+                        </div>
+                        <div class="TextHeader " id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="task-column-mng rejected-body  column-body-none" style="display:none" status='rejected'>
+   
+                    <div class="task-column-body task-kanban-view-rejected task_column-body-none main_div_of_backlog_info_kanban_view_table_rejected"
+                        id="rejected">
+                        <div class="content-drag"></div>
+   
+   
+                    </div>
+                    <div class="TaskMiniStoryCard">
+                        <h5>New Task</h5>
+                        <input class="TaskMiniStoryInput form-control" type="text">
+                        <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'rejected')"
+                            style="color: green;">
+                            <i class="fas fa-check"></i>
+   
+                        </div>
+                        <div class="TextHeader " id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>
+                </div>
+             </div>
+
+
+         </div>
+
+         <div class="groupByUserstory" style="display: block;">
+             <div class="UserStory">
+                 <div class="userStory-header sticky-top col-12">
+                     <div class="downUser angle-right" style="display: block;"><i class="fas fa-angle-right"></i></div>
+                     <div class="downUser angle-down"> <i class="fas fa-angle-down"></i></div>
+
+                     <span style="margin-right: 10px;">Tasks without User Story</span>
+                     <span class="backlog-status">
+                         <div class="us-list-item   us-item-status-new "> new </div>
+                     </span>
+                 </div>
+                 <div class="task-column-mng new" status="new">
+
+                     <div class="task-column-body task_group_kanban_view_new" id="new">
+                         <div draggable="true" class="content-drag"></div>
+                     </div>
+                     <div class="TaskMiniStoryCard">
+                         <h5>New Task</h5>
+                         <input class="TaskMiniStoryInput form-control" type="text">
+                         <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'new')"
+                             style="color: green;">
+                             <i class="fas fa-check"></i>
+
+                         </div>
+                         <div class="TextHeader " id="DeleteStory" style="color: red;">
+                             <i class="fas fa-times"></i>
+                         </div>
+                     </div>
+                     <div class="CardContentAdd">
+                         <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                     </div>
+                 </div>
+                 <div class="task-column-mng on-going" status="ongoing">
+
+                     <div class="task-column-body task_group_kanban_view_ongoing" id="new">
+                         <div draggable="true" class="content-drag"></div>
+
+
+
+                     </div>
+                     <div class="TaskMiniStoryCard">
+                         <h5>New Task</h5>
+                         <input class="TaskMiniStoryInput form-control" type="text">
+                         <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'ongoing')"
+                             style="color: green;">
+                             <i class="fas fa-check"></i>
+
+                         </div>
+                         <div class="TextHeader " id="DeleteStory" style="color: red;">
+                             <i class="fas fa-times"></i>
+                         </div>
+                     </div>
+                     <div class="CardContentAdd">
+                         <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                     </div>
+                 </div>
+                 <div class="task-column-mng closed" status='closed'>
+
+                     <div class="task-column-body task_group_kanban_view_closed" id="new">
+                         <div draggable="true" class="content-drag"></div>
+                     </div>
+                     <div class="TaskMiniStoryCard">
+                         <h5>New Task</h5>
+                         <input class="TaskMiniStoryInput form-control" type="text">
+                         <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'closed')"
+                             style="color: green;">
+                             <i class="fas fa-check"></i>
+
+                         </div>
+                         <div class="TextHeader " id="DeleteStory" style="color: red;">
+                             <i class="fas fa-times"></i>
+                         </div>
+                     </div>
+                     <div class="CardContentAdd">
+                         <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                     </div>
+                 </div>
+             </div>
+
+             <div class="UserStory">
+                 <div class="userStory-header sticky-top col-12">
+                     <div class="downUser angle-right" style="display: block;"><i class="fas fa-angle-right"></i></div>
+                     <div class="downUser angle-down"> <i class="fas fa-angle-down"></i></div>
+
+                     <span style="margin-right: 10px;">Tasks without User Story</span>
+                     <span class="backlog-status">
+                         <div class="us-list-item   us-item-status-new "> new </div>
+                     </span>
+                 </div>
+                 <div class="task-column-mng new" status="new">
+
+                     <div class="task-column-body task_group_kanban_view_new" id="new">
+                         <div draggable="true" class="content-drag"></div>
+                     </div>
+                     <div class="TaskMiniStoryCard">
+                         <h5>New Task</h5>
+                         <input class="TaskMiniStoryInput form-control" type="text">
+                         <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'new')"
+                             style="color: green;">
+                             <i class="fas fa-check"></i>
+
+                         </div>
+                         <div class="TextHeader " id="DeleteStory" style="color: red;">
+                             <i class="fas fa-times"></i>
+                         </div>
+                     </div>
+                     <div class="CardContentAdd">
+                         <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                     </div>
+                 </div>
+                 <div class="task-column-mng on-going" status="ongoing">
+
+                     <div class="task-column-body task_group_kanban_view_ongoing" id="new">
+                         <div draggable="true" class="content-drag"></div>
+
+
+
+                     </div>
+                     <div class="TaskMiniStoryCard">
+                         <h5>New Task</h5>
+                         <input class="TaskMiniStoryInput form-control" type="text">
+                         <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'ongoing')"
+                             style="color: green;">
+                             <i class="fas fa-check"></i>
+
+                         </div>
+                         <div class="TextHeader " id="DeleteStory" style="color: red;">
+                             <i class="fas fa-times"></i>
+                         </div>
+                     </div>
+                     <div class="CardContentAdd">
+                         <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                     </div>
+                 </div>
+                 <div class="task-column-mng closed" status='closed'>
+
+                     <div class="task-column-body task_group_kanban_view_closed" id="new">
+                         <div draggable="true" class="content-drag"></div>
+                     </div>
+                     <div class="TaskMiniStoryCard">
+                         <h5>New Task</h5>
+                         <input class="TaskMiniStoryInput form-control" type="text">
+                         <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'closed')"
+                             style="color: green;">
+                             <i class="fas fa-check"></i>
+
+                         </div>
+                         <div class="TextHeader " id="DeleteStory" style="color: red;">
+                             <i class="fas fa-times"></i>
+                         </div>
+                     </div>
+                     <div class="CardContentAdd">
+                         <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+
+     </div>
+
+     </div>

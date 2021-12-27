@@ -1,0 +1,419 @@
+<div class="run-services-wrapper">
+    <div class="row">
+        <div class="col-12 pt-3 mb-3">
+            <div class="cs-headline-by-content">
+                <h5>Project Run Service List <a href="#" class="addNewBusinessRun" data-toggle="modal" data-target="#newRunBbusinessServiceBox"><i class="fas fa-plus-square" aria-hidden="true"></i> <span>New Run</span></a></h5>
+            </div>
+            <table class="table RunServicesTblStyle">
+                <thead>
+                   <tr>
+                      <th>#</th>
+                      <th>Title</th>
+                      <th>Project Names</th>
+                      <th>Services Names</th>
+                      <th>JSON</th>
+                      <th>Start & End Dates</th>
+                      <th>Intensive</th>
+                      <th>Repeat Every</th>
+                      <th>Run Time</th>
+                      <th>Status</th>
+                      <th>OPTIONS</th>
+                   </tr>
+                </thead>
+                <tbody id="RunServiceTrlist" >
+                   <tr>
+                      <td>1</td>
+                      <td class="RunServiceTitleName">
+                          <span>Title asasas sasas</span>
+                      </td>
+                      <td class="RunServiceProjectName">
+                          <span>Chewee</span>
+                      </td>
+                      <td class="RunServiceName">
+                        <span>Phasellus non lobortis felis... </span>
+                      </td>
+                      <td class="RunServiceJson">
+                        <span>{ "glossary": {...} </span>
+                     </td>
+                     <td class="StartEndDates">
+                         <span>04/11/2021 - 04/12/2021</span>
+                     </td>
+                     <td class="intensive">
+                        <span>Weekly</span>
+                     </td>
+                     <td class="repeat">
+                        <span>1</span>
+                     </td>
+                     <td class="RunTime">
+                         <span>09:00</span>
+                     </td>
+                     <td class="Status cs-active">
+                        <span>Active</span>
+                    </td>
+
+                    <td class="tdCenter bcr-EditRemove">
+                        <a class="color-green mr-2" style="color:green;" onclick="editRunBusinessServace('idname')"><i class="fas fa-edit"></i></a>
+                        <a class="color-primary" onclick="deleteRunBusinessServace('idname')"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </td>
+                   </tr>
+                   <tr>
+                        <td>2</td>
+                        <td class="RunServiceTitleName">
+                            <span>Title asasas sasas</span>
+                        </td>
+                        <td class="RunServiceProjectName">
+                            <span>Project 2</span>
+                        </td>
+                        <td class="RunServiceName">
+                            <span>Phasellus non lobortis felis... </span>
+                        </td>
+                        <td class="RunServiceJson">
+                            <span>{ "glossary": {...} </span>
+                        </td>
+                        <td class="StartEndDates">
+                            <span>04/11/2021 - 04/12/2021</span>
+                        </td>
+                        <td class="intensive">
+                            <span>Weekly</span>
+                        </td>
+                        <td class="repeat">
+                            <span>2</span>
+                         </td>
+                        <td class="RunTime">
+                            <span>10:00</span>
+                        </td>
+                        <td class="Status cs-passive">
+                            <span>Passive</span>
+                        </td>
+
+                        <td class="tdCenter bcr-EditRemove">
+                            <a class="color-green mr-2" style="color:green;" onclick="editRunBusinessServace('idname')"><i class="fas fa-edit"></i></a>
+                            <a class="color-primary" onclick="deleteRunBusinessServace('idname')"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
+                   </tr>
+                   <tr>
+                        <td>3</td>
+                        <td class="RunServiceTitleName">
+                            <span>Title asasas sasas</span>
+                        </td>
+                        <td class="RunServiceProjectName">
+                            <span>Project 3</span>
+                        </td>
+                        <td class="RunServiceName">
+                            <span>Phasellus non lobortis felis... </span>
+                        </td>
+                        <td class="RunServiceJson">
+                            <span>{ "glossary": {...} </span>
+                        </td>
+                        <td class="StartEndDates">
+                            <span>04/11/2021 - 04/12/2021</span>
+                        </td>
+                        <td class="intensive">
+                            <span>Weekly</span>
+                        </td>
+                        <td class="repeat">
+                            <span>1</span>
+                         </td>
+                        <td class="RunTime">
+                            <span>15:00</span>
+                        </td>
+                        <td class="Status cs-active">
+                            <span>Active</span>
+                        </td>
+
+                        <td class="tdCenter bcr-EditRemove">
+                            <a class="color-green mr-2" href="#" style="color:green;" onclick="editRunBusinessServace('idname')"><i class="fas fa-edit"></i></a>
+                            <a class="color-primary" onclick="deleteRunBusinessServace('idname')"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
+                   </tr>
+                </tbody>
+             </table>
+        </div>
+    </div>
+
+    <!-- ON New Run Business Service Modal -->
+    <div class="cs-modal-box newRunBbusinessService modal fade" id="newRunBbusinessServiceBox" tabindex="-1" role="dialog"
+    aria-labelledby="newRunBbusinessServiceModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="newRunServiceModalTitle">New Auto Run Service</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="cs-popup-body">
+                        <div class="flex-container">
+                            <div class="row">
+                                <div class="cs-flex-col flex-item mt-2 ml-2">
+                                    <div class="cs-input-group">
+                                        <div class="input-group-addon">Service Title</div>
+                                        <input class="form-control" type="text" name="run_service_title" id="run_service_title" required>
+                                    </div>
+                                </div>
+                                <div class="cs-flex-col flex-item mt-2">
+                                    <div class="cs-input-group">
+                                        <div class="input-group-addon">Project Name</div>
+                                        <select class="" id="run_service_project_name" name="run_service_project_name"
+                                                data-live-search="true" required>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="cs-flex-col flex-item">
+                                    <div class="cs-input-group mt-2">
+                                        <div class="input-group-addon">Service Name</div>
+                                        <select class="" id="run_service_name" name="run_service_name"
+                                                data-live-search="true" required>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 pl-2 pr-2">
+                                    <div class="cs-input-group mt-3">
+                                        <div class="input-group-addon">JSON</div>
+                                        <textarea class="RunServiceJsonTextarea" name="form-control" id="RunServiceJsonTextarea" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="cs-flex-col flex-item ml-2 mt-2">
+                                    <div class="cs-input-group">
+                                        <div class="input-group-addon">Start Date</div>
+                                        <input class="form-control" name="runServiceStartDate" id="runServiceStartDate" type="text" required>
+                                    </div>
+                                </div>
+                                <div class="cs-flex-col flex-item mt-2">
+                                    <div class="cs-input-group">
+                                        <div class="input-group-addon">End Date</div>
+                                        <input class="form-control" name="runServiceEndDate" id="runServiceEndDate" type="text" required>
+                                    </div>
+                                </div>
+                                <div class="cs-flex-col flex-item mt-2">
+                                    <div class="cs-input-group">
+                                        <div class="input-group-addon">Run Time</div>
+                                        <input class="form-control" name="runServiceTime" id="runServiceTime" type="text" required>
+                                    </div>
+                                </div>
+                               
+                                <div class="cs-flex-col flex-item">
+                                    <div class="cs-input-group mt-2">
+                                        <div class="input-group-addon">Intensive</div>
+                                        <select class="" name="run_service_intensive_select" id='run_service_intensive_select' data-live-search="true">
+                                                <option value="weekly">Weekly</option>
+                                                <option value="monthly">Monthly</option>
+                                                <option value="yearly">Yearly</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="cs-flex-col flex-item">
+                                    <div class="cs-input-group mt-2">
+                                        <div class="input-group-addon">Repeat every</div>
+                                        <select class="" name="run_service_repeat_select" id='run_service_repeat_select' data-live-search="true">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="cs-flex-col flex-item">
+                                    <div class="cs-input-group mt-2">
+                                        <div class="input-group-addon">Status</div>
+                                        <select class="" name="run_service_status_select" id='run_service_status_select' data-live-search="true">
+                                                <option value="active">Active</option>
+                                                <option value="passive">Passive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 pl-2 pr-2">
+                                    <div class="cs-input-group mt-3">
+                                        <div class="input-group-addon">Description</div>
+                                        <textarea class="RunServiceDescTextarea" name="form-control" id="RunServiceDescTextarea" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row weekly-actions run-intensive run-enabled">
+                                <div class="col-12">
+                                    <h5 class="section-title"><strong>Weekly Actions</strong> <span></span></h5>
+                                </div>
+                                <div class="col-md-3 cs-flex-col flex-item ml-2 mt-2">
+                                   <div class="cs-input-group mt-2">
+                                       <div class="input-group-addon">Weekday</div>
+                                       <select class="" name="run_service_weekday_select" id="run_service_weekday_select" data-actions-box="true" multiple data-live-search="true">
+                                               <option value="monday">Monday</option>
+                                               <option value="tuesday">Tuesday</option>
+                                               <option value="wednesday">Wednesday</option>
+                                               <option value="thursday">Thursday</option>
+                                               <option value="friday">Friday</option>
+                                               <option value="saturday">Saturday</option>
+                                               <option value="sunday">Sunday</option>
+                                       </select>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="row" style="display: none;">
+                                <input type="hide" id="hide_actions">
+                                <input type="hide" id="hide_actions_param">
+                                <input type="hide" id="hide_actions_param_2">
+                            </div>
+                           <div class="row monthly-actions run-intensive">
+                                <div class="col-12">
+                                    <h5 class="section-title"><strong>Monthly Action</strong> <span></span></h5>
+                                </div>
+                                <div class="cs-flex-col flex-item ml-2 mt-2">
+                                   <div class="cs-input-group horizontal mt-2">
+                                       <div class="input-group-addon">Specification</div>
+                                        <label class="checkcontainer">Last day of month
+                                            <input type="radio" checked="checked" name="radio" id="last_day_of_month">
+                                            <span class="radiobtn"></span>
+                                        </label>
+                                        <label class="checkcontainer">First day of month
+                                            <input type="radio" name="radio" id="first_day_of_month">
+                                            <span class="radiobtn"></span>
+                                        </label>
+                                         <label class="checkcontainer spa">Specific day of month
+                                            <input type="radio" name="radio" id="specific_day_of_month">
+                                            <span class="radiobtn"></span>
+                                          </label>
+                                          <label class="checkcontainer spa">Before last day of month
+                                            <input type="radio" name="radio" id="before_last_day_of_month">
+                                            <span class="radiobtn"></span>
+                                          </label>
+                                          <label class="checkcontainer spa">Specific weekday of month 
+                                            <input type="radio" name="radio" id="specific_weekday_of_month">
+                                            <span class="radiobtn"></span>
+                                          </label>
+                                   </div>
+                               </div>
+                               <div class="col-12">
+                                   <hr class="hr_spa">
+                                    <div class="row">
+                                        <div class="spa_sdofm_day_of_Month_select run_spa cs-flex-col flex-item ml-2 mt-2">
+                                            <div class="cs-input-group">
+                                                <div class="input-group-addon">Day of Month</div>
+                                                <select class="" name="sdofm_day_of_Month_select" id="sdofm_day_of_Month_select" data-live-search="true">
+                                                        <option value="1">1</option>
+                                                        <option value="2">3</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                        <option value="24">24</option>
+                                                        <option value="25">25</option>
+                                                        <option value="26">26</option>
+                                                        <option value="27">27</option>
+                                                        <option value="28">28</option>
+                                                        <option value="29">29</option>
+                                                        <option value="30">30</option>
+                                                        <option value="31">31</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="spa_days_before_last_day_of_month run_spa cs-flex-col flex-item mt-2">
+                                            <div class="cs-input-group">
+                                                <div class="input-group-addon">Day(s) before last day of month</div>
+                                                <input class="form-control" name="days_before_last_day_of_month" id="days_before_last_day_of_month" type="number" required>
+                                            </div>
+                                        </div>
+                                        <div class="spa_swofm_fl_action_select run_spa cs-flex-col flex-item ml-2 mt-2">
+                                            <div class="cs-input-group">
+                                                <div class="input-group-addon">Action</div>
+                                                <select class="" name="swofm_fl_action_select" id="swofm_fl_action_select" data-live-search="true">
+                                                    <option value="first">First</option>
+                                                    <option value="last">Last</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="spa_swofm_weekday_select run_spa cs-flex-col flex-item ml-2 mt-2">
+                                            <div class="cs-input-group">
+                                                <div class="input-group-addon">Weekdays</div>
+                                                <select name="swofm_weekday_select" id="swofm_weekday_select" data-live-search="true">
+                                                    <option value="monday">Monday</option>
+                                                    <option value="tuesday">Tuesday</option>
+                                                    <option value="wednesday">Wednesday</option>
+                                                    <option value="thursday">Thursday</option>
+                                                    <option value="friday">Friday</option>
+                                                    <option value="saturday">Saturday</option>
+                                                    <option value="sunday">Sunday</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                           <div class="row yearly-actions run-intensive">
+                            <div class="col-12">
+                                <h5 class="section-title"><strong>Yearly</strong> <span></span></h5>
+                            </div>
+                            <div class="cs-flex-col flex-item ml-2 mt-2">
+                                <div class="cs-input-group">
+                                    <div class="input-group-addon">Execution Data</div>
+                                    <input class="form-control" id="runServiceExecutiveDate" type="text" name="runServiceExecutiveDate" required>
+                                </div>
+                           </div>
+                         </div>
+                           <div class="row">
+                               <div class="col-12">
+                                <hr>
+                               </div>
+                                <div class="cs-flex-col flex-item ml-2 mt-2 horizontal">
+                                    <div class="cs-input-group mt-2">
+                                        <label class="checkmarkcontainer">Send Notification
+                                        <input type="checkbox" id="sendnotification">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    </div>
+                                    <div class="cs-input-group">
+                                        <input class="form-control" type="email" name="notification_email" placeholder="Notification Email" id="notification-email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="run-msg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="newRunBbusinessServiceSaveBtn"
+                                class="newRunBbusinessServiceSaveBtn btn btn-primary" type="submit" data-dismiss="modal">Save</button>
+                        <button type="button" id="newRunBbusinessServiceCloseBtn"
+                                class="newRunBbusinessServiceCloseBtn btn btn-secondary cs-btn-secondary"
+                                data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

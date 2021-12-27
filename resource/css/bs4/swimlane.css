@@ -1,0 +1,804 @@
+ /* Table Css General */
+ .Graphtable{
+ 
+  padding-top: 30px;
+  /* box-shadow: rgba(9, 30, 66, 0.25) 0px 0px 0px 0px, rgba(9, 30, 66, 0.31) 0px 0px 2px; */
+  display: flex;
+  width: max-content;
+}
+.LaneAdder{
+  background: #fff;
+    position: fixed;
+    width: 93.5%;
+    z-index: 5;
+    padding: 10px 0px;
+  
+}
+
+.Graphtable .laneColumnDiv {
+
+
+ width: max-content;
+  
+ /* display: flex!important;
+ flex-wrap: wrap;   */  
+  
+ border: 1px solid #cccccc
+
+}
+
+.Graphtable > .laneColumnDiv > table > tbody{
+  
+ display: flex!important;
+ flex-wrap: wrap;    
+ 
+}
+.Graphtable > .laneColumnDiv > table > tbody > tr{
+
+
+ width: 320px;
+  
+ display: flex!important;
+ flex-wrap: wrap;    
+  
+
+
+}
+.laneColumnDiv > table > tbody > tr >td{
+ width: 200px;
+ height: 150px;
+ position: relative;
+ vertical-align: middle !important;
+  margin: auto;
+  margin-bottom: 20%;
+}
+
+/* figure Adder popUp css */
+.tdAdderSwimlaneOpened{
+
+
+ 
+  margin: 0px 9px 0px 9px;
+  padding: 10px;
+  height: 100%;
+
+  border: 1px solid #cccccc;
+   visibility: hidden;
+}
+.tdAdderSwimlaneOpenedbtn{
+  width: 60px;
+  height: 60px;
+  font-size: 35px !important;
+  margin-top: 15%;
+ visibility: hidden;
+
+  
+}
+.tdAdderSwimlaneOpened:hover .tdAdderSwimlaneOpenedbtn{
+  visibility: visible;
+}
+.laneColumnDiv table > tbody > tr:hover .tdAdderSwimlaneOpened {
+
+  visibility: visible;
+  }
+.tdAdderSlopDiv{
+  text-align: center;
+  height: 100%;
+}
+.tdAdderSwimlane{
+  position: relative;
+  z-index: 500;
+  width: 200px ;
+  box-shadow: rgba(9, 30, 66, 0.25) -3px -3px 4px -3px, rgba(9, 30, 66, 0.31) 2.5px 0.5px 11px;
+ height: 145px;
+background-color: white;
+ 
+
+}
+.tdAdderSwimlane:hover {
+  transform: scale(2.2); 
+}
+.tableAdderAccept{
+  padding: 6px;
+}
+
+
+
+/* Color edit css */
+.ColopickerSpan{
+  width: 5px;
+  height: 5px;
+  margin-right: 2px;
+  padding: 15px 15px 3px 4px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 0px 0px 0px, rgba(9, 30, 66, 0.31) 1px 2px 5px;
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+  cursor: pointer;
+ 
+}
+.ColopickerSpanLine{
+  width: 32px;
+  height: 30px;
+  /* margin-right: 2px; */
+  font-size: 15px;
+  box-shadow: rgb(9 30 66 / 25%) 0px 0px 0px 0px, rgb(9 30 66 / 31%) 1px 2px 5px;
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+  cursor: pointer;
+ border: none;
+}
+.ColopickerSpanLine.gactive{
+  outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+.Colorchangespan{
+  width: 5px;
+  height: 5px;
+  margin-right: 2px;
+  padding: 15px 15px 3px 4px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 0px 0px 0px, rgba(9, 30, 66, 0.31) 1px 2px 5px;
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+  cursor: pointer;
+ 
+}
+.selectedColorPickerswfg{
+
+  border: 1px solid green;
+
+
+}
+
+.figureBgSelectOption{
+  padding-left: 4px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ChangeFigureColor{
+ 
+  display: flex;
+  flex-wrap: wrap;  
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+}
+#selecttextfontSize{
+  width: 80px !important;
+  display: inline-block !important;
+}
+/* Figure Form edit ccss */
+.figureSelectOption{
+ padding-left: 5px;
+
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.ChnageFigureForm{
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+}
+.customSpanUst{
+  font-size: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: green;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.selectedfigureswfg{
+color:  white;
+border-radius: 2px;
+
+  background-color: #4dabf7;
+  position: relative ;
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+ 
+
+ 
+}
+
+.SizeInputFg{
+  width: 80px !important;
+  display: inline-block !important;
+}
+
+.ColopickerSpan:hover {
+  transform: scale(1.5); 
+}
+.Colorchangespan:hover {
+  transform: scale(1.5); 
+}
+.ColopickerSpanLine:hover {
+  transform: scale(1.5); 
+}
+
+.selectColorWord{
+  padding-left: 4px;
+  font-size: 10px;
+  margin: 0px;
+  
+}
+.selectColorWordPopup{
+  padding-left: 4px;
+  font-size: 10px;
+  margin: 0px;
+  margin-top: 15px;
+  
+}
+
+.figureFromspansw{
+   width: 31px;
+   height: 20px;
+   font-size: 15px;
+   text-align: center;
+   -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+   position: relative;
+   
+}
+.figureFromspansw img{
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  position: absolute;
+  left: 0px;
+}
+
+.figureFromspansw:hover {
+  transform: scale(1.5);
+  z-index: 55555;
+  background-color: #ffff;
+}
+.figureFromspansChange{
+   width: 35px;
+   height: 35px;
+   font-size: 28px;
+   text-align: center;
+   -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 2);
+}
+.figureFromspansChange:hover {
+  transform: scale(1.5); 
+}
+
+.LaneHeader{
+  border-bottom: 1px solid black;
+  
+}
+
+/*  figure resize  */
+
+.resizeFigure{
+  
+  position: absolute;
+  left: 50%; 
+  top: 50%; /*move the object to the center of the parent object*/
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+}
+
+/*  Content figure Css */
+
+.ContentBody{
+  cursor: move;
+    position: absolute;
+    line-height: 1.2;
+    font-weight: normal;
+    font-size: 5px;
+    padding: 3px;
+    font-family: Helvetica;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.ContentBody span{
+  
+  height: 100% !important;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.contentArrow{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  border-radius: 50%;
+  border: 1px solid black;
+  z-index: 150;
+  padding: 0px 0px 0px 4px;
+  cursor: pointer;
+  visibility: hidden;
+  width: 20px;
+  height: 20px;
+  font-size: 13px;
+ 
+}
+.Content{
+  position: relative;
+ 
+  z-index: 500 ;
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+  height: 100%;
+  width: 100%;
+ 
+
+}
+.Content img{
+  width: 100%;
+  height: 100%;
+}
+.contentDropEDit{
+   position: absolute !important;
+   top: -5px;
+   right: 0px;
+
+  visibility: hidden;
+  z-index: 505;
+}
+.arrowCustom{
+  margin-right: 10px;
+  width: 12.5px;
+}
+.laneColumnDiv > table > tbody > tr >td:hover .contentDropEDit{
+visibility: visible;
+}
+.Content:hover .contentArrow{
+visibility: visible;
+}
+
+.figureAddbtn{
+  height: 21px;
+  width: 25px;
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+  /* padding-top: 0px; */
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: rgb(9 30 66 / 25%) 0px 4px 8px -2px, rgb(9 30 66 / 31%) 0px 0px 1px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.figureAddbtn:hover{
+  background-color: rgb(209, 209, 209);  
+}
+#tdAdderslAccept{
+  color: green;
+}
+/* Lane And Lane Edit Css */
+
+.addlineAfterPart{
+  
+height: 32px;
+position: absolute !important;  
+  top: 0px;
+  right: 1px;
+
+
+ 
+}
+.dragLaneClass{
+  height: 33px; 
+  position: absolute;  
+  top: 0px;
+  right: 32px ;
+}
+.ShowLaneBtnSect{
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  display: none;
+  
+  
+}
+.ShowLaneBtn{
+  
+  pointer-events: initial;
+}
+.HideNameLine{
+
+  height: 100% !important; 
+ 
+  
+}
+.HideNameLine > span{
+
+position: relative;
+display: block;
+
+ transform: rotate(90deg);
+ text-transform: initial;
+ margin-top: 20px;
+  height: 100%; 
+  word-wrap: break-word;
+  
+}
+.EditSectionLane{
+  position: relative;
+  display: flex;
+  width: 30%;
+ 
+}
+.LaneheaderColumn{
+  width: 100%;
+  position: relative;
+  max-height: 50px !important;
+  display: flex;
+  
+}
+.laneHeaderName{
+  padding: 10px ;
+  font-size: 15px;
+  width: 70%;
+  margin: 0px;
+ 
+}
+.LaneheaderRenameInput{
+ visibility: hidden;
+   top: 0px;
+   left: 1px;
+  position: absolute;
+z-index: 999;
+  
+}
+
+
+
+/* swimcard popup*/
+.editNameProcessDiv{
+  position: relative;
+}
+.editNameProcessDiv input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: none;
+}
+.SwimBackG{
+  bottom: 0px;
+  left: 0px;
+  opacity: 1;
+  pointer-events: initial;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 500;
+  background: rgb(243 244 245 / 87%);
+  transition: opacity 220ms ease 0s;
+}
+.SwimPopUp{
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(9, 30, 66, 0.08) 0px 0px 0px 1px, rgba(9, 30, 66, 0.08) 0px 2px 1px, rgba(9, 30, 66, 0.31) 0px 0px 20px -6px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-height: 100%;
+ 
+  border-radius: 3px;
+  outline: 0px;
+  display: flex;
+  flex-direction: column;
+  
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(100% - 120px);
+  top: 60px;
+  width: 50%;
+  z-index: 510;
+ 
+  position: fixed;
+
+ 
+}
+.SwimPopUpHeader{
+  display: flex;
+ 
+  
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 0px 0px 0px, rgba(9, 30, 66, 0.31) 1px 2px 5px;
+}
+.ExitCardswim{
+  margin-top: 8px;
+
+  border-radius: 6px;
+  font-size: 20px;
+ padding-top: 7px;
+   text-align: center;
+  height: 40px;
+
+}
+.ExitCardswim:hover{
+  background-color: rgba(173, 173, 173, 0.466);
+  color: #3399ff;
+}
+.SwimPopUpBody{
+padding: 10px;
+position: relative;
+}
+.ContentCopyDiv{
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+ 
+  width: 200px;
+  height: 145px;
+  
+  pointer-events: none;
+  box-shadow: rgba(9, 30, 66, 0.25) -3px -3px 4px -3px, rgba(9, 30, 66, 0.31) 2.5px 0.5px 11px;
+}
+
+.SwimPopUpFooter{
+  padding: 10px;
+ 
+  
+}
+
+
+/*  line edit section 
+*/
+.ChangeLineColor{
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;  
+}
+.ColorchangeLinespan{
+  width: 5px;
+  height: 5px;
+  margin-right: 2px;
+  padding: 15px 15px 3px 4px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 0px 0px 0px, rgba(9, 30, 66, 0.31) 1px 2px 5px;
+
+  cursor: pointer;
+ 
+}
+.ColorchangeLinespan:hover {
+  transform: scale(1.5); 
+}
+
+.addtextLine{
+  position: absolute;
+  z-index: 5555;
+ display: none;
+ padding: 3px ;
+ box-shadow: rgba(9, 30, 66, 0.25) 0px 0px 0px 0px, rgba(9, 30, 66, 0.31) 0px 0px 2px;
+ border-radius: 1px;
+ background-color: #ffff;
+}
+
+.lineRemovebtn:hover{
+
+  color: rgb(233, 89, 89);
+}
+#lineRemovebtn{
+ 
+  color: red;
+}
+.btnLineHover{
+  position: relative;
+  height: 40px;
+  width: 40px;
+  /* font-size: 18px; */
+  display: inline-block;
+  background-color: #ffff !important;
+  /* padding-top: 7px; */
+  /* padding-left: 8px !important; */
+  border-radius: 3px;
+  box-shadow: rgb(9 30 66 / 25%) 0px 4px 8px -2px, 
+ 
+  
+}
+
+
+
+.Graphtable > svg{
+ 
+pointer-events: none !important;
+    
+}
+
+.Graphtable > svg > text > textPath{
+ 
+  pointer-events: initial !important;
+} 
+
+ 
+.switch-holder {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+  width: 150px;
+}
+
+/* Visually hide the checkbox input from the DOM, we only need it semantically */
+.check-switch {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+/* color background */
+.switch-cst {
+  --switch-container-width: 50px;
+  --switch-size: calc(var(--switch-container-width) / 2);
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: var(--switch-size);
+  flex-basis: var(--switch-container-width);
+  border-radius: var(--switch-size);
+  background-color: #999;
+	transition: background-color 0.25s ease-in-out;
+}
+/* circle inside the switch */
+.switch-cst::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  height: calc(var(--switch-size) - 4px);
+  width: calc(var(--switch-size) - 4px);
+  border-radius: 9999px;
+  background-color: white;
+	transition: transform 0.375s ease-in-out;
+}
+/* style for ON state */
+.check-switch:checked + .switch-cst {
+  background-color: #4fd1c5;
+}
+.check-switch:checked + .switch-cst::before {
+  border-color: #4fd1c5;
+  transform: translateX(
+    calc(var(--switch-container-width) - var(--switch-size))
+  );
+}
+                            /*  Graph TAblee Figure Csss Section Start */
+
+     
+
+
+
+.selectedfigureswfg > .diamondFigureForm{
+  border: 1px solid white;
+}
+.diamondFigureForm{
+
+  border: 0.5px solid black;
+  padding-top: 11.5px;
+  margin-left: 3px;
+  transform: skew(-15deg);
+  width: 13px;
+  height: 7.2px;
+  margin-top: 3px;
+
+ 
+}
+.selectedfigureswfg > .diamondFigureForm1{
+  border: 1px solid #007bff;
+}
+.diamondFigureForm1{
+
+  border: 2px solid black;
+  padding-top: 12.5px;
+  transform: skew(20deg);
+  width: 23px;
+  height: 23.2px;
+  margin-top: 8px;
+ 
+}
+
+
+
+
+.USrectangle {
+  
+ position: relative;
+ border-radius: 6px;
+ overflow: hidden;
+ box-shadow: rgb(6 24 44 / 40%) 0px 0px 0px 1px, rgb(6 24 44 / 65%) 0px 0px 0px -1px, rgb(255 255 255 / 8%) 0px 1px 0px inset;
+
+}
+.StatFigure{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #8ad6a3;
+  font-size: 8px;
+  display: inline-block;
+  padding: 2px;
+  color: white;
+  border-radius: 3px;
+  text-align: center;
+
+}
+.StatFigure1{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: #d1d6d3;
+  font-size: 8px;
+  display: inline-block;
+  padding: 2px;
+  color: black;
+  border-radius: 3px;
+  text-align: center;
+
+}
+.UserRectBody{
+    min-width: 100px;
+    min-height: 100px;
+    cursor: move;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: normal;
+    font-size: 5px;
+    padding: 3px;
+    padding-top: 20px;
+    
+    font-family: Helvetica;
+}
+
+.UserRectBody  span{
+  
+  min-height: 100px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+  
+.lines-block-act .geItem{
+  overflow: hidden;
+  /* width: 34px; */
+  /* height: 32px; */
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-radius: 8px;
+  border: none;
+
+}    
+.lines-block-act .geItem:focus{
+  border: none;
+}      
+.lines-block-act .geItem:hover{
+  background-color: #e0e0e0;
+} 
+.lines-block-act .geItem.gactive{
+border: 3px solid #cdcfd0;
+}         
+
+.StickMnbody{
+  width: 100%;
+ 
+  height: 20px;
+  overflow: hidden;
+  top: unset;
+
+}

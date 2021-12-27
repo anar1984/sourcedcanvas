@@ -1,0 +1,402 @@
+<div class="row">
+
+
+
+    <div class="col-3 text-right">
+        
+      
+    </div>
+
+    <div class="col-6  text-center">
+        <br>
+        <h4>Project Management</h4>
+        <br>
+    </div>
+    <div  class="col-3 row text-right">
+      <!-- Example split danger button -->
+      
+
+    </div>
+</div>
+
+<div class="row" ppp style="margin: 0;">
+    <div class="col-lg-2 flexbox">
+        <div class="">
+            <div> <input data-type='search_text' type="text" class='prmanage-filter form-control' onchange="getProjectManagementList()" id='promgment_filter_search_text'
+                    placeholder="Search . . ." required="">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 row">
+        <div class="col-lg-6">
+            <div class="dropdown">
+                <span class="dropdown-toggle1 btn-f-l"  data-toggle="dropdown">Label</span> 
+                <div id="general" class="">
+                    <i>
+                        <span class="badge">0</span>
+                    </i>
+                </div>
+
+
+                <div class="dropdown-menu drop-label-menu label-show">
+                    <span>
+                        <a class="new-label-modal" title="New Label" data-toggle="modal" href="#" style="padding:0px;width: 20px;font-weight: 600;vertical-align: -webkit-baseline-middle; font-size: 12px; color:#727D91; margin-top: 5px;"
+                           data-target="#insertNewLabel" >
+
+                            Add Label
+
+                        </a>
+                    </span>
+                    <span class="newlabelspan" style="cursor: pointer;" onclick="new UserStory().clearAndShowAll(this)">Clear</span>
+
+
+                    <div class="dropdown-divider" style="padding:0px;">
+
+                    </div>
+                    <div id="tasklabellist"
+                         class="tasklabellist"
+
+                         style='height: 250px;overflow-y: auto; overflow-x: hidden;'>
+
+                    </div>
+                </div>
+            </div>
+           </div>
+        <div class="col-lg-6">
+            <div class="dropdown">
+                <!-- btn btn-primary   sildim -->      
+                <span class="dropdown-toggle1 btn-f-l"  data-toggle="dropdown" style="cursor: pointer;margin-left: -6px;">
+
+                    Sprint</span> 
+
+                <div id="general3" class="">
+                    <i>
+                        <span class="badge">0</span>
+                    </i>
+                </div>
+
+
+                <div class="dropdown-menu drop-label-menu sprint-show">
+                    <span>
+
+                        <a class="dropdown-item" data-toggle="modal" href="#" data-target="#insertNewSprint" 
+                           f="" 
+                           style="padding:0px;width: 20px;font-weight: 600;vertical-align: -webkit-baseline-middle; 
+                           font-size: 12px; color:#727D91; margin-top: 5px;" >
+                            New Sprint</a>
+                    </span>
+                    <span class="newlabelspan" style="cursor: pointer;" onclick="new UserStory().clearAndShowAll(this)">Clear</span>
+
+
+                    <div class="dropdown-divider" style="padding:0px;">
+
+                    </div>
+                    <div id="sprintlist"
+                         class="sprintlist"
+                         style='height: 250px;overflow-y: auto; overflow-x: hidden;'>
+
+                    </div>
+                </div>
+            </div>
+        
+           </div>
+    </div>
+    
+    <div class="col-lg-4 row">
+        <div class="col-lg-4">
+            <select class="form-control  prmanage-filter prmanage-mgmt-filter-select" data-live-search="true" data-actions-box="true"
+                style="text-overflow: ellipsis" onchange='callProjectManagementFilterMulti(this)' id='prMn_filter_project_id'
+                data-type="project_id" title="Project"></select>
+        </div>
+        <div class="col-lg-4">
+            <select class="form-control  bug-filter-multi  prmanage-mgmt-filter-select" data-actions-box="true"
+                onchange='callProjectManagementFilterMulti(this)' multiple data-live-search="true" id='bug_filter_assignee_id'
+                data-type="assignee_id" title="Assignee"></select>
+        </div>
+    
+        <div class="col-lg-4">
+            <select class="form-control bug-filter-multi  prmanage-mgmt-filter-select selectpicker1" data-actions-box="true"
+                onchange='callProjectManagementFilterMulti(this)' multiple data-live-search="true" id='bug_filter_backlog_id'
+                data-type="backlog_id" title="Story Card">
+    
+            </select>
+        </div>
+    </div>
+   
+    
+    <div class="col-lg-1">
+<!--         <button class="btn btn-light" data-toggle="modal" data-target="#filterPopUp" > <i class="fas fa-plus"></i></button>
+ -->        <button id="multi-edit-menu-btn" class="btn btn-light" data-toggle="modal" data-target="#multieditpopUp" > <i class="fas fa-edit"></i></button>
+    </div>
+
+    <div class="col-lg-1 text-center ">
+        
+      
+        <select data-type='limit' class="prmanage-filter form-control" style="width : 80px;margin-bottom:10px;"
+            id="bug_filter_limit">
+            <option value='10'>10</option>
+            <option value='25' selected> 25</option>
+            <option value='50'>50</option>
+            <option value='100'>100</option>
+            <option value='200'>200</option>
+            <option value='300'>300</option>
+        </select>
+
+        <b id="table-row-count"> </b>
+        <!--        </div>-->
+
+    </div>
+   
+    
+      <div  class="col-lg-2 row">
+        <span>Group By  </span>
+
+        <select class="custom-select" style="width: 40%; margin-left: 5px;" id="inputGroupSelect01">
+            <option value='0' >None</option>
+            <option value='4' >Task Nature</option>
+            <option value='5' >Assignee</option>
+            <option value='6' >Task Type</option>
+            <option value='7'>Priority</option>
+            <option value='8' >Story Card</option>
+            <option value='9' >Project</option>
+            <option value='10' >Create By</option>
+            <option value='11' >Create Date</option>
+            <option value='12'>Late Update</option>
+            
+ 
+        </select>
+   
+      </div>
+     
+  
+
+    
+
+  <!-- Modal -->
+<!-- <div class="modal fade bd-example-modal-lg" id="multieditpopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body  row" >
+             <div class='col-12 row'>
+                <div class="col-lg-4">
+                    <select class="form-control" data-live-search="true" data-actions-box="true"
+                        style="text-overflow: ellipsis" onchange='' id='bug_filter_project_id_multi'
+                         title="Project"></select>
+                </div>
+                <div class="col-lg-4">
+                    <select class="form-control" data-actions-box="true"
+                        onchange=''  data-live-search="true" id='bug_filter_assignee_id_multi'
+                         title="Assignee"></select>
+                </div>
+            
+                <div class="col-lg-4">
+                    <select class="form-control   prmanage-mgmt-filter-select " data-actions-box="true"
+                        onchange=''  data-live-search="true" id='bug_filter_backlog_id_multi'
+                        title="Story Card">
+            
+                    </select>
+                </div>
+                <div class="col-lg-4">
+                    <select class="form-control   prmanage-mgmt-filter-select " data-actions-box="true"
+                        onchange=''  data-live-search="true" id='bug_task_type_id_multi'
+                        title="Task Type">
+            
+                    </select>
+                </div>
+                <div class="col-lg-4">
+                    <select class="form-control   prmanage-mgmt-filter-select " data-actions-box="true"
+                        onchange=''  data-live-search="true" id='bug_task_nature_id_multi'
+                        title="Task Nature">
+                        <option value="" ></option>
+                        <option value="bug" >Bug</option>
+                        <option value="change" >Change Request</option>
+                        <option value="new" >New Request</option>
+            
+                    </select>
+                </div>
+                <div class="col-lg-4 " >
+
+                    <select class="form-control prmanage-mgmt-filter-select" data-actions-box="true" 
+                        data-type="priority" onchange="" id='bug_filter_priority_add' title="Priority">
+                        <option value=''>None</option>
+                        <option value='1'>1- Lowest</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                        <option value='5'>5</option>
+                        <option value='6'>6</option>
+                        <option value='7'>7</option>
+                        <option value='8'>8</option>
+                        <option value='9'>9 - Highest</option>
+            
+                    </select>
+                </div>
+               
+                  </div>
+           
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="update_multi_bug_change_btn" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- Modal -->
+<!-- <div class="modal fade bd-example-modal-lg" id="filterPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body  row" >
+            <div class="col-lg-4">
+                <select class="form-control bug-filter-multi  prmanage-mgmt-filter-select" onchange='callProjectManagementFilterMulti(this)'
+                    data-live-search="true" data-actions-box="true" multiple id='bug_filter_status' data-type="status"
+                    title="Status">
+                    <option value='new' selected>New</option>
+                    <option value='ongoing' selected>Ongoing</option>
+                    <option value='closed'>Closed</option>
+                    <option value='waiting'>Waiting</option>
+                    <option value='canceled'>Canceled</option>
+                    <option value='rejected'>Rejected</option>
+                    <option value='UAT'>UAT</option>
+        
+                </select>
+            </div>
+            <div class="col-lg-4">
+                <select class="form-control bug-filter-multi  prmanage-mgmt-filter-select" onchange='callProjectManagementFilterMulti(this)'
+                    multiple id='bug_filter_nature' data-type="nature" title="Task Nature">
+                    <option value='bug' selected>Bug</option>
+                    <option value='change' selected>Change Request</option>
+                    <option value='new' selected>New Request</option>
+                </select>
+            </div>
+            <div class="col-lg-4">
+                <select class=" form-control bug-filter-multi  prmanage-mgmt-filter-select" data-actions-box="true"
+                    onchange='callProjectManagementFilterMulti(this)' multiple data-live-search="true" id='bug_filter_created_by'
+                    data-type="created_by" title="Created by"></select>
+            </div>
+          
+        
+            <div class="col-4 text-right" style="padding-top: 7px;">
+        
+                <input type="checkbox" class="form-control1 bug-filter-checkbox prmanage-mgmt-filter-select"
+                    data-type="showChildTask" onchange="callProjectManagementFilterMulti(this)" checked="true" id='bug_filter_onlyparent'
+                    title="Show Child Tasks"> Show Child Tasks
+        
+            </div>
+        
+            <div class="col-4 text-right" style="padding-top: 7px;">
+        
+                <select class="form-control bug-filter-multi  prmanage-mgmt-filter-select" data-actions-box="true" multiple
+                    data-type="priority" onchange="callProjectManagementFilterMulti(this)" id='bug_filter_priority' title="Priority">
+                    <option value=''>None</option>
+                    <option value='1'>1- Lowest</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                    <option value='6'>6</option>
+                    <option value='7'>7</option>
+                    <option value='8'>8</option>
+                    <option value='9'>9 - Highest</option>
+        
+                </select>
+            </div>
+        
+        
+            <div class="col-4 text-right" style="padding-top: 7px;">
+        
+                <select class="form-control  prmanage-mgmt-filter-select" data-actions-box="true" multiple onchange="toggleColumns()"
+                    id='bug_filter_columns' title="Columns">
+                    <option value='task-status' selected>Status</option>
+                    <option value='task-id' selected>Task ID</option>
+                    <option value='task-name' selected>Description</option>
+                    <option value='task-nature' selected>Task Nature</option>
+                    <option value='assignee' selected>Assignee</option>
+                    <option value='tasktype' selected>Task Type</option>
+                    <option value='priority'>Priority</option>
+                    <option value='story-card' selected>Story Card</option>
+                    <option value='project' selected>Project</option>
+                    <option value='created-by' selected>Create By</option>
+                    <option value='created-date' selected>Create Date</option>
+                    <option value='last-update'>Late Update</option>
+                    <option value='estimated-hours'>Estimated Hours</option>
+                    <option value='spent-hours'>Spent Hours</option>
+                    <option value='executed-counter'>Executed Counter</option>
+                    <option value='estimated-budget'>Estimated Budget</option>
+                    <option value='spent-budget'>Spent Budget</option>
+        
+                </select>
+            </div>
+        
+           
+        </div>
+      
+      </div>
+    </div>
+  </div> -->
+
+</div>
+
+
+<div class="row" style="margin: 0;">
+    
+</div>
+
+<div class="row bugListContent">
+    <div class="col-12 col-bug-list" id="addBuglist" style="zoom: 95%;">
+        <div class="row" style="margin: 0;">
+            <div class='col-12 tableFixHead' id1="bugList" style="padding: 0;">
+                <table class="table-hover splited1 bugListTable" style="width:100%" id="bugListTable">
+                    <thead class="bugThead">
+
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+
+                </table>
+            </div>
+            
+        </div>
+       
+        <div class=" col-12 d-flex justify-content-center paginationStyle">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination projectManagmentPaginition" id="pagination_block">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item num"><a class="page-link">1</a></li>
+                    <li class="page-item num"><a class="page-link">2</a></li>
+
+                    <li class="page-item order-last">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+

@@ -1,0 +1,219 @@
+
+.contBackground{
+  background-color:#D3E0E5;  
+  position: relative;
+  padding-top: 20px;
+ 
+}
+#testLine{
+  z-index: 1;
+}
+
+ .tdSeqment {
+   position: relative;
+ z-index: 400; 
+  min-width:  200px;
+  height: 80px;
+   border-radius: 3px;
+   padding: 0px;
+   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.31) 0px 0px 1px;
+  vertical-align: initial;
+  background-color: rgba(255, 255, 255, 0.767);
+
+  } 
+  tr:nth-child(even) {
+  
+  
+    visibility: hidden;
+    }
+ td:nth-child(even) {
+  
+  pointer-events: none;
+  visibility: hidden;
+  }
+
+
+.tableDataBase{
+ 
+
+  border-collapse: initial;
+  
+}
+.Addfiledbtn{
+  width: 100%;
+ color: #393e44;
+ font-size: 15px;
+ padding-top: 3px;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.tdOpenedBtn{
+  border-radius:50% ;
+  border: 1px solid black;
+  margin-top: 10%;
+  
+}
+.tdBody{
+
+ text-align: center;
+}
+.over{
+  border: 1px dashed black;
+}
+.tdHeader{
+  text-align: center;
+  border-bottom: 1px solid rgba(173, 172, 172, 0.699);
+  max-height: 25px;
+ 
+}
+.TableAdder{
+  text-align: center;
+}
+.popUpTable{
+  width: 230px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  padding: 7px;
+  
+ 
+  box-shadow: rgba(9, 30, 66, 0.35) 0.5px 0.5px 0.5px 0.5px;
+  transition: opacity 0.2s ease 0s;
+  
+}
+.popUpFeild{
+  width: 220px;
+  background-color: #ffffff;
+  padding: 7px;
+  transition: opacity 0.2s ease 0s;
+}
+#inputFAildName{
+  border: none;
+  background-color: #ffe4a17a;
+}
+.newtableBtn{
+  height: 32px;
+  width: 30px;
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+  padding-top: 5px;
+  padding-left: 7px;
+  border-radius: 3px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.31) 0px 0px 1px;
+}
+#AcceptTableNew{
+  color: rgb(102, 197, 102);
+}
+#CancelTableNew{
+  color: rgb(197, 53, 53);
+}
+.feildSection{
+  width: 200px;
+  height: 35px;
+  padding: 3px 3px 3px 3px;
+  margin: 10px 10px 10px 10px;
+  background-color: #ffe4a17a;
+  border-radius: 2px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.31) 0px 0px 1px;
+  display: flex;
+}
+.tdConnectArrow{
+  visibility: hidden;
+  cursor: pointer;
+}
+.feildSection:hover .tdConnectArrow{
+  visibility: visible;
+}
+.Feild-child{
+  width: 100%;
+  
+  background-color: #ffe4a100 ;
+}
+.SelectDiagramOption{
+  width: 400px !important;
+}
+.AddUserStoryDiagramEntity{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  border-radius: 50%;
+  color: white;
+  background-color: #007bff;
+  padding-top: 2px;
+  padding-left: 9px;
+  width: 35px;
+    height: 35px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.AddUserStoryDiagramEntity:hover{
+font-size: 24px;
+padding-top: 0px;
+padding-left: 7px;
+}
+.userSwitchtory{
+  display: inline;
+}
+.zoomBtnSection {
+  width: 25px;
+  height: 25px;
+  background: #eef;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #005bac;
+  padding-top: 1px ;
+  top:90vh;
+  position: fixed;
+  text-align: center;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 500;
+ 
+}
+
+/* zoom section  */
+.zmBtnSection {
+  width: 25px;
+  height: 25px;
+  background: #eef;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #005bac;
+  padding-top: 1px ;
+  top:90vh;
+  left: 20px;
+  position: fixed;
+  text-align: center;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 500;
+ 
+}
+
+.zmPlus{
+  bottom: 100px;
+  margin-top: -70px;
+  box-shadow: 0px 1px 8px #8b8b8e;
+}
+.zmOut{
+  bottom: 120px;
+  margin-top: -34px;
+  box-shadow: 0px 1px 8px #8b8b8e;
+}
+
+.zmRefresh{
+    bottom: 60px;
+   
+   
+    box-shadow: 0px 1px 8px #8b8b8e;
+}

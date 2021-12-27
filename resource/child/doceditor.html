@@ -1,0 +1,255 @@
+
+
+<body>
+
+    <div class="bodybg">
+        <div class="NavbarSection">
+            <div class="documentLogoCont">
+                <img class="documentLogoImg"  src="resource/img/docs_48dp.png" alt="">
+            </div>
+            <div >
+                <div class="docs-title-input-label" >
+                    <span class="docs-title-input-label-inner" id="doc-name">Untitled document</span>
+                    <input aria-label="Yeniden Adlandırın"   class="docs-title-input" type="text">
+                    <!--                <div class="IconEdit" id="sharePage">
+                                        <i class="fas fa-share-alt"></i>
+                                        <span class="PagebtnInfo" >Share</span>
+                                    </div>-->
+                    <div class="IconEdit" id="printPage">
+                        <i class="fa fa-print"></i>
+
+                        <span class="PagebtnInfo">Print</span>
+                    </div>
+                </div>
+
+                <div  class="editorPageBtnGroup">
+
+
+                    <div class="dropdown">
+                        <div class="menubtn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            File
+                        </div>
+                        <div class="dropdown-menu text-left" style="padding:5px 1px;" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#" onclick="newDocument()">New</a>
+                            <a class="dropdown-item" href="#" onclick="openDocument()">Open</a>
+                            <a class="dropdown-item" href="#" onclick="saveDocument()">Save</a>
+                            <a class="dropdown-item" href="#" onclick="saveAsDocumentModal()">Save As</a>
+                            <a class="dropdown-item" href="#" onclick="deleteDocument()">Delete</a>
+                            <a class="dropdown-item" href="#" onclick="getDocumentTrashModal()">Trash</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="menubtn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Container
+                        </div>
+                        <div class="dropdown-menu" style="padding-bottom: 10px;" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" id="addStoryContainer" >Story Card</a>
+                             
+                            <a class="dropdown-item" id="addEntityContainer" >Entity</a>
+                            <hr style="margin: 1px 1px;">
+                            <a id="updateAllbtn" class="dropdown-item" >Update All Story Cards</a>
+                            <a id="updateAllbtn" class="dropdown-item" >Update All Entities</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="SavePanel">
+                <div class="dropdown paragraphAdd">
+                    <button class="btn  paragraphAddButton dropdown-toggle type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-plus"></i> Container 
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" id="addStoryContainer" >Story Card</a>
+                         <a class="dropdown-item" id="addEntityContainer" >Entity</a>
+                    </div>
+                      
+                </div>
+                <div class="Savebtn" >
+
+                    <div  class="SaveClassPage"  onclick="saveDocument()" id="SavePage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-save"></i> Save
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="SaveAsPopUp" >
+            <div class="saveAsPopUpBackG"></div>
+            <div class="saveAspopUpBody">
+
+                <input id="documentNameInput" class="form-control" placeholder="Add Name Document" type="text" name="" id="">
+
+
+
+                <div style="padding-top: 30px;">
+                    <button class="btn btn-primary" id="saveAspopUpSaveDoc" type="submit">Save</button>
+                    <button type="button" id="saveAspopUpCanacel" class="btn btn-outline-secondary">Cancel</button>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="dropdown commentAddArticle " style="display: none;">
+            <button class="btn comment-seqment-open" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-comment-alt"></i>
+            </button>
+            <div class="dropdown-menu comment-seqment-header" aria-labelledby="dropdownMenuButton">
+                <div >
+                    <input class="form-control" id="commentWriteInputarticle" type="text">
+
+                    <button class="btn btn-primary " id="commentAddArticleButton">add</button>
+                    <button class="btn">cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="Choose-userstory-popUp"  style="display: none;"  >
+
+            <div class="userStoryPopUpBackG" ></div>
+            <div class="userStoryChoose-body">
+                <div class="ChooseSpan">
+                    <div class="chooseSpanHeader">
+                        <h5>Select User Story Card</h5> 
+
+
+                        <button class="Choose-userstory-popUpClosed">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="col-12" style="display: flex;" >
+
+                        
+
+                        <div class="seqmentSelectUserst col-6">
+                            <select class="custom-select custom-select-lg" 
+                                    onchange="loadStoryCards4Editor(this)"
+                                    id="editor-container-pr-list">
+                                <option selected>Select User Story</option>
+                                <option value=""></option>
+                                
+                            </select>
+                        </div>
+
+                        <div class="col-3" >
+                            <div id="live-search" action="" class="styled" method="post">
+                                <fieldset>
+                                    <input type="search" class="text-input form-control" id="filter"  placeholder="Search" aria-label="Search" value="" />
+
+                                </fieldset>
+                            </div>
+
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="treeViewBody">
+                    <ul class="hummingbird-treeview" style="z-index: 3;" id="treeview">
+                        <li> <i class="fa fa-plus"></i>
+                            <label>
+                                <input id="xnode-0" data-id="custom-0"  type="checkbox" />
+                                User Story Cards </label>
+                            <ul>
+                                <li>
+                                    <label>
+                                        <input class="test181" id="xnode-0-1" data-id="custom-0-1" type="checkbox" />
+                                        yoxlama1
+                                    </label>
+
+                                </li>
+                                <li> 
+                                    <label>
+                                        <input   class="test181" data-id="custom-0-2" type="checkbox" />
+                                        yoxlama 2 </label>
+
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="appendStoryCard">
+                    <button id="addUserStoryCont" class="btn btn-primary" >Add</button>
+                    <button id="CancelChooseUser" class="btn" > Cancel</button>
+
+                </div>  
+            </div>
+
+
+
+        </div>
+
+        <div class="Update-all-userstoryPopup" style="display:none">
+            <div class="userStoryPopUpBackG" ></div>
+            <div class="updateAllPopUpbody">
+
+                <div class="updateAllPopUpbodyHeader">
+                    <h3><b>Update All User Story Card</b></h3>
+                    <button class="UpdateAllpopUpClosed">
+                        <i class="fas fa-times"></i>
+                    </button>
+
+                </div>
+                <div class="ContentPopUpBody">
+
+                    <div class="contentUserCardUptade">
+                        <input type="checkbox"  >
+                        <span>Content1</span>
+                    </div>
+                    <div class="contentUserCardUptade">
+                        <input type="checkbox"  >
+                        <span>Content1</span>
+                    </div>
+
+
+                </div>
+
+
+                <div class="appendStoryCard">
+                    <button id="UptadeUserCard" class="btn btn-primary" >Update</button>
+                    <button id="CancelUpdatePopUp" class="btn" > Cancel</button>
+
+                </div>  
+
+            </div>
+
+        </div>
+
+        <div class=" zoom-main-new" >
+            <a class="zoomBtnSection zoomPlus" onclick="zoomDocIn()"><i class="fa fa-plus" aria-hidden="true"></i></a>
+            <a class="zoomBtnSection zoomOut" onclick="zoomDocOut()"><i class="fa fa-minus" aria-hidden="true"></i></a>
+            <a class="zoomBtnSection zoomRefresh " onclick="zoomDocReset()"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>
+
+
+        </div>
+        <page size="A4"  id="testPage"   >
+
+
+
+
+
+
+
+            <div class="contentComment">
+
+                <textarea name="" id="editor" cols="30" rows="10"></textarea>
+
+                <div  class="contentComment-Seqment">
+
+                </div>
+            </div>
+
+        </page>
+    </div>
+</body>

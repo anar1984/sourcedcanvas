@@ -1,0 +1,68 @@
+/* 
+ * dragtable
+ *
+ * @Version 2.0.14
+ *
+ * default css
+ *
+ */
+/*##### the dragtable stuff #####*/
+.dragtable-sortable { 
+    list-style-type: none; margin: 0; padding: 0; -moz-user-select: none;
+}
+.dragtable-sortable li {
+    margin: 0; padding: 0; float: left; font-size: 1em; background: white; 
+}
+
+.dragtable-sortable th, .dragtable-sortable td{
+    border-left: 0px;
+}
+
+.dragtable-sortable li:first-child th, .dragtable-sortable li:first-child td {
+    border-left: 1px solid #CCC; 
+}
+
+.ui-sortable-helper  {
+    opacity: 0.7;filter: alpha(opacity=70);
+}
+.dragtable-sortable .hide-filt-drag{
+    display: none;
+}
+/* .ui-sortable-placeholder { 
+    -moz-box-shadow: 4px 5px 4px #C6C6C6 inset;
+    -webkit-box-shadow: 4px 5px 4px #C6C6C6 inset;
+    box-shadow: 4px 5px 4px #C6C6C6 inset;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    visibility: visible !important;
+    background: #EFEFEF !important; 
+    visibility: visible !important;
+}
+.ui-sortable-placeholder .filter-table-row-header-tr { 
+  display: none;
+}
+.ui-sortable-placeholder * { 
+    opacity: 0.0; visibility: hidden; 
+} */
+.handle-drag{
+    visibility: hidden;
+    
+}
+.table thead th:hover .handle-drag{
+    visibility: visible;
+
+}
+.table-gorup-by-th.active{
+    color: #17a2b8!important;
+}
+
+.component-table-class-for-zad thead th .handle-drag {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    font-size: 10px;
+    width: 3px;
+    background-color: #9b9b9b;
+    cursor: move;
+}

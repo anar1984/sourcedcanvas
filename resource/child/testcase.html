@@ -1,0 +1,385 @@
+<!-- 24.08.2020 -->
+
+
+
+
+<div class="row">
+    <div class="col-12  text-center">
+        <br>
+        <h4>Test Case Management</h4>
+        <br>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-2 flexbox">
+        <div class="search">
+            <div> <input type="text"
+                         class="testcase-filter" onchange="" 
+                         id="testcase_search" placeholder="Search . . ." required="">
+            </div>
+        </div>
+    </div>
+    <div class="col-9  d-flex1 justify-content-end1  text-right">
+        <select type="text" data-live-search="true" 
+                multiple1 data-live-search="true"
+                onchange1="testCaseFilter(this)"  title="Project"
+                id="testcase_projectfilter" placeholder="Search . . ." required="">
+        </select>
+        <select type="text" data-live-search="true" 
+                multiple1 data-live-search="true"
+                onchange="testCaseFilter(this)"  title="Story Card"
+                id="testcase_storycardfilter" placeholder="Search . . ." required="">
+        </select>
+        <select type="text" data-live-search="true" 
+                multiple1 data-live-search="true"
+                onchange="testCaseFilter(this)"  title="Created By"
+                id="testcase_createdbyfilter" placeholder="Search . . ." required="">
+        </select>
+        <select  onchange="testCaseFilter(this)"  title="Priority" id="testcase_priority4filter" 
+                 multiple1 data-live-search="true">
+            <option value=''>Priority</option>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+            <option value='6'>6</option>
+            <option value='7'>7</option>
+            <option value='8'>8</option>
+            <option value='9'>9</option>
+            <option value='10'>10</option>
+        </select>
+    </div>
+    <div class="col-1 d-flex justify-content-end">
+
+        <div class="form-group">
+            <label></label>
+            <select data-type='limit' class="  form-control testcase-filter" id="testcase_limit">
+                <option value='10' selected>10</option>
+                <option value='25' > 25</option>
+                <option value='50' >50</option>
+                <option value='100'>100</option>
+                <option value='200'>200</option>
+                <option value='300'>300</option>
+            </select>
+
+            <b id="table-row-count"> </b>
+        </div>
+
+    </div>
+</div>
+
+<!-- Test case view list -->
+<div class="row bugListContent">
+    <div class="col-12 col-bug-list" id="testCaseViewPageListTable">
+        <div class="row">
+            <div class="col-12 tableFixHead">
+                <table class="table table-hover1 splited1 bugListTable1" id="testCaseViewPageListTableMain" >
+                    <thead class="bugThead">
+
+                    </thead>
+                    <tbody id="testCaseViewList">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="8" ><input type="text" class="form-control testDesc prerActionTableGeneralCls" 
+                                                    style="width:50%"      name="testCaseDescription"
+                                                    onchange="addNewTestCase(this)" placeholder="+ Add Test Case"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+
+            <div class=" col-12 d-flex justify-content-end paginationStyle">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination" id="pagination_block">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item num"><a class="page-link">1</a></li>
+                        <li class="page-item num"><a class="page-link">2</a></li>
+
+                        <li class="page-item order-last">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- __________1.1 Test Case Scenario-Top___________ -->
+    <div class="col-6" id="testCaseViewPage" style="background-color: white;visibility: hidden;">
+        <div class='row'>
+            <div class="col-12 d-flex justify-content-end top-fixed-menu" style="z-index: 1000;">   <!-- /* 24.09.2020  .top-fixed-menu  class elave etdim*/ -->
+
+                <button class="btn btn-light addBugBtnPoints fa fa-ellipsis-h" href="#" role="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-hidden="true">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="" x-placement="bottom-start">
+                    <button class="dropdown-item firstbut " onclick="dublicateTestCase()(this)" style="z-index: 1000;">Dublicate</button>
+                    <button class="dropdown-item firstbut " onclick="deleteTestCase(this)" style="z-index: 1000;">Delete</button>
+                </div>
+                <button class="btn btn-light addBugBtn" id="testCaseViewPageClose">
+                    <i class="fa fa-times"></i></button>
+            </div>
+
+
+            <div class="col-lg-12 generalTestCase">
+                <span style='font-size: 12px;'>Test Case</span>
+                <input class="form-control test-case-change-4-update" 
+                       data-type='testCaseName'
+                       id='testcase_name' type="text" placeholder="" >
+            </div>
+
+            <div class="col-lg-10 generalTestCase">
+                <span style='font-size: 12px;'>Story Card </span>
+                <select class="form-control test-case-change-4-update" 
+                        data-actions-box="true"
+                        data-live-search="true"
+                        data-type='fkBacklogId'
+                        id='testcase_storycard' type="text" placeholder="" >
+                </select>
+            </div>
+
+            <div class="col-lg-2 generalTestCase">
+                <span style='font-size: 12px;'>Priority </span>
+                <select class="form-control test-case-change-4-update" 
+                        data-type='priority'
+                        id='testcase_priority' type="text" placeholder="" >
+                    <option value='1'>1-Low</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                    <option value='6'>6</option>
+                    <option value='7'>7</option>
+                    <option value='8'>8</option>
+                    <option value='9'>9</option>
+                    <option value='10'>10-High</option>
+                </select>
+            </div>
+            <div class="col-lg-12 generalTestCase ">
+                <span style='font-size: 12px;' >General Description</span>
+                <textarea class="form-control test-case-change-4-update" 
+                          data-type='generalDescription'
+                          id="testcase_generaldesc" rows="3" ></textarea>
+            </div>
+        </div>
+
+
+        <!-- __________1.2 Prerequisite Action-Center________ -->
+        <div class='row'>
+            <div class="col-12"  >
+                <br>
+            </div>
+            <div class="col-12 text-center testCaseTable" id="prerAction">
+                <table class="table table-hover spilted"  id="prerActionTable">
+                    <thead>
+                        <tr>
+                            <th style="width1:50%" >Prerequisite</th>   
+                            <th  style="width1:50%" >Required Data</th>   
+                            <th  style="width1:50%"> </th>   
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                                <input class="form-control prerActionTableGeneralCls"
+                                       type="text" id="AddNewprerAction"  
+                                       onchange="addNewPrerAction(this)" placeholder="+ Add New Prerequisite">
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <!-- ____1.2.1 Test Scenario____ -->
+        <div class='row'>
+            <div class="col-12">
+                <span style='font-size: 12px;'> Test Scenario</span>
+                <input class="form-control test-case-change-4-update" 
+                       data-type='testCaseScenario'
+                       id="testcase_testscenario" type="text" placeholder="">
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class="col-12"  >
+                <br>
+            </div>
+            <div class="col-lg-12 generalTables " id="testCaseGeneralTable">
+                <table class="table table-hover spilted testCaseScernarioTable" id="testCaseGeneralTableList" >
+                    <thead  onclick="testCaseGeneralTable()">
+                        <tr>
+                            <th>Step Details</th>
+                            <th>Required Data</th>
+                            <th>Expected Results</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">
+                                <input type="text" 
+                                       class="form-control prerActionTableGeneralCls" 
+                                       onchange="testCaseGeneralTable(this)" 
+                                       id="addStepInput" placeholder="+ Add Step"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-6" id="testCaseTrialViewPage" style="background-color: white;visibility: hidden;">
+        <div class='row'>
+            <div class="col-12 d-flex justify-content-end top-fixed-menu" style="z-index: 1000;">   <!-- /* 24.09.2020  .top-fixed-menu  class elave etdim*/ -->
+                <button class="btn btn-light addBugBtnPoints fa fa-ellipsis-h" href="#" role="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-hidden="true">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="" x-placement="bottom-start">
+                    <button class="dropdown-item firstbut " onclick="deleteTestCaseTrial(this)" style="z-index: 1000;">Delete</button>
+                </div>
+                <button class="btn btn-light addBugBtn" id="testCaseTrialViewPageClose">
+                    <i class="fa fa-times"></i></button>
+            </div>
+
+            <div class="col-4 generalTestCase"  >
+                <b style='font-size: 12px;'>Trial Status </b>
+                <select class="form-control test-case-trial-change-4-update" 
+                        data-type='trialStatus'
+                        id='testcasetrial_trialstatus' type="text" placeholder="" >
+                    <option value='incomplete'>Incomplete</option>
+                    <option value='passed'>Passed</option>
+                    <option value='failed'>Failed</option>
+                    <option value='rejected'>Rejected</option>
+                </select>
+            </div>
+            <div class="col-4 generalTestCase">
+                <b style='font-size: 12px;'>Is Solved? (If Failed) </b>
+                <select class="form-control test-case-trial-change-4-update" 
+                        data-type='isSolved'
+                        id='testcasetrial_issolved' type="text" placeholder="" >
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>
+            </div>
+
+            <div class="col-4 generalTestCase" style="padding-top:18px;">
+                <a href="#" class="col-form-label control-label attachA" data-toggle="modal" data-target="#setStoryCardUploadImageModal" onclick="new UserStory().setStoryCardUploadImage()">
+                    <i  class="fa fa-paperclip attach" aria-hidden="true"
+                        ><span>Attach</span>
+                    </i>
+                </a>
+            </div>
+            
+            <div class="row" id="testcasetrial_filelist"></div>
+
+            <div class="col-12 generalTestCase"  > <hr></div>
+
+
+            <div class="col-lg-12 generalTestCase">
+                <span style='font-size: 12px;'>Test Case</span>
+                <input class="form-control " 
+                       disabled readonly
+                       id='testcasetrial_name' type="text" placeholder="" >
+            </div>
+
+
+            <div class="col-lg-12 generalTestCase ">
+                <span style='font-size: 12px;' >General Description</span>
+                <textarea class="form-control  " 
+                          disabled readonly
+                          id="testcasetrial_generaldesc" rows="4" ></textarea>
+            </div>
+        </div>
+
+
+        <!-- __________1.2 Prerequisite Action-Center________ -->
+        <div class='row'>
+            <div class="col-12"  >
+                <br>
+            </div>
+            <div class="col-12 text-center testCaseTrialTable" id="prerActionTrial">
+                <table class="table table-hover spilted"  id="prerActionTableTrial">
+                    <thead>
+                        <tr>
+                            <th style="width1:50%" >Prerequisite</th>   
+                            <th  style="width1:50%" >Required Data</th>   
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+
+
+                </table>
+            </div>
+        </div>
+        <!-- ____1.2.1 Test Scenario____ -->
+        <div class='row'>
+            <div class="col-12">
+                <span style='font-size: 12px;'> Test Scenario</span>
+                <input class="form-control  " 
+                       disabled readonly
+                       id="testcasetrial_testscenario" type="text" placeholder="">
+            </div>
+        </div>
+
+
+
+        <div class='row'>
+            <div class="col-12"  >
+                <br>
+            </div>
+            <div class="col-lg-12 generalTables " id="testCaseTrialGeneralTable">
+                <table class="table table-hover spilted testCaseTrialScernarioTable" id="testCaseTrialGeneralTableList" >
+                    <thead  onclick="testCaseTrialGeneralTable()">
+                        <tr>
+                            <th>Step Details</th>
+                            <th>Required Data</th>
+                            <th>Expected Results</th>
+                            <th>Actual Results</th>
+                            <th>Step Status</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

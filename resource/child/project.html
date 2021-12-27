@@ -1,0 +1,83 @@
+<!--<div class="modal fade" id="insertNewProject" tabindex="-1" role="dialog" aria-hidden="true">-->
+<div class="modal-dialog modal-lg" style="width: 95%;max-width: 95%" role="document">
+    <div class="modal-content" style="min-height: 100%;">
+        <div class="modal-header text-center" style="display:block;">
+            <h5 class="modal-title" >Project</h5>
+
+        </div>
+        <div class="modal-body">
+            <div class="row" style="font-size:13px;">
+
+                <!--burdan asagi hisse olacaqdir-->
+
+                <div class="col-12" >
+                    <div class="row">
+
+                        <div class="col-8 flexbox">
+                            <div class="search">
+                                <div> <input type="text"  onchange="new Project().searchProject(this)"
+                                             id="newProjectNameSearch" placeholder="Search . . ." required >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4 text-right new-proje-add">
+                            <!-- <button class="btn newin dropdown-toggle fa fa-ellipsis-h description-delete-btn" href="#" role="button" id="copyMovePrint" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> </button>
+                            <div class="dropdown-menu" aria-labelledby="copyMovePrint" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px;">
+                              
+                              <button class="dropdown-item firstbut" data-toggle="modal" data-target="#exampleModal2"onclick="new Project().toggleFields()" ><a href="#" id="chbNewProject">New Project</a></button>
+                              
+                            </div> -->
+                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal2"onclick="new Project().toggleFields()" ><a href="#" id="chbNewProject"><i
+                                        class="fa fa-plus-circle"></i><span style="font-size: 14px;"> New Project</a></button>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div class='col-12 table-responsive project-list'>
+                        <table class="table table-hover project-table-list defaultTable sar-table" id="tblProjectList">
+                            <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Project name</th>
+                                    <th>Project Code</th>
+                                    <th>Description</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody style="cursor:pointer">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- update and add modal -->
+                    
+
+
+                    <!-- Involved Users modal -->
+                   
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!--            <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+                    </div>-->
+    </div>
+</div>
+<!--</div>-->

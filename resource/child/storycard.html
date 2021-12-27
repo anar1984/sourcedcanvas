@@ -1,0 +1,847 @@
+<div class="d-flex justify-content-center storecard-header-nav-section">
+
+    <div class="d-flex justify-content-center cs-col-pagename" style="padding-right:10px;">
+        <div class="mm-col">
+            <span class="mm-title"></span>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center cs-col-project">
+        <div class="mm-col">
+            <span class="mm-title">Project</span>
+        </div>
+        <div class="mm-col">
+            <select onchange="loadStoryCardByProject4StoryCard(this)" class="form-control projectList_liveprototype_storycard" 
+                    data-live-search="true" name="" id="">
+            </select>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center cs-col-storecard">
+        <div class="mm-col">
+            <span class="mm-title">Story Card</span>
+        </div>
+        <div class="mm-col">
+            <select class="form-control"  onchange="loadStoryCardInfo4StoryCard(this)"
+                    name="" data-live-search="true" id="storyCardListSelectBox4StoryCard">
+            </select>
+        </div>
+    </div>
+
+    <div class="cs-col-storecard-general-setting">
+        <div class="scg-button-box form-control">
+            <button class="btn newin dropdown-toggle" href="#" role="button" id="copyMovePrint" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-wrench" style=" margin-right: 6px; color: #fff;"></i> Tools</button>
+            <div class="dropdown-menu " aria-labelledby="copyMovePrint" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(892px, 30px, 0px);">
+                <button class="dropdown-item firstbut "   onclick="addUserStoryNewModal()"><a href="#" >New Story Card</a></button>  <!-- 20.08.2020 -->
+                <button class="dropdown-item firstbut "   onclick="window.print();"><a href="#" >Print</a></button>  <!-- 20.08.2020 -->
+                <button class="dropdown-item firstbut " id="pdf"  onclick="savePdf()"><a href="#" >Save as PDF</a></button>
+                <button class="dropdown-item firstbut " onclick="new UserStory().copyGeneralView()"> <a href="#" >Copy URL</a></button>
+                <button class="dropdown-item firstbut " onclick="new UserStory().copyGeneralPrototypeView()" ><a href="#" >Copy Prototype URL</a></button>
+                <button class="dropdown-item firstbut " id="shareGeneralView" pid="20042316073405409986" bid="20071210041301137431" lid="" onclick="new UserStory().shareGeneralView(this)" d="backlog"><a href="#" >View Story Card</a></button>
+                <button class="dropdown-item firstbut " id="shareGeneralView" pid="" bid="" lid="" onclick="new UserStory().shareGeneralPrototypeView(this)" ><a href="#" >View Live Prototype</a></button>
+                <button class="dropdown-item firstbut " id="shareGeneralView" pid="" bid="" lid="" onclick="editUserStoryName(this)" ><a href="#" >Edit</a></button>
+                <button class="dropdown-item firstbut " id="shareGeneralView" pid="" bid="" lid="" onclick="addUserStoryToTask()" ><a href="#" >Add to Task</a></button>
+                
+                <hr style="margin: 4px 0px;"> 
+                <button class="dropdown-item firstbut " id="ExportImportView" data-toggle="modal" data-target="#ExportImportBox"><a href="#" >Export</a></button>
+                <button class="dropdown-item firstbut " id="CopyView" data-toggle="modal" data-target="#CopyBox"><a href="#" >Copy</a></button>
+                <button class="dropdown-item firstbut " id="ImportView" data-toggle="modal" data-target="#ImportBox"><a href="#" >Import</a></button>
+                <button class="dropdown-item firstbut " id="HiostoryView" ><a href="#" >History</a></button>
+
+                <hr style="margin: 4px 0px;">
+                <button class="dropdown-item firstbut " id="shareGeneralView" pid="" bid="" lid=""  onclick="new UserStory().delete()"><a href="#" >Delete</a></button>
+                <br>
+                <!--<button class="dropdown-item firstbut " onclick="new UserStory().printGeneralView()"><a href="#" >Print</a></button>-->
+            </div>
+        </div>
+    </div>
+    <div class="cs-col-storecard-general-setting">
+        <button class="btn btn-outline-secondary live-prototype-show-story-card-hard-refresh"
+                title = 'Refresh'>
+            <i class="live-prototype-show-story-card1 fa fa-refresh " style="font-size: 10px;cursor: pointer;" aria-hidden="true"></i>
+        </button>
+    </div>
+     <div class="cs-col-storecard-general-setting">
+        <input class="btn btn-outline-secondary  "
+               id="storycard-panel-backlog-id"
+                title = 'Refresh'>
+          
+    </div>
+</div>
+
+<div class="row">
+    <div class="col print-container pdf page-content" style="height: calc(100vh - 80px);overflow: auto;"  id="exportContent">
+        <!-- 
+        <div class="row">
+            <div class="col-12 text-center">
+                <br>
+            </div>
+        </div> -->
+
+
+
+        <div class="row">
+            <div class="col-12" id="storycard_filelis1t">
+                <br>
+                <div class="row" id="storycard_filelist">
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="col-12"><br></div> -->
+        <br>
+        <div class="hideme1" id="live-prototype-show-key" style="display:none">
+            <div class='row gv-gui-design-api'>
+                <div class="col-12 text-center text-prototype">
+                    <br>
+                    <b style="font-size:14px">Live Prototype</b>
+                </div>
+            </div>
+
+            <div class="row gv-gui-design gv-gui-design-api " id="gv_gui_component_main_view1">
+                <div class="col-12 redirectClass4CSS" id="gv_gui_component_main_view">
+                    <div class="row redirectClass" id="general-view-task-gui"></div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- <div class="col-1"></div> -->
+
+        <div class="col-12 text-center" id="pinnedImages">
+
+        </div>
+
+
+        <!-- 
+        
+        <div class="col-1"></div>
+        
+        
+        <div class="col-1"></div>
+        <br><br> -->
+
+
+        <div class='change_history_hide' style="display:none;">
+            <div class="col-12 text-center" style="margin: auto;">
+                <label style="font-size:14px;"><b>Change History (Versions)</b></label>
+            </div>
+            <!-- <div class="col-1"></div>
+            
+            
+            <div class="col-1"></div> -->
+            <div class="col-12 change-mgmt-gui-design text-center storycard_ipo" style="font-size: 12px; ">
+                <select id="change-mgmt-gui-design-start-date" style="width:auto;padding: 0px;                                                                    
+                        border-radius: 4px;
+                        min-width:65px;
+                        max-width:70px;
+                        border: 1px solid gray;" onchange="new UserStory().changeRequestForStartDate(this, 'start')"><option></option><option value="20200710">10.07.2020</option><option value="20200424">24.04.2020</option><option value="20200423">23.04.2020</option></select>
+                <select id="change-mgmt-gui-design-start-time" style="width:auto;padding: 0px;                                                                    
+                        border-radius: 4px;
+                        min-width:65px;
+                        max-width:70px;
+                        border: 1px solid gray;" onchange="new UserStory().changeRequestForStartDate(this)">
+
+                </select>
+                -
+                <select id="change-mgmt-gui-design-end-date" style="width:auto;padding: 0px;                                                                    
+                        border-radius: 4px;
+                        min-width:65px;
+                        max-width:70px;
+                        border: 1px solid gray;" onchange="new UserStory().changeRequestForStartDate(this, 'end')"><option value="20200712">Current</option><option value="20200710">10.07.2020</option><option value="20200424">24.04.2020</option><option value="20200423">23.04.2020</option></select>
+                <select id="change-mgmt-gui-design-end-time" style="width:auto;padding: 0px;                                                                    
+                        border-radius: 4px;
+                        min-width:65px;
+                        max-width:70px;
+                        border: 1px solid gray;" onchange="new UserStory().changeRequestForStartDate(this)">
+                </select>
+
+
+                Assigned Labels:
+                <select id="change-mgmt-gui-design-label-list" style="width:auto;padding: 0px;                                                                    
+                        border-radius: 4px;
+                        min-width:65px;
+                        max-width:70px;
+                        border: 1px solid gray;" onchange="new UserStory().changeRequest_setDatesByAssignedLabel(this)"></select>
+                &nbsp; 
+                <a href="#" style="color: black;font-size: 12;text-decoration: none; " onclick="new UserStory().changeRequest_loadLabel4ChangeRequest()">Add </a>   &nbsp;  
+
+
+                <a href="#" style="color: black;font-size: 12;text-decoration: none; " id="changerequest_notify" onclick="new UserStory().changeRequest_notifyLabelAsTask()"> Notify</a>
+                &nbsp;
+                <input type="checkbox" id="changerequest_showlastchange" onclick="new UserStory().changeRequest_showLastChanges()"> Last Changes
+                &nbsp;  
+                <input type="checkbox" id="changerequest_hidedates" onclick="new UserStory().changeRequest_hideDates()"> Hide Dates
+                &nbsp; 
+
+
+
+
+
+            </div>
+            <br> 
+        </div>
+        <div class="col-12 change_history_hide" id='generalview_input_history_list'>
+
+        </div>
+
+        <div class="row text-center storycard_ipo">
+            <!-- <div class="col-1"></div> -->
+            <div class="col-12">
+                <br>
+                <label class="inputAndDes"><b>Inputs and Descriptions</b></label>
+                
+                <div  class="d-flex col-12 add_descriotion_btn-container">
+                    <div  class="col-2 add_descriotion_btn pdfHide" > 
+                    <button class="btn newin dropdown-toggle fa fa-ellipsis-h description-delete-btn" href="#" role="button" 
+                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </button>
+                    <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                        <button class="dropdown-item firstbut " data-toggle="modal" 
+                                onclick="setActiveInputDescType('IN')"
+                                data-target="#addRelatedSUSOutputModal">Add Descriptions </button>
+                        <button class="dropdown-item firstbut "   
+                                onclick="new UserStory().setAsOutput()">Set as Output</button>
+                        <button class="dropdown-item firstbut " data-toggle="modal" 
+                                onclick="addInputListToTaskNew()"  >Add to Task </button>
+                        <button class="dropdown-item firstbut " data-toggle="modal" 
+                                onclick="addInputListToTaskNewEvent()"  >Add to Task Events</button>
+
+
+                        <button class="dropdown-item firstbut " data-toggle="modal" data-target="#copyMoveInputsModalNew"
+                                onclick="new UserStory().copyMoveInputsModalNew('IN')">Copy/Move</button>
+                        <button class="dropdown-item firstbut "     onclick="new UserStory().deleteInputsNew()">Delete</button>
+                        <hr style="margin:3px 0px;">
+                        <button class="dropdown-item firstbut "     onclick="addFieldsOfTableAsInput(this)">Add Fields of Table as Input</button>
+                        <button class="dropdown-item firstbut "     onclick="addInputOfStoryCardAs(this)">Add Input of Story Card As</button>
+
+                    </div>
+                </div>
+                  <div class="col-10 add_descriotion_btn pdfHide" > 
+                    <button class="btn newin dropdown-toggle fa fa-ellipsis-h description-delete-btn" href="#" role="button" 
+                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </button>
+                    <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                       
+                        <button class="dropdown-item firstbut "     onclick="addInputDescListToTaskNewEvent()">Add To Task Desc</button>
+                        <button class="dropdown-item firstbut "     onclick="RemoveDescMultiple()">Delete</button>
+                      
+                    </div>
+                </div>
+
+                </div>
+                
+                
+
+
+                <div class="col-12" id='generalview_input_list'>
+                </div>
+                <table class="table table-hover table-bordered descriptiontable pdfHide" id="description_table_id_2" >
+                    <tbody id="description_table_body_id_2">       
+                    </tbody >
+
+                    <tfooter>
+                        <tr><td> </td><td >
+                                <input type="text" id="newInputId" class="form-control newinp add-input" onchange="new UserStory().insertNewInputNew(this)"
+                                       placeholder="Add new input">
+                    </tfooter>
+                </table>
+
+            </div>
+        </div>
+
+        <br><br><br>
+        <div class="row text-center storycard_ipo" style="margin-top: -70px;">
+            <!-- <div class="col-1"></div> -->
+            <div class="col-12">
+                <br>
+                <!-- <label class="prosesDes"><b>Process Description</b></label>
+    
+                <div class="col-12 add_descriotion_btn pdfHide"> 
+                    <button class="btn newin dropdown-toggle fa fa-ellipsis-h description-delete-btn" style="margin-left: -22px;" href="#" role="button" 
+                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </button>
+                    <div class="dropdown-menu prosesD-alt-menu" aria-labelledby="dropdownMenuLink">
+                        <button class="dropdown-item " onclick="addProceccDescListToTaskNew()"  >Add to Task</button>
+                        <button class="dropdown-item pdescColored" pcolor='#f19a91' val="#f19a91">Oranged</button>
+                        <button   class="dropdown-item firstbut pdescColored" pcolor="#33E8FF">Blued</button>
+                        <button  class="dropdown-item firstbut pdescColored" pcolor="#8ad6a3">Greened</button>
+                        <button class="dropdown-item firstbut pdescColored" pcolor="">Whited</button>
+                        <button   class="dropdown-item firstbut pdescDeleteAll">Delete</button>
+    
+                    </div>
+                </div> -->
+
+
+                <table class="table table-hover table-bordered descriptiontable" id="description_table_id">
+                    <thead id="cs_description_table_head_id">
+                        <tr class="cs-cursor-auto">
+                            <th class="col-3"><div class="cs-table-head-title prosesDes">Process Description</div></th>
+                            <th class="col-9">
+                                <div class="cs-table-head-right-section">
+                                    <div class="row">
+                                        <div class="col-12 text-right">
+                                            <div class="cs-table-row-setting-btn dropdown">
+                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i class="fas fa-cog"></i> Row setting
+                                                    <span class="caret"></span></button>
+                                                <ul class="dropdown-menu">
+                                                    <li><button class="pdescColored" pcolor='#f19a91' val="#f19a91"><i class="fas fa-tint"></i> Oranged</button></li>
+                                                    <li><button class="firstbut pdescColored" pcolor="#33E8FF"><i class="fas fa-tint"></i> Blued</button></li>
+                                                    <li><button class="firstbut pdescColored" pcolor="#8ad6a3"><i class="fas fa-tint"></i> Greened</button></li>
+                                                    <li><button class="firstbut pdescColored" pcolor=""><i class="fas fa-tint"></i> Default</button></li>
+                                                    <li role="presentation" class="divider"></li>
+                                                    <li><button class="firstbut pdescDeleteAll"><i class="fas fa-trash-alt"></i> Delete</button></li>
+                                                </ul>
+                                            </div>
+                                            <div class="cs-proces-desc-add-to-task-box">
+                                                <button class="btn btn-primary" onclick="addProceccDescListToTaskNew()"  ><i class="fas fa-address-book"></i> Add to Task</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="description_table_body_id">       
+                    </tbody>
+                    <tfooter>
+                        <tr><td> 
+                                <input type="checkbox" class="prosDescCheckAll pdfHide">
+                            </td><td >
+                                <input type="text" id="backlogDescriptionText" class="form-control newinp add-description" 
+                                             placeholder="Add Process Description"   />
+                            </td><td> 
+                            </td>
+                        </tr>
+                    </tfooter>
+                </table>
+
+            </div>
+            <div class="col-1"></div>
+        </div>
+
+
+        <div class="row text-center storycard_ipo is-api-dependence-verse">
+            <!-- <div class="col-1"></div> -->
+            <div class="col-12">
+                <br>
+                <label class="inputAndDes"><b>Output</b></label>
+                <div class="col-12 add_descriotion_btn pdfHide" > 
+                    <button class="btn newin dropdown-toggle fa fa-ellipsis-h description-delete-btn" href="#" role="button" 
+                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </button>
+                    <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                        <button class="dropdown-item firstbut " data-toggle="modal" 
+                                onclick="setActiveInputDescType('OUT')"
+                                data-target="#addRelatedSUSOutputModal">Add Descriptions </button>
+                        <button class="dropdown-item firstbut "     
+                                onclick="new UserStory().setAsInput()">Set as Input</button>
+
+                        <button class="dropdown-item firstbut " data-toggle="modal" data-target="#copyMoveInputsModalNew"
+                                onclick="new UserStory().copyMoveInputsModalNew('OUT')">Copy/Move</button>
+                        <button class="dropdown-item firstbut "     onclick="new UserStory().deleteStoryCardOutputs()">Delete</button>
+                        <hr style="margin:3px 0px;">
+                        <button class="dropdown-item firstbut "     onclick="addFieldsOfTableAsOutput(this)">Add Fields of Table as Output</button>
+                        <button class="dropdown-item firstbut "     onclick="addInputOfStoryCardAsOutput(this)">Add Input of Story Card As Output</button>
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-12" id='generalview_output_list'>
+                </div>
+                <table class="table table-hover table-bordered descriptiontable pdfHide" id="tblIPOOutputList" >
+                    <tbody id="description_table_body_id_2">       
+                    </tbody >
+
+                    <tfooter>
+                        <tr>
+                            <td> </td>
+                            <td>
+                                <input type="text" id="newOutputId" class="form-control newinp add-input" 
+                                       onchange="new UserStory().insertNewInputNew(this, 'OUT')"
+                                       placeholder="Add new output">
+                            </td>
+                            <td> 
+                                <input type="checkbox" id="newOutputCopyAsInput" class="  newinp add-input"> 
+                                Copy as Input
+                            </td>
+                        </tr>
+                    </tfooter>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <!-- old class name: storyCard-right-menu -->
+    <div class="col-sm-3 col-lg-3 col-xl-3" id="storyCardRightMenu"> 
+        <div class="storecard-sidebar-headline">
+            <div class="sc-close-sidebar-btn"><i class="fas fa-times"></i></div>
+            <div class="sc-open-sidebar-btn"><i class="fas fa-bars"></i></div>
+            <span>Description Options</span>
+        </div>
+        <div class="storecard-sidebarin">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="cs-forum-group pt-4">
+                            <label class="cs-label-name all-cs-status" >Type</label>
+                            <select class="user-story-backlog-type user-story-short-change" data-type="backlogType" id="user-story-type">
+                                <option value="gui"  selected>GUI Mockup</option>
+                                <option value="api"  selected>Backend API</option>
+                                <option value="desc">Descriptive</option>
+                                <option value="userstory">User Story</option>
+                                <option value="process">Process</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="cs-forum-group pt-4">
+                            <label class="cs-label-name all-cs-status">Status <span class="s-status cs-status-new"></span></label>
+                            <select class="user-status user-story-short-change" data-type="backlogStatus" id="user-story-status">
+                                <option value="new"  selected>New</option>
+                                <option value="ongoing">Ongoing</option>
+                                <option value="closed">Closed</option>
+                                 <option value="draft"  selected>Draft</option>
+                                <!--<option value="ongoing">Ongoing</option>-->
+                                <!--<option value="closed">Closed</option>-->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <hr class="hr-ss">
+            </div>
+            <div class="col-12">
+                <div class="row">
+                    <div class="cs-forum-group col-6">
+                        <label class="cs-label-name">Priority </label>
+                        <select  class="user-story-short-change user-priority" id="user-story-priority" data-type="priority">
+                            <option value="1" selected>Priority</option>
+                            <option value="2"  >2</option>
+                            <option value="3"  >3</option>
+                            <option value="4"  >4</option>
+                            <option value="5"  >5</option>
+                            <option value="6"  >6</option>
+                            <option value="7"  >7</option>
+                            <option value="8"  >8</option>
+                            <option value="9"  >9</option> 
+                        </select>
+                    </div>
+                    <div class="cs-forum-group col-6">
+                        <!-- <label class="cs-label-name">Attach File </label> -->
+                        <a href="#" class="cs-attach-a attachA" data-toggle="modal" data-target="#setStoryCardUploadImageModal" onclick="new UserStory().setStoryCardUploadImage()" style=" margin-top: 37px;">
+                            <i  class="fa fa-paperclip attach" aria-hidden="true"></i><span>Attach File</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cs-forum-group mt-3">
+                            <label class="cs-label-name">Description</label>
+                            <div class="cs-textarea">      
+                                <textarea rows='2' type="number" id="user-story-description" class="form-control user-story-short-change" data-type="description" step=any required></textarea>           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- switch on off  -->
+            <div class="story-card-right-menu-panels   prototype-on-off col-12">
+                <div>
+                    <h3>Is API</h3>
+                </div>
+                <div>
+                    <label class="switch prototype-cls">
+                        <input type="checkbox" id="user-story-is-api" class="user-story-prototype-change1">
+                        <span class="slider round hide-off is-api-switch"></a></span>
+                    </label>
+                </div>
+            </div>
+            <!-- Finaly switch on off  -->
+
+            <div class="col-12">
+                <hr class="hr-ss">
+            </div>
+ 
+            <div class="col-12 story-card-right-menu-panels story-card-right-menu-panels-api ">
+                <div class="row">
+                    <div class="story-card-right-menu-panels story-card-right-menu-panels-api col-6 is-api-dependence-verse cs-forum-group">
+                        <label class="cs-label-name">API Action</label>
+                        <select class="user-status user-story-short-change" data-type="apiAction" id="user-story-apiaction">
+                            <option value="-1"  selected >Container</option>
+                            <option value="C">Create</option>
+                            <option value="R">Read</option>
+                            <option value="U">Update</option>
+                            <option value="D">Delete</option>
+                        </select>
+                    </div>
+
+                    <div class="story-card-right-menu-panels story-card-right-menu-panels-api col-6 is-api-dependence-verse cs-forum-group">
+                        <label class="cs-label-name">API Request Type </label>
+                        <select class="user-status user-story-short-change" data-type="apiSyncRequest" id="user-story-apirequesttype">
+                            <option value="sync"  selected >Synchronize</option>
+                            <option value="async">Asynchronize</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="story-card-right-menu-panels story-card-right-menu-panels-api row mt-3 is-api-dependence-verse">
+
+                    <div class="col-6">
+                        <div class="cs-forum-group">
+                            <input type="submit" class="btn btn-primary" onclick="runApiOnStoryCard()" value="Run API" accept=""id="user-story-execute" class="user-story-short-change">
+                        </div>    
+                    </div>
+                    <div class="col-6">      
+                        <div class="cs-forum-group">
+                            <input type="submit" class="btn btn-primary" onclick="testApiOnStoryCard()" value="Test API" accept=""id="user-story-execute" class="user-story-short-change">
+                        </div> 
+                    </div>
+                </div>
+            </div> 
+
+            <div class="story-card-right-menu-panels story-card-right-menu-panels-gui prototype-on-off col-12 is-api-dependence">
+                <div>
+                    <h3>Show Prototype</h3>
+                </div>
+                <div>
+                    <label class="switch prototype-cls">
+                        <input type="checkbox" id="user-story-show-prototype" class="user-story-prototype-change">
+                        <span class="slider round hide-off live-prototype-switch"></a></span>
+
+                    </label>
+                </div>
+            </div>
+
+            <div class="prototype-on-off col-12    ">
+                <div>
+                    <h3>Share for Projects</h3>
+                </div>
+                <div>
+                    <label class="switch prototype-cls">
+                        <input type="checkbox" id="user-story-is-shared" class="user-story-is-shared">
+                        <span class="slider round hide-off is-shared-switch"></a></span>
+
+                    </label>
+                </div>
+            </div>
+
+             <div class="prototype-on-off col-12 story-card-right-menu-panels story-card-right-menu-panels-api  ">
+                <div>
+                    <h3>Run in Backend</h3>
+                </div>
+                <div>
+                    <label class="switch prototype-cls">
+                        <input type="checkbox" id="user-story-run-in-backend" class="user-story-run-in-backend">
+                        <span class="slider round hide-off  run-in-backend-switch"></a></span>
+
+                    </label>
+                </div>
+            </div>     
+
+
+            <!-- <div class="" style="margin-top: 80px;" ><span><b>Estimated hour(s):</b> </span><span style="font-size: 14px;color: #727d91;" id="generalview_esthours"
+                    class="us-priority"></span>
+            <span><b>Hour(s) Spent:</b></span> <span style="font-size: 14px;color: #727d91;" id="generalview_spenthours"
+                 class="us-priority"></span>
+            </div> -->
+
+            <div class="col-12">
+                <hr class="hr-ss">
+            </div>
+
+            <div class="cs-forum-group col-12 Assigne-card-story1" style="z-index: 1000;">
+                <label class="cs-label-name">Created By: <span class="by-last-updated"><span class="story_card_created_date"></span> / <span class="story_card_created_time"></span></label>
+                <div class="Assigne-card-story-select form-control">
+                    <div id='story-card-createdby'>
+                        <img id='story-card-createdby-img' class="Assigne-card-story-select-img" src="api/get/files/userprofile.png" alt="" srcset="">
+                        <span id='story-card-createdby-name' class="Assigne-card-story-select-name">Unassigned</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cs-forum-group col-12 Assigne-card-story1 mt-3" style="z-index: 1000;">
+                <label class="cs-label-name">Updated By: <span class="by-last-updated"><span class="story_card_updated_updated"></span> / <span class="story_card_updated_time"></span></span></label>
+                <div class="Assigne-card-story-select form-control">
+                    <div id='story-card-updatedby'>
+                        <img id='story-card-createdby-img' class="Assigne-card-story-select-img" src="api/get/files/userprofile.png" alt="" srcset="">
+                        <span id='story-card-createdby-name' class="Assigne-card-story-select-name">Unassigned</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cs-forum-group col-12 Assigne-card-story mt-3" style="z-index: 1000;">
+                <label class="cs-label-name">Owner </label>
+                <div class="Assigne-card-story-select form-control">
+                    <div id='story-card-owner'>
+                        <img id='story-card-owner-img' class="Assigne-card-story-select-img" src="api/get/files/userprofile.png" alt="" srcset="">
+                        <span id='story-card-owner-name' class="Assigne-card-story-select-name">Unassigned</span>
+                    </div>
+                    <input type="search" class="Assigne-card-story-search form-control" >
+                    <div class="Assigne-card-story-select-content pr-0 pl-0" id='story-card-owner-list'>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mt-4">
+                <hr class="hr-ss">
+                <div class="cs-forum-group">
+                    <div class="cs-sc-task-box">
+                        <div>
+                            <h3>Tasks | Related Issue(s)</h3>
+                        </div>
+                        <div>
+                            <label class="switch prototype-cls" style="right:0;">
+                                <input type="checkbox" id="user-story-sc-task-box" class="user-story-prototype-change1">
+                                <span class="slider round hide-off is-api-switch"></a></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="checkout-related-issues">
+                        <b pid="20112612464604063033" class="cs-all-task task-for-backlog-event stat_group_title mt-2" 
+                           action='overall' status='total'
+                           style="cursor: pointer;">Total-<span id="backlog-task-stat-overall" class="xpclear" >0</span></b>
+                        <div class="task-fbe-box">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-overall-new" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-new" action='overall' status='new'>new</span>
+                                </div>
+
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-overall-ongoing" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-ongoing" action='overall' status='ongoing'>ongoing</span>
+                                </div>
+
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-overall-closed" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-closed" action='overall' status='closed'>closed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <b pid="20112612464604063033"  class="cs-all-task task-for-backlog-event stat_group_title" 
+                           action='bug' status='total'
+                           style="cursor: pointer;">Bug-<span id="backlog-task-stat-bug" class="xpclear" ></span></b>
+                        <div class="task-fbe-box">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-bug-new" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-new" action='bug' status='new'>new</span>
+                                </div>
+
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-bug-ongoing" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-ongoing" action='bug' status='ongoing'>ongoing</span>
+                                </div>
+
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-bug-closed" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-closed" action='bug' status='closed'>closed</span>
+                                </div>
+                            </div>
+
+
+                            <!-- <span class="task-for-backlog-event us-item-status-new"   action='bug' status='new'>new  </span>-<span  id="backlog-task-stat-bug-new" class="xpclear" >8</span> &nbsp;
+                            <span class="task-for-backlog-event   us-item-status-ongoing"   action='bug' status='ongoing'>ongoing</span >-<span  id="backlog-task-stat-bug-ongoing" class="xpclear" >0</span> &nbsp;
+                            <span class="task-for-backlog-event us-item-status-closed"   action='bug' status='closed'>closed</span>-<span id="backlog-task-stat-bug-closed" class="xpclear" >0</span> -->
+                        </div>
+
+                        <b pid="20112612464604063033"  
+                           action='new' status='total'
+                           class="cs-all-task task-for-backlog-event stat_group_title" 
+                           style="cursor: pointer;">New Request-<span id="backlog-task-stat-new" class="xpclear" ></span></b>
+                        <div class="task-fbe-box">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-new-new" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-new" action='new' status='new'>new</span>
+                                </div>
+
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-new-ongoing" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-ongoing" action='new' status='ongoing'>ongoing</span>
+                                </div>
+
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-new-closed" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-closed" action='new' status='closed'>closed</span>
+                                </div>
+                            </div>
+
+
+                            <!-- <span class="task-for-backlog-event us-item-status-new" action='new' status='new'>new</span>-<span  id="backlog-task-stat-new-new" class="xpclear" >8</span> &nbsp;
+                            <span class="task-for-backlog-event   us-item-status-ongoing" action='new' status='ongoing'>ongoing</span>-<span  id="backlog-task-stat-new-ongoing" class="xpclear" >0</span> &nbsp;
+                            <span class="task-for-backlog-event us-item-status-closed" action='new' status='closed' >closed</span>-<span  id="backlog-task-stat-new-closed" class="xpclear" >0</span> -->
+                        </div>
+
+                        <b pid="20112612464604063033"  
+                           class="cs-all-task task-for-backlog-event stat_group_title" 
+                           action='change' status='total'
+                           style="cursor: pointer;">Change Request-<span  class="xpclear" id="backlog-task-stat-change"></span></b>
+                        <div class="task-fbe-box">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-change-new" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-new" action='change' status='new'>new</span>
+                                </div>
+
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-change-ongoing" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-ongoing" action='change' status='ongoing'>ongoing</span>
+                                </div>
+
+                                <div class="col-4">
+                                    <div id="backlog-task-stat-change-closed" class="xpclear btso-title-name" >0</div>
+                                    <span class="task-for-backlog-event us-item-status-closed" action='change' status='closed'>closed</span>
+                                </div>
+                            </div>
+                            <!-- <span class="task-for-backlog-event us-item-status-new" action='change' status='new'>new</span>-<span class="xpclear"   id="backlog-task-stat-change-new">8</span> &nbsp;
+                            <span class="task-for-backlog-event   us-item-status-ongoing" action='change' status='ongoing'>ongoing</span>-<span  class="xpclear"  id="backlog-task-stat-change-ongoing">0</span> &nbsp;
+                            <span class="task-for-backlog-event us-item-status-closed" action='change' status='closed'>closed</span>-<span  class="xpclear" id="backlog-task-stat-change-closed">0</span> -->
+                        </div>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="col-12">
+                <hr class="hr-ss">
+            </div>
+
+            <div class=" story-card-right-menu-panels story-card-right-menu-panels-api right-menu-description col-12 mt-3">
+                <div id="storycard_dependentapi" class="cs-forum-group">
+                    <label class="cs-label-name">Dependencies </label> 
+                    <span id="storycard_dependentapi_span" class="1us1-priority" style="font-size:11px;"></span>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="row mt-3">
+                    <div class="col-6 cs-forum-group">
+                        <label class="cs-label-name">Estimated hour(s) </label> 
+                        <input type="number" id="user-story-est-hours" class=" cs-input user-story-short-change" data-type="estimatedHours" step=any required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="col-6 cs-forum-group">
+                        <label class="cs-label-name">Hour(s) Spent </label> 
+                        <input type="number" id="user-story-spent-hours" class="cs-input user-story-short-change" data-type="spentHours" step=any required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="col-6 cs-forum-group"> 
+                        <label class="cs-label-name">Estimated Counter(s)</label>      
+                        <input type="number" id="user-story-est-counter" class="cs-input user-story-short-change" data-type="estimatedCounter" step=any required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="col-6 cs-forum-group">   
+                        <label class="cs-label-name">Executed Counter(s)</label>       
+                        <input type="number" id="user-story-executed-counter" class="cs-input user-story-short-change" data-type="executedCounter" step=any required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                    </div>
+
+
+                    <div class="col-6 cs-forum-group">
+                        <label class="cs-label-name">Estimated Budget </label>          
+                        <input type="number" id="user-story-est-budget" class="cs-input user-story-short-change" data-type="estimatedBudget" step=any required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="col-6 cs-forum-group">
+                        <label class="cs-label-name">Spent Budget </label>          
+                        <input type="number" id="user-story-spent-budget" class="cs-input user-story-short-change" data-type="spentBudget" step=any required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="right-menu-description col-12" >
+                <br>
+                <br>
+                <!--        <div id="storycard_because"><span><b>Because</b></span><br><span
+                                id="generalview_because"></span></div>
+                        <div  id="storycard_description"><span><b>Description</b></span><br><span
+                                id="generalview_description"></span></div>-->
+                <!--        <div  id="storycard_childbound"><span><b>Child Bound User Story</b></span> <br><span
+                                id="generalview_childbound" class="us-priority"></span></div>
+                        <div  id="storycard_bound"><span><b>Bound Sourced User Story</b></span><br> <span
+                                id="generalview_bound" class="us-priority"></span></div>-->
+                <div id="storycard_dependency"><span><b >Parent Dependency</b></span> <br><span
+                        id="generalview_dependency" class="us-priority"></span></div>
+                <div  id="storycard_childdependency"><span><b>Child Dependency</b></span> <br><span
+                        id="generalview_childdependency" class="us-priority"></span></div>
+
+            </div>
+
+
+
+            <!--    <div class="userstoryDeletAll col-12">
+                    <label class="switch delete-show-hide">
+                        <h3><a href="#" onclick="new UserStory().delete()">Delete User Story</a></h3>
+                        <input type="checkbox">
+                        <span class="slider round"></span>  
+                      </label>
+                </div>-->
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="task-ongoing-large-history" style="z-index: 1045;" tabindex="-1" role="dialog" aria-labelledby=""    aria-hidden="true">
+    <div class="modal-dialog modal-lg"  style="max-width: 100%; max-height: 100%; margin: 0px;height: 100%;" role="document">
+        <div class="modal-content" style="width: 100%; height: 100%;">
+            <div class="modal-header" >
+                <h5 class="modal-title" >History</h5>
+                <div class="float-right">
+
+                </div>
+
+                <button type="button" class="close" data-dismiss="modal"  aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body histroy-and-dashboard" style="background-color: rgb(244, 245, 247);height: 90vh;overflow: auto; position: relative;">
+                <!--<form>-->
+                <div class="row" >
+                    <div class="table-content " style="overflow-y: auto; height: 80vh;">
+
+
+                        <table id="history-main-table-backlogst" style="width: max-content;min-width: 100%;" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                    <td>Project </td>
+                                    <td>Backlog</td>
+                                    <td>Input</td>
+                                    <td>Description</td>
+                                    <td>New Value</td>
+                                    <td>Old Value</td>
+                                    <td>Action Type</td>
+                                    <td>Time & Date</td> 
+                                    <td>Created</td>
+
+                                </tr>  
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

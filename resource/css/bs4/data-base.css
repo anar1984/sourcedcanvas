@@ -1,0 +1,90 @@
+.SelectDiagramOption{
+  width: 400px !important;
+}
+.AddUserStoryDiagramEntity{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  border-radius: 50%;
+  color: white;
+  background-color: #007bff;
+  padding-top: 2px;
+  padding-left: 9px;
+  width: 35px;
+    height: 35px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.AddUserStoryDiagramEntity:hover{
+font-size: 24px;
+padding-top: 0px;
+padding-left: 7px;
+}
+.userSwitchtory{
+  display: inline;
+}
+.zoomBtnSection {
+  width: 25px;
+  height: 25px;
+  background: #eef;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #005bac;
+  padding-top: 1px ;
+  top:90vh;
+  position: fixed;
+  text-align: center;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 1500;
+ 
+}
+
+/* zoom section  */
+.zmBtnSection {
+  width: 25px;
+  height: 25px;
+  background: #eef;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #005bac;
+  padding-top: 1px ;
+  top:90vh;
+  left: 100px;
+  position: fixed;
+  text-align: center;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 500;
+ 
+}
+
+.zmPlus{
+  bottom: 100px;
+  margin-top: -70px;
+  box-shadow: 0px 1px 8px #8b8b8e;
+}
+.zmOut{
+  bottom: 120px;
+  margin-top: -34px;
+  box-shadow: 0px 1px 8px #8b8b8e;
+}
+
+.zmRefresh{
+    bottom: 60px;
+   
+   
+    box-shadow: 0px 1px 8px #8b8b8e;
+}

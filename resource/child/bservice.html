@@ -1,0 +1,215 @@
+
+
+
+
+
+<div class="splitter">
+
+    <div id="rightSplitter">
+        <div class="row">
+            <div class="col-9">
+                <button class=" btn btn-light accordian-main-name dropdown-toggle" id="selectServiceGroup" 
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Service Group
+                </button>
+
+
+                <div class="dropdown-menu serviceName" aria-labelledby="selectService">
+                    <div class="row mb-2">
+                        <div class="col-6"><a href="#" data-toggle="modal" data-target="#serviceAddModal"> Add Sercive Group</a> </div>
+                        <!-- <div class="col-6" style="cursor: pointer;" onclick="new UserStory().clearAndShowAll(this)">Clear</div> -->
+                    </div>
+                    <div id="addServiceName"></div>
+                </div>
+            </div>
+
+            <div class="col-3 text-right">
+                <div class="addServiceMainBtn"  onclick="SubMenu_1()">
+                    <button class="btn btn-light accordian-main-name" 
+                            data-toggle="modal" data-target="#addServiceNameModalNewTrueModal">
+                        <i class="fa fa-plus" style="font-size: 18px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div> 
+        <div class="row" id="sub" style="height:92vh; overflow-y: scroll;">
+
+        </div>
+    </div>
+
+    <div id="separator" ></div>
+
+    <div id="leftSplitter" >
+        <div class="serviceStatusMenu"></div>
+        <div class="row mt-3">
+            <div class="col-6 d-flex justify-content-left text-left serciveNameTop"
+                 style="padding-left:30px;">
+                <h5 id="base-service-title-name">NAME</h5>
+            </div>
+            <div class="col-6 d-flex justify-content-end " id='service-main-business-case-main' style="display:none">
+                <span class="exerciseIcon">
+                    <p class="secondName" style="padding:0px 10px;" id="exercutiveInsertDiv"></p>
+                </span>
+
+                <button class="btn dropdown-toggle config_btn" type="button" data-toggle="dropdown" id="btn_baud">
+                    <i class="fa fa-caret-down"></i>
+                </button>
+
+                <ul class="dropdown-menu" id="baudrate" style="z-index:3000;">
+                </ul>
+
+            </div>
+
+
+
+
+        </div>
+        <hr>
+        <!--        <div class="col-12 defaultPage" style="padding:30px;text-align:center;">
+                    <h5><i class="fa fa-cubes" style="font-size:30px" aria-hidden="true"></i></h5>
+                    <h5> No User Story have been found or created on this project</h5>
+                    <p>All User Story searched or created on this project will appear here</p>
+                </div>-->
+
+        <div class="col-12" id="business_service_main_div_body" 
+             style="height:86vh; overflow-y: scroll;display: block;">
+            <div class="col-12 defaultPage" style="padding:30px;text-align:center;">
+                <h5><i class="fa fa-cubes" style="font-size:30px" aria-hidden="true"></i></h5>
+                <h5>No Business Case have been found or created on this Service</h5>
+                <p>All Business Case created on this Service will appear here</p>
+            </div>
+        </div>
+
+        <div class="col-12" id="exercutiveMainPage" style="display: none;">
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Service new add modal -->
+<div class="modal fade" id="serviceAddModal" tabindex="-1" role="dialog" aria-labelledby="serviceAddModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceAddModalLabel">New Service Group</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="serviceAddModal_servicegroupnew" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"  onclick="addBusinessService()">Add</button>
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addServiceNameModalNewTrueModal" tabindex="-1" role="dialog" aria-labelledby="serviceAddModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceAddModalLabel">New Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="addServiceNameModalNewTrueModal_servicename" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"  onclick="addOnlyBusinessService()">Add</button>
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addBusinessCase4ServiceModal" tabindex="-1" role="dialog" aria-labelledby="serviceAddModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceAddModalLabel">New Business Case</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="addBusinessCase4ServiceModal_casename" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"  onclick="addBusinessCase4ServiceAction()">Add</button>
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addServiceProcessModal" tabindex="-1" role="dialog" aria-labelledby="serviceAddModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceAddModalLabel">New Service Business Process</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="addServiceProcessModal_processname" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary "  onclick="addServiceProcessAction()">Add</button>
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="addStoryCard4ProcessModal" tabindex="-1" role="dialog" aria-labelledby="serviceAddModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceAddModalLabel">Add Story Card to process</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12">
+                    <span style="width: 100%;" id="addRelatedSourceModal-apititle">Project</span>
+                    <select id="addStoryCard4ProcessModal_project" class="form-control" 
+                            style="width:100%;padding:1px;  " 
+                            onchange="loadStoryCardByProject4Service(this)"> 
+                    </select>
+                </div>
+                <div class="col-12">
+                    <br>
+                    <span style="width: 100%;" id="addRelatedSourceModal-apititle">Story Card</span>
+                    <select id="addStoryCard4ProcessModal_storycard" class="form-control" 
+                            style="width:100%;padding:1px;  " > 
+                    </select>
+                    <div class="row  create-new-storycard-4-process " style="display:none">
+                        <div class="form-group col-9">
+                            <span style="width: 100%;">New Story Card</span><br>
+                            <input type="text" id="addStoryCard4ProcessModal_storycardnew" class="form-control " style=" padding:10px 0px;  ">
+                        </div>
+                        <div class=" col-2">
+                            <br>
+                            <button class=" btn btn-secondary  " onclick="addNewStoryCard4Process()">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary "  onclick="addServiceProcessAndBacklogAction()">Add</button>
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

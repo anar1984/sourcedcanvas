@@ -1,0 +1,363 @@
+<div class="row" style="padding:4px 10px 30px 10px;">
+
+    <div class="col-12 text-center">
+
+        <h4>Task Type Management</h4>
+    </div>
+
+    <!--By G.R-->
+    <div class="TaskPanel container" style="max-width: 90%;">
+
+        <div class="category-kanban col-12" style="display: flex;">
+
+
+            <div class="col-2">
+                <select onchange="genTaskTypeManagmentForproject(this)"
+                    title="Project"
+                    class="form-control form-control-sm projectList_liveprototype_tasktypemgmt" data-live-search="true" multiple name="" id="">
+                </select>
+            </div>
+            <div class="col-2">
+                <select onchange="genTaskTypeManagmentView4None()"
+                    title="Backlog"
+                    class="form-control form-control-sm type_liveprototype_tasktypemgmt" data-live-search="true" name="" id="story_mn_type_backlog_id">
+                </select>
+            </div>
+
+            <div class="col-2">
+            
+                <input onchange="genTaskTypeManagmentView4None()"
+                placeholder="search"
+                    class="form-control form-control-sm projectList_liveprototype_taskmgmt_search" data-live-search="true" multiple name=""
+                    id="projectList_liveprototype_tasktypemgmt_search">
+ 
+            </div>
+
+            <div class="col-2">
+                <select onchange="genTaskTypeManagmentView4None()"
+                multiple
+                    title="Assigne"
+                    class="form-control form-control-sm type_liveprototype_tasktypemgmt" data-live-search="true" name="" multiple id="story_mn_type_assigne_id">
+                </select>
+            </div>
+            <div class="col-2">
+
+                <select onchange="genTaskTypeManagmentView4None()"
+                multiple
+                    title="Created By"
+                    class="form-control form-control-sm type_liveprototype_tasktypemgmt" data-live-search="true" name="" multiple id="story_mn_type_created_id">
+                </select>
+            </div>
+            <div class="col-2 ">
+           
+                <div class="dropdown task-sprint-show">
+               
+                    <span class="dropdown-toggle1 btn-sm btn btn-light task-sprint-show" data-toggle="dropdown"
+                      >
+                        Task Sprint</span>
+                    <i>
+                        <span class=" bug-filter-badge" style="display:none;">0</span>
+                    </i>
+
+                    <div class="dropdown-menu drop-label-menu sprint-show-4-task">
+                        <span>
+
+                            <a class="dropdown-item" data-toggle="modal" href="#" data-target="#insertNewSprint4Task"
+                                style="padding:0px;width: 20px;font-weight: 600;vertical-align: -webkit-baseline-middle; 
+                      font-size: 12px; color:#727D91; margin-top: 5px;">
+                                New Sprint</a>
+                        </span>
+                        <span class="newlabelspan" style="cursor: pointer;"
+                            onclick="new UserStory().clearAndShowAll(this)">Clear</span>
+                        <div class="dropdown-divider" style="padding:0px;">
+                        </div>
+                        <div id="sprintlist4Task" class="sprintlist4Task"
+                            style='height: 250px;overflow-y: auto; overflow-x: hidden;'>
+
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+
+            <div class="col-2">
+
+<!-- 
+                <span class="">Group By</span>
+                <div class="dropdown">
+                    <button class="categorybtn btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="category-noneAktiv">User Story</span>
+
+                    </button>
+                    <div class="dropdown-menu" style="z-index: 2000;" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item none " href="#">None</a>
+                        <a class="dropdown-item assignee" href="#">Assignee</a>
+                        <a class="dropdown-item userStoryTab" href="#">User Story</a>
+
+                    </div>
+                </div> -->
+            </div>
+
+
+        </div>
+        <div class="taskTypeNewPanel">
+            <div class="task-panel" style="width: max-content;display: block;">
+                <div id="taskTypeManagmentHeader" class="task-panel-header col-12 sticky-top">
+                    <div class="task-column-type  new " status='new'>
+    
+                        <div class="task-column-header">
+                            <span class="headerInputColumn">New <b><span class="counterkanban" >0</span></b></span>
+                        </div>
+                    </div>
+    
+                    <div class="task-column-type  on-going" status='ongoing'>
+                        <div class="task-column-header">
+                            <span class="headerInputColumn">Ongoing <b><span class="counterkanban"
+                                        id="kanban_view_ongoing_count_4_task">0</span></b></span>
+                        </div>
+                    </div>
+    
+                    <div class="task-column-type  closed" stats='closed'>
+                        <div class="task-column-header">
+                            <span class="headerInputColumn">Closed <b><span class="counterkanban"
+                                        id="kanban_view_closed_count_4_task">0</span></b></span>
+                        </div>
+                    </div>
+                </div>
+             <div class="d-flex "  style="width: 100%; flex-wrap: wrap;" id="taskTypeManagmentBody">
+
+             </div>
+            <!--     <div class="task-column-type  new-body  column-body-none "  status='new'>
+    
+                    <div class="task-column-body task-kanban-view-new task_main_div_of_backlog_info_kanban_view_table_new"
+                        id="new">
+                        <div draggable="true" class="content-drag"></div>
+                    </div>
+                    <div class="TaskMiniStoryCard">
+                        <h5>New Task</h5>
+                        <input class="TaskMiniStoryInput form-control" type="text">
+                        <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'new')"
+                            style="color: green;">
+                            <i class="fas fa-check"></i>
+    
+                        </div>
+                        <div class="TextHeader " id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+    
+                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="task-column-type  on-going-body  column-body-none " status='ongoing'>
+    
+                    <div class="task-column-body  task-kanban-view-ongoing task_main_div_of_backlog_info_kanban_view_table_new"
+                        id="new">
+                        <div draggable="true" class="content-drag"></div>
+                    </div>
+                    <div class="TaskMiniStoryCard">
+                        <h5>New Task</h5>
+                        <input class="TaskMiniStoryInput form-control" type="text">
+                        <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'ongoing')"
+                            style="color: green;">
+                            <i class="fas fa-check"></i>
+    
+                        </div>
+                        <div class="TextHeader " id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="task-column-type  Closed-body  column-body-none"  status='closed'>
+    
+                    <div class="task-column-body task-kanban-view-closed task_column-body-none main_div_of_backlog_info_kanban_view_table_closed"
+                        id="closed">
+                        <div class="content-drag"></div>
+    
+    
+                    </div>
+                    <div class="TaskMiniStoryCard">
+                        <h5>New Task</h5>
+                        <input class="TaskMiniStoryInput form-control" type="text">
+                        <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'closed')"
+                            style="color: green;">
+                            <i class="fas fa-check"></i>
+    
+                        </div>
+                        <div class="TextHeader " id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>
+                </div> -->
+    
+            </div>
+    
+          <!--   <div class="groupByUserstory" style="display: block;">
+                <div class="UserStory">
+                    <div class="userStory-header sticky-top col-12">
+                        <div class="downUser angle-right" style="display: block;"><i class="fas fa-angle-right"></i></div>
+                        <div class="downUser angle-down"> <i class="fas fa-angle-down"></i></div>
+    
+                        <span style="margin-right: 10px;">Tasks without User Story</span>
+                        <span class="backlog-status">
+                            <div class="us-list-item   us-item-status-new "> new </div>
+                        </span>
+                    </div>
+                    <div class="task-column-type new" status="new">
+    
+                        <div class="task-column-body task_group_kanban_view_new" id="new">
+                            <div draggable="true" class="content-drag"></div>
+                        </div>
+                        <div class="TaskMiniStoryCard">
+                            <h5>New Task</h5>
+                            <input class="TaskMiniStoryInput form-control" type="text">
+                            <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'new')"
+                                style="color: green;">
+                                <i class="fas fa-check"></i>
+    
+                            </div>
+                            <div class="TextHeader " id="DeleteStory" style="color: red;">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="CardContentAdd"><img class="contentAdImg" src="resource/img/plus-icon.png" alt=""></div>
+                    <div class="task-column-type on-going" status="ongoing">
+    
+                        <div class="task-column-body task_group_kanban_view_ongoing" id="new">
+                            <div draggable="true" class="content-drag"></div>
+    
+    
+    
+                        </div>
+                        <div class="TaskMiniStoryCard">
+                            <h5>New Task</h5>
+                            <input class="TaskMiniStoryInput form-control" type="text">
+                            <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'ongoing')"
+                                style="color: green;">
+                                <i class="fas fa-check"></i>
+    
+                            </div>
+                            <div class="TextHeader " id="DeleteStory" style="color: red;">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="CardContentAdd">
+                            <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                        </div>
+                    </div>
+                    <div class="task-column-type closed" status='closed'>
+    
+                        <div class="task-column-body task_group_kanban_view_closed" id="new">
+                            <div draggable="true" class="content-drag"></div>
+                        </div>
+                        <div class="TaskMiniStoryCard">
+                            <h5>New Task</h5>
+                            <input class="TaskMiniStoryInput form-control" type="text">
+                            <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'closed')"
+                                style="color: green;">
+                                <i class="fas fa-check"></i>
+    
+                            </div>
+                            <div class="TextHeader " id="DeleteStory" style="color: red;">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="CardContentAdd">
+                            <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="UserStory">
+                    <div class="userStory-header sticky-top col-12">
+                        <div class="downUser angle-right" style="display: block;"><i class="fas fa-angle-right"></i></div>
+                        <div class="downUser angle-down"> <i class="fas fa-angle-down"></i></div>
+    
+                        <span style="margin-right: 10px;">Tasks without User Story</span>
+                        <span class="backlog-status">
+                            <div class="us-list-item   us-item-status-new "> new </div>
+                        </span>
+                    </div>
+                    <div class="task-column-type new" status="new">
+    
+                        <div class="task-column-body task_group_kanban_view_new" id="new">
+                            <div draggable="true" class="content-drag"></div>
+                        </div>
+                        <div class="TaskMiniStoryCard">
+                            <h5>New Task</h5>
+                            <input class="TaskMiniStoryInput form-control" type="text">
+                            <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'new')"
+                                style="color: green;">
+                                <i class="fas fa-check"></i>
+    
+                            </div>
+                            <div class="TextHeader " id="DeleteStory" style="color: red;">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="CardContentAdd">
+                            <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                        </div>
+                    </div>
+                    <div class="task-column-type on-going" status="ongoing">
+    
+                        <div class="task-column-body task_group_kanban_view_ongoing" id="new">
+                            <div draggable="true" class="content-drag"></div>
+    
+    
+    
+                        </div>
+                        <div class="TaskMiniStoryCard">
+                            <h5>New Task</h5>
+                            <input class="TaskMiniStoryInput form-control" type="text">
+                            <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'ongoing')"
+                                style="color: green;">
+                                <i class="fas fa-check"></i>
+    
+                            </div>
+                            <div class="TextHeader " id="DeleteStory" style="color: red;">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="CardContentAdd">
+                            <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                        </div>
+                    </div>
+                    <div class="task-column-type closed" status='closed'>
+    
+                        <div class="task-column-body task_group_kanban_view_closed" id="new">
+                            <div draggable="true" class="content-drag"></div>
+                        </div>
+                        <div class="TaskMiniStoryCard">
+                            <h5>New Task</h5>
+                            <input class="TaskMiniStoryInput form-control" type="text">
+                            <div class="TextHeader " id="TaskAcceptStory" onclick="insertNewTask(this, 'closed')"
+                                style="color: green;">
+                                <i class="fas fa-check"></i>
+    
+                            </div>
+                            <div class="TextHeader " id="DeleteStory" style="color: red;">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="CardContentAdd">
+                            <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+    
+        </div>
+       
+
+    </div>
+
+    </div>

@@ -1,0 +1,616 @@
+    <style>
+         .trigger-leaderline-id .leader-line {
+          
+          
+            z-index: -1 !important; 
+        } 
+        .porjectNameProto,.tool-panel-col,.toolbar,.gooeyMenu{
+            display: none !important;
+        }
+        .proto_type_block{
+            margin: 0px !important;
+        }
+        .us-sub-menu-body{
+            width: 100% !important;
+        }
+        .zoom-main-new,.dragsection{
+            margin: 0px !important;
+        }
+        .gui-design-is-apis{
+            margin: 0px !important;
+            padding: 0px !important;
+        }
+        #modal-prototypye{
+            padding: 0px !important;
+        }
+        #modal-prototypye .modal-body{
+            padding-top: 0 !important;
+        }
+        .btnZoom i {
+        line-height: 0;
+        }
+        .leader-line{
+           
+            pointer-events: none !important;
+
+        } 
+        .leader-line textPath{
+           
+            pointer-events: all !important;
+            position: absolute;
+            z-index: 500000;
+        } 
+    </style>
+
+    <div class="activity-conatiner trigger-leaderline-id" id="gui_component_main_view" style="height: 140vh;zoom:70%;">
+     
+
+        <div class="container" style="max-width: 95%;">
+
+            <div class="LaneAdder ">
+             
+               <div class="col-6" style="display:inline-flex;">
+                <div class="dropdown col-1">
+                    <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                       
+                        <a class="dropdown-item " id="newPorcessModal"  href="#">New Process</a>
+                        <a class="dropdown-item " id="editNameProcess"  href="#">Edit Process Name</a>
+                        <a class="dropdown-item " id="deleteProcessName"  href="#">Delete Process</a>
+                        <a class="dropdown-item "  href="#">Copy</a>
+                        <!--<a class="dropdown-item deleteDatabaseBtn" href="#">Trash</a>-->
+            
+                    </div>
+                </div>
+               <select class="col-4 form-control" sa-selectedfield="id" style="display: inline;" name="" id="projectListSwimlaneInside">
+                  
+                </select>
+              
+                 
+                  
+                   <button class="btn btn-light" id="LaneAddBtn"><i class="fas fa-plus"></i></button>
+                   <button class="btn btn-light" id="printgraphTable"><i class="far fa-file-pdf"></i></i></button>
+
+                   <div class="editNameProcessDiv col-8 text-center">
+                       <h4></h4>
+                       <input class="form-control" type="text" id="editProcessName">
+                   </div>
+                 
+                </div>
+       
+             
+          
+
+
+                
+                <div class=" float-right lines-block-act">
+                   <span>choose line type</span>
+                    <button class="geItem gactive" data-tylp="line-svg-1"><svg style="width: 32px; height: 30px;">
+                            <g>
+                                <g></g>
+                                <g>
+                                    <g transform="translate(0.5,0.5)" style="visibility: visible;">
+                                        <path d="M 3.06 28.56 Q 28.56 28.56 15.81 15.81 Q 3.06 3.06 25.31 3.06"
+                                            fill="none" stroke="white" stroke-width="9.3" stroke-miterlimit="10"
+                                            pointer-events="stroke" visibility="hidden"></path>
+                                        <path d="M 3.06 28.56 Q 28.56 28.56 15.81 15.81 Q 3.06 3.06 25.31 3.06"
+                                            fill="none" stroke="#000000" stroke-width="1.3" stroke-miterlimit="10"
+                                            pointer-events="stroke"></path>
+                                        <path d="M 27.99 3.06 L 24.42 4.84 L 25.31 3.06 L 24.42 1.27 Z" fill="#000000"
+                                            stroke="#000000" stroke-width="1.3" stroke-miterlimit="10"
+                                            pointer-events="all"></path>
+                                    </g>
+                                </g>
+                                <g></g>
+                                <g></g>
+                            </g>
+                        </svg></button>
+                    <button class="geItem" data-tylp="line-svg-2"><svg style="width: 32px; height: 30px;">
+                            <g>
+                                <g></g>
+                                <g>
+                                    <g transform="translate(0.5,0.5)" style="visibility: visible;">
+                                        <path
+                                            d="M 7.11 25.58 L 9.11 27.59 L 2.53 28.25 L 3.19 21.67 L 5.2 23.67 L 24.75 4.12 L 22.75 2.11 L 29.33 1.45 L 28.67 8.03 L 26.66 6.03 Z"
+                                            fill="none" stroke="white" stroke-width="9.3" stroke-linejoin="round"
+                                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden"></path>
+                                        <path
+                                            d="M 7.11 25.58 L 9.11 27.59 L 2.53 28.25 L 3.19 21.67 L 5.2 23.67 L 24.75 4.12 L 22.75 2.11 L 29.33 1.45 L 28.67 8.03 L 26.66 6.03 Z"
+                                            fill="none" stroke="#000000" stroke-width="1.3" stroke-linejoin="round"
+                                            stroke-miterlimit="10" pointer-events="all"></path>
+                                    </g>
+                                </g>
+                                <g></g>
+                                <g></g>
+                            </g>
+                        </svg></button>
+                    <button class="geItem" data-tylp="line-svg-3"><svg style="width: 32px; height: 30px;">
+                            <g>
+                                <g></g>
+                                <g>
+                                    <g transform="translate(0.5,0.5)" style="visibility: visible;">
+                                        <path d="M 2.12 27.56 L 28.62 1.06" fill="none" stroke="white"
+                                            stroke-width="9.3" stroke-miterlimit="10" pointer-events="stroke"
+                                            visibility="hidden"></path>
+                                        <path d="M 2.12 27.56 L 28.62 1.06" fill="none" stroke="#000000"
+                                            stroke-width="1.3" stroke-miterlimit="10" stroke-dasharray="1.59 1.59"
+                                            pointer-events="stroke"></path>
+                                    </g>
+                                </g>
+                                <g></g>
+                                <g></g>
+                            </g>
+                        </svg></button>
+                    <button class="geItem" data-tylp="line-svg-4"><svg style="width: 32px; height: 30px;">
+                            <g>
+                                <g></g>
+                                <g>
+                                    <g transform="translate(0.5,0.5)" style="visibility: visible;">
+                                        <path d="M 7.18 23.16 L 23.98 6.36" fill="none" stroke="white"
+                                            stroke-width="9.3" stroke-miterlimit="10" pointer-events="stroke"
+                                            visibility="hidden"></path>
+                                        <path d="M 7.18 23.16 L 23.98 6.36" fill="none" stroke="#000000"
+                                            stroke-width="1.3" stroke-miterlimit="10" pointer-events="stroke"></path>
+                                        <path d="M 5.65 24.69 L 6.67 21.64 L 7.18 23.16 L 8.7 23.67 Z" fill="#000000"
+                                            stroke="#000000" stroke-width="1.3" stroke-miterlimit="10"
+                                            pointer-events="all"></path>
+                                        <path d="M 25.51 4.83 L 24.49 7.88 L 23.98 6.36 L 22.46 5.85 Z" fill="#000000"
+                                            stroke="#000000" stroke-width="1.3" stroke-miterlimit="10"
+                                            pointer-events="all"></path>
+                                    </g>
+                                </g>
+                                <g></g>
+                                <g></g>
+                            </g>
+                        </svg></button>
+
+                </div>
+                <div class=" float-right lines-block-act">
+
+                    <div class="figureBgSelectOption">
+                        <span>choose line color</span>
+                        <button data-bgcolorspan="#303030" style="background-color: #6d6d6d;" class="ColopickerSpanLine gactive"></button>
+                        <button data-bgcolorspan="#e3b6aac4" style="background-color: #e3b6aa;" class="ColopickerSpanLine "></button>
+                        <button data-bgcolorspan="#bad9f9c4" style="background-color: #bad9f9;" class="ColopickerSpanLine"></button>
+                        <button data-bgcolorspan="#c1e57cc4" style="background-color: #c1e57c;" class="ColopickerSpanLine"></button>
+                        <button data-bgcolorspan="#fdf67cc4" style="background-color: #fdf67c;" class="ColopickerSpanLine"></button>
+                        <button data-bgcolorspan="#fa8065c4" style="background-color: #fa8065;" class="ColopickerSpanLine "></button>
+                        <button data-bgcolorspan="#b0b0b0c4" style="background-color: #b0b0b0;" class="ColopickerSpanLine"></button>
+                        <button data-bgcolorspan="#ff3300c4" style="background-color: #ff3300;" class="ColopickerSpanLine"></button>
+                        <button data-bgcolorspan="#3399ffc4" style="background-color: #3399ff;" class="ColopickerSpanLine"></button>
+                        <button data-bgcolorspan="#bda8b6c4" style="background-color: #bda8b6;" class="ColopickerSpanLine"></button>
+                        </div>
+                    <!-- <input type="color" name="" id="color-picker-act"> -->
+                </div>
+                <div class=" float-right lines-block-act">
+                   
+                    <div style="display: flex;">
+                        <label class="switch-holder">
+                            <span>editable line</span>
+                            <input
+                                class="check-switch"
+                                type="checkbox"
+                                :checked="checked"
+                                @change="toggleSwitch"
+                                id="lineEditableInput"
+                            />
+                            <span class="switch-cst"></span>
+                            
+                        </label>
+                    </div>
+                    
+      
+ 
+                 </div>
+             
+            </div>
+
+            <div style="padding-top: 60px; position: relative;">
+                <div class="box-csta" id="loader-actvty">
+                    <div class="loader-41"></div>
+                  </div>
+
+                  <div class="Graphtable">
+
+                  </div>
+              <!--   <table class="Graphtable" id="sadMainPage">
+
+                    <tbody>
+
+
+                    </tbody>
+                </table> -->
+            </div>
+
+
+
+
+            <div class="CardSwimAdd" style="display: none;">
+                <div class="SwimBackG"></div>
+                <div class="SwimPopUp">
+                    <div class="SwimPopUpHeader">
+                        <h2 class="col-11" style="margin-top: 15px;">Figure Edit </h2>
+                        <div class="ExitCardswim col-1">
+                            <i class="fas fa-times"></i>
+                        </div>
+
+                    </div>
+                    <div class="SwimPopUpBody">
+
+
+                        <div class="ContentCopyDiv">
+
+                        </div>
+                        <div class="ChangeFigur">
+                            <p class="selectColorWordPopup">Change Figure Form</p>
+                            <div class="ChnageFigureForm">
+                                <span data-figurnum="10" class="figureFromspansChange"><i
+                                        class="fal fa-male"></i></span>
+                                <span data-figurnum="12" class="figureFromspansChange"><i
+                                        class="fal fa-circle"></i></span>
+
+                                <span data-figurnum="14" class="figureFromspansChange"><i
+                                        class="fal fa-square"></i></span>
+
+                                <span data-figurnum="16" class="figureFromspansChange">
+                                    <div class="diamondFigureForm1"></div>
+                                </span>
+
+                                <span data-figurnum="18" class="figureFromspansChange"><i
+                                        class="fal fa-hexagon"></i></span>
+
+                                <span data-figurnum="20" class="figureFromspansChange"><i
+                                        class="fal fa-triangle"></i></span>
+
+                                <span data-figurnum="22" class="figureFromspansChange"><i
+                                        class="fal fa-file"></i></span>
+
+                                <span data-figurnum="24" class="figureFromspansChange"><i
+                                        class="fal fa-diamond"></i></span>
+                                <span data-figurnum="26" class="figureFromspansChange">
+
+                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="M256,51C117.03,51,0,140.526,0,256s117.035,205,256,205c138.97,0,256-89.526,256-205S394.965,51,256,51z M256,431
+                                               c-124.617,0-226-78.505-226-175S131.383,81,256,81s226,78.505,226,175S380.617,431,256,431z" />
+                                            </g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span data-figurnum="28" class="figureFromspansChange">
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
+                                        enable-background="new 0 0 50 50" xml:space="preserve">
+                                        <path d="M35.75,41.75c0.097,0,0.194-0.014,0.29-0.043c0.422-0.128,0.71-0.517,0.71-0.957v-30c0-0.553-0.447-1-1-1h-20
+                              c-0.553,0-1,0.447-1,1v30c0,0.44,0.288,0.829,0.71,0.957c0.421,0.129,0.878-0.036,1.122-0.402l9.168-13.752l9.168,13.752
+                              C35.106,41.588,35.422,41.75,35.75,41.75z M34.75,37.447l-8.168-12.252c-0.186-0.278-0.498-0.445-0.832-0.445
+                              s-0.646,0.167-0.832,0.445L16.75,37.447V11.75h18V37.447z" />
+                                    </svg>
+                                </span>
+
+                            </div>
+                        </div>
+
+         
+
+                        <p class="selectColorWordPopup">Select Color Figure</p>
+
+                        <div class="ChangeFigureColor">
+                            <span data-bgcolorspan="#fff" style="background-color: #fff;"
+                                class="Colorchangespan"></span>
+                            <span data-bgcolorspan="#e3b6aac4" style="background-color: #e3b6aa;"
+                                class="Colorchangespan "></span>
+                            <span data-bgcolorspan="#bad9f9c4" style="background-color: #bad9f9;"
+                                class="Colorchangespan"></span>
+                            <span data-bgcolorspan="#c1e57cc4" style="background-color: #c1e57c;"
+                                class="Colorchangespan"></span>
+                            <span data-bgcolorspan="#fdf67cc4" style="background-color: #fdf67c;"
+                                class="Colorchangespan"></span>
+                            <span data-bgcolorspan="#fa8065c4" style="background-color: #fa8065;"
+                                class="Colorchangespan"></span>
+                            <span data-bgcolorspan="#b0b0b0c4" style="background-color: #b0b0b0;"
+                                class="Colorchangespan"></span>
+                            <span data-bgcolorspan="#ff3300c4" style="background-color: #ff3300;"
+                                class="Colorchangespan"></span>
+                            <span data-bgcolorspan="#3399ffc4" style="background-color: #3399ff;"
+                                class="Colorchangespan"></span>
+                            <span data-bgcolorspan="#bda8b6c4" style="background-color: #bda8b6;"
+                                class="Colorchangespan"></span>
+                        </div>
+
+                        <p class="selectColorWordPopup">Select Text Font Size</p>
+
+                        <select class="form-control " id="selecttextfontSize">
+
+                            <option value="5px">5</option>
+                            <option value="6px">6</option>
+                            <option value="7px">7</option>
+                            <option value="8px">8</option>
+                            <option value="9px">9</option>
+                            <option value="10px">10</option>
+                            <option value="11px">11</option>
+                            <option value="12px">12</option>
+                            <option value="13px">13</option>
+                            <option value="14px">14</option>
+                            <option value="15px">15</option>
+                            <option value="16px">16</option>
+                            <option value="17px">17</option>
+                            <option value="18px">18</option>
+                            <option value="19px">19</option>
+                            <option value="20px">20</option>
+                            <option value="21px">21</option>
+                            <option value="22px">22</option>
+                            <option value="23px">23</option>
+                            <option value="24px">24</option>
+                            <option value="25px">25</option>
+                            <option value="30px">30</option>
+                            <option value="35px">35</option>
+                            <option value="40px">40</option>
+                            <option value="45px">45</option>
+                            <option value="50px">50</option>
+                            <option value="55px">55</option>
+                            <option value="60px">60</option>
+                            <option value="65px">65</option>
+                            <option value="70px">70</option>
+
+                        </select>
+
+                        <p class="selectColorWordPopup">Change Figure Size</p>
+
+                        <span class="selectColorWordPopup">width</span>
+                        <input type="number" min="80" id="FigureWitdh" max="100" placeholder="%"
+                            class="form-control SizeInputFg">
+                        <span class="selectColorWordPopup">height</span>
+                        <input disabled type="number" min="25" id="FigureHeight" max="100" placeholder="%"
+                            class="form-control SizeInputFg">
+
+
+
+
+                    </div>
+
+
+
+                    <div class="SwimPopUpFooter">
+                        <div class="Forgeneralfigure">
+                            <p class="selectColorWordPopup">Add text</p>
+                            <input class="form-control SelectFigureText" id="select-text" maxlength="150">
+                        </div>
+
+
+                        <div class="row ForProcesstFigure col-12" style="display: none;">
+                            <div class="col-4">
+                                <span>Process</span>
+                                <select onchange="" class="form-control procces_List_activity" 
+                                        data-live-search="true" name="" id="">
+                
+                                </select>
+                            </div>
+                           
+
+                        </div>
+
+                        <div class="row ForUSerStFigure col-12">
+                            <div class="col-4">
+                                <span>Project</span>
+                                <select onchange="loadStoryCardByProject4oIpo(this)" class="form-control projectList_activity" 
+                                        data-live-search="true" name="" id="">
+                
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <span>Story Card</span>
+                                <select class="form-control SelectFigureText storyCardListSelectBox1"   onchange="loadStoryCardInfo4Ipo(this)"
+                                        name="" data-live-search="true" id="storyCardListSelectBox">
+                
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <span>New Story Card</span>
+                                <button onclick="addUserStoryNewModal()" class="btn  btn-primary">Add</button>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="addtextLine">
+
+                <button class="btn btnLineHover " id="lineRemovebtn"><i class="fas fa-trash-alt"></i></button>
+
+
+
+                <div class="btn-group dropright">
+                    <button class="btn btnLineHover " id="lineEditPopupOpened" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown"><i class="fas fa-edit"></i></button>
+
+                    <div class="dropdown-menu">
+                        <textarea id="addTextInput" type="text" class="form-control" placeholder="Username"
+                            aria-label="Username" aria-describedby="addon-wrapping"></textarea>
+                        <div class="ChangeLineColor">
+                            <span data-bgcolorspan="#000000" style="background-color: #000000;"
+                                class="ColorchangeLinespan "></span>
+                            <span data-bgcolorspan="#bad9f9" style="background-color: #bad9f9;"
+                                class="ColorchangeLinespan"></span>
+                            <span data-bgcolorspan="#c1e57c" style="background-color: #c1e57c;"
+                                class="ColorchangeLinespan"></span>
+                            <span data-bgcolorspan="#fdf67c" style="background-color: #fdf67c;"
+                                class="ColorchangeLinespan"></span>
+                            <span data-bgcolorspan="#fa8065" style="background-color: #fa8065;"
+                                class="ColorchangeLinespan"></span>
+                            <span data-bgcolorspan="#b0b0b0" style="background-color: #b0b0b0;"
+                                class="ColorchangeLinespan"></span>
+                            <span data-bgcolorspan="#ff3300" style="background-color: #ff3300;"
+                                class="ColorchangeLinespan"></span>
+                            <span data-bgcolorspan="#3399ff" style="background-color: #3399ff;"
+                                class="ColorchangeLinespan"></span>
+                            <span data-bgcolorspan="#bda8b6" style="background-color: #bda8b6;"
+                                class="ColorchangeLinespan"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        
+
+
+    </div>
+
+    <div class="row zoom-main-new" >
+        <a class="btnZoom zoom" onclick="new UserStory().zoomIn()"><i class="fa fa-plus" aria-hidden="true"></i></a>
+        <a class="btnZoom zoom-out" onclick="new UserStory().zoomOut()"><i class="fa fa-minus" aria-hidden="true"></i></a>
+        <a class="btnZoom zoom-refresh " onclick="new UserStory().zoomInit()"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>
+        <a class="btnZoom zoom-init " onclick="new UserStory().showAllGUI()"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+
+    </div>
+    <div class="modal fade" id="modal-prototypye" style="margin: 0px; padding: 0px;" tabindex="-1" style="" role="dialog" aria-labelledby=""
+    aria-hidden="true">
+   <div class="modal-dialog modal-lg" style="max-width: 100%;margin: 0px;padding: 0px;" role="document">
+       <div class="modal-content">
+           <div class="modal-header">
+            <button type="button" class="btn btn-outline-secondary line-prev-act-ipo">
+                <i class="fa fa-random" style="font-size: 15px" aria-hidden="true"></i>
+               </button>
+               <button type="button" class="close close-modal-act-ipo" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+           
+           </div>
+           <div class="modal-body" style="font-size: 12px;">
+           <div class="row" id="show-prototype-modal-act">
+
+           </div>
+           </div>
+          
+       </div>
+   </div>
+</div>
+ 
+<div class="card-custom-popUpNew" id="CardSwimAdd-gen" style="display: block;">
+    <div class="SwimBackG"></div>
+    <div class="SwimPopUp" style="width: 25%;">
+        <div class="SwimPopUpHeader">
+            <h2 class="col-12 text-center">Start</h2>
+            
+        </div>
+        <div class="SwimPopUpBody text-center">
+
+            
+            <button class="btn btn-primary col-10" id="newPorcessModal">New Process</button>
+            <br>
+            <br>
+            <button class="btn btn-primary col-10" id="existingProcessModal">Open Existing Process</button>
+        
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<div class="card-custom-popUpNew" id="CardSwimAdd-new" style="display: none;">
+    <div class="SwimBackG"></div>
+    <div class="SwimPopUp" style="width: 25%;">
+        <div class="SwimPopUpHeader">
+            <div class="col-1" style="padding: 0px;" >
+                <button class="btn btn-light popCloseModal" id=""><i class="fas fa-long-arrow-alt-left"></i></button>
+            </div>
+            <h2 class="col-11 text-center">New Process</h2>
+            
+        </div>
+        <div class="SwimPopUpBody text-center">
+
+             <div>
+                 <span>Process Name</span>
+                <input   type="text" id="newProcessNameInput" class="col-12 form-control">
+             </div>
+           
+            <br>
+            <button class="btn btn-primary col-10" id="addNewPorcessButton">Add</button>
+     
+        </div>
+
+
+
+    </div>
+
+</div>
+<div class="card-custom-popUpNew" id="CardSwimAdd-old" style="display: none;">
+    <div class="SwimBackG"></div>
+    <div class="SwimPopUp" style="width: 25%;">
+        <div class="SwimPopUpHeader">
+            <div class="col-1" style="padding: 0px;" >
+                <button class="btn btn-light popCloseModal" id=""><i class="fas fa-long-arrow-alt-left"></i></button>
+            </div>
+            <h2 class="col-11 text-center">Existing Process</h2>
+            
+        </div>
+        <div class="SwimPopUpBody text-center">
+
+             <div>
+                 <span>Choose Process Name</span>
+                 <select class="col-4 form-control col-12" sa-selectedfield="id" style="display: inline;" name="" id="projectListSwimlane">
+                  
+                </select>
+             </div>
+           
+            <br>
+            <button class="btn btn-primary col-10" id="openOldProcess">Open process</button>
+     
+        </div>
+
+
+
+    </div>
+
+</div>
+    <!--<script src="resource/js/bs4/swimlane2.js"></script>-->
+
+    

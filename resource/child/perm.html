@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+
+<br>
+
+<div class="col-12"  >
+    <br>
+</div>
+
+<div class="col-10 offset-1" >
+
+    <div class="col text-center"  ><h5>Permission List</h5><br></div>
+    <select id="permission_userlist"
+            title="User"
+            onchange=" "
+            data-actions-box="true"
+            class="SelectDiagramOption selectcustom1" 
+            data-live-search="true">
+    </select>
+
+    <br><br>
+    <div class="tab-content">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" 
+                   onclick=""
+                   href="#permision_byproject" data-toggle="tab" style="font-size: 14px;"> 
+                    Project Access
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " 
+                   onclick=""
+                   href="#permision_pinproject" data-toggle="tab" style="font-size: 14px;"> 
+                    Pin Project 
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  " 
+                   onclick=""
+                   href="#permision_bymodule" data-toggle="tab" style="font-size: 14px;"> 
+                    Module Access
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link "
+                   onclick=""
+                   href="#permision_bystorycard" data-toggle="tab" style="font-size: 14px;"> 
+                    Story Card Access
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link "
+                   onclick=""
+                   href="#permision_byapi" data-toggle="tab" style="font-size: 14px;"> 
+                    API Access
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="container tab-pane active" id="permision_byproject">
+                <br><br>
+                <div class="row" id="permision_byproject_body">
+
+                </div>
+            </div>
+            <div class="container tab-pane  " id="permision_pinproject">
+                <br><br>
+                <div class="row" id="permision_pinproject_body">
+
+                </div>
+            </div>
+            <div class="container tab-pane  " id="permision_bymodule">
+                <br><br>
+                <div class='row' id="permision_bymodule_body">
+
+                </div>
+
+            </div>
+            <div class="container tab-pane  " id="permision_bystorycard">
+                <br><br>
+                <div class="row">
+                    <div class="col-3 ">
+                        <span>Projects</span>
+                        <select id="permission_projectlist4backlog"
+                                title="Project"
+                                onchange=" "
+                                class="form-control " 
+                                data-live-search="true">
+                        </select>
+                        <br>
+                    </div>
+                    <div class="col-3 "></div>
+                    <div class="col-3 ">
+                        <span>Role  <a onclick="addPermissionRoleModal()" style=" font-size:10px;" href="#"><i class="fa fa-gear"></i></a></span>
+                        <select id="permission_rolelist"
+                                title="Roles"
+                                onchange=" "
+                                class="form-control  " 
+                                data-live-search="true">
+                        </select>
+                    </div>
+                    <div class="col-3 " style="padding-top:10px;">
+
+                        <a onclick="addRolePermissionToUser()"    style=" font-size:10px;" href="#">Load Permission List</a><br>
+                        <a onclick="addRolePermission()" style=" font-size:10px;" href="#">Add To Role Permission</a>
+
+                    </div>
+
+                </div>
+                <div class="row" id="permision_bystorycard_body">
+
+
+                </div>
+
+            </div>
+            <div class="container tab-pane  " id="permision_byapi">
+
+                <br><br>
+                <div class="row">
+                    <div class="col-3 ">
+                        <span>Projects</span>
+                        <select id="permission_projectlist4api"
+                                title="Project"
+                                onchange=" "
+                                class="form-control  " 
+                                data-live-search="true">
+                        </select>
+                        <br>
+                    </div>
+                </div>
+                <div class="row" id="permision_byapi_body">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addPermissionRoleModal" tabindex="-1" role="dialog" aria-labelledby=""
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width: 50%;max-width: 50%" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">Permission Role</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="font-size: 12px;">
+                <div class="row" id="">
+                    <br>
+                    <div class="col-10">
+                        Role Name
+                        <input type="text" id="addPermissionRoleModal_rolename" class="form-control">
+                    </div>
+                    <div class="col-2">
+                        <br>
+                        <button type="button" class="btn btn-primary" onclick="addPermissionRoleAction()">
+                            Add
+                        </button>
+                    </div>
+                </div>
+                <div class="row" id="">
+
+
+                    <div class="col-12" id=" ">
+                        <br> 
+                        Role List <br>  <br> 
+                    </div>
+                    <div class="col-12"  >
+                        <div class="row" id="addPermissionRoleModal_rolelist">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="addPermissionBacklockListModal" tabindex="-1" role="dialog" aria-labelledby=""
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width: 50%;max-width: 50%" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">Triggered Story Card</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="font-size: 12px;">
+                <div class="row" id="">
+                    <br>
+                    <div class="col-12">
+                        <input type="hidden" id="addPermissionBacklockListModal_id" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        Story Card
+                        <select type="text" id="addPermissionBacklockListModal_storycard" class="form-control">
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="addPermissionBacklockListAction()">
+                    Add
+                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

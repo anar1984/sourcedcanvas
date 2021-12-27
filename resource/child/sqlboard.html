@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="sqlboard-wrapper">
+            <div class="sql-board-header text-center">
+                <h5 style="font-size: 14px; margin-left: 30px;">SQL Editor Board</h5>                
+            </div>
+            <div class="sqlboard-body mt-2 row">
+                <div class="sqlboard-sidebar col-md-12 col-lg-4 col-xl-2">
+                    <div class="sidebar-list-box mt2">
+                        <div class="cs-input-group">
+                                <div class="input-group-addon">Database Name</div>
+                                <select class="sqlboard-database-select" data-live-search="true">
+                                    <option> 1. database</option>
+                                    <option>2. database</option>
+                                    <option>3. database</option>
+                                    <option>3. database</option>
+                                    <option>4. database</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-list-box" style=" border: none; padding-bottom: 0; ">
+                            <div class="cs-input-group">
+                                <div class="input-group-addon">Database tables</div>
+                                <input class="cs-input cs-search-table-board hide-clear" type="search" placeholder="Search...">
+                            </div>
+                        </div>
+                        <div class="sidebar-list-box">
+                            <ul class="sqlboard-table-list cs-list-group">
+                                <li role="presentation" class="disabled"><span>Select Database for view table list</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                        
+                    <div class="sqlboard-main col-md-12 col-lg-8 col-xl-10">
+                        <div class="sql-table-tabs-box">
+                            <ul class="nav nav-tabs sql-board-tab-list" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">1.table-board-name</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">2.table-board-name</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">3.table-board-name</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content sql-board-tab-content">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">1 ...</div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2 ...</div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3 ...</div>
+                          </div>
+                    </div>
+                </div> 
+            </div>
+    </body>
+</html>

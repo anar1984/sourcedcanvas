@@ -1,0 +1,133 @@
+ 
+<div class="contBackground">
+    <div class="topMenuDataBAseSection">
+        <!--        <h5>Sourced-Activity Diagram</h5>-->
+        <div class='col-2'>
+            <select onchange="SADProjectListChange(this)" 
+                    class="SelectDiagramOption1 selectcustom1" 
+                    id="sad-diagram-projectlist"
+                    data-live-search="true">
+            </select>
+        </div>
+        <div class='col-2'>
+            <select id="sad-diagram-sclist"
+                    title="Story Cards"
+                    class="SelectDiagramOption1 selectcustom2" multiple data-live-search="true">
+
+            </select>
+        </div>
+
+        <div class='col-1'>
+            <span class="userSwitchtoryDiagram  custom-control custom-switch">
+                <input id="btnApiControl" checked="checked"  type="checkbox" class="custom-control-input" >
+                <label class="custom-control-label" for="btnApiControl" style="padding:3px 0px;">APIs</label>
+            </span>  
+            <br>
+            <span class="userSwitchtoryDiagram  custom-control custom-switch">
+                <input id="btnEntityControl" checked="checked"  type="checkbox" class="custom-control-input" >
+                <label class="custom-control-label" for="btnEntityControl" style="padding:3px 0px;">Entity</label>
+            </span>  
+        </div>
+        <div class='col-2'>
+            <span class="userSwitchtoryDiagram  custom-control custom-switch">
+                <input id="btnStoryCardsControl" checked="checked"  type="checkbox" class="custom-control-input" >
+                <label class="custom-control-label" for="btnStoryCardsControl" style="padding:3px 0px;">Story Cards</label>
+            </span>  
+            <br>
+            <span class="userSwitchtoryDiagram  custom-control custom-switch">
+                <input id="btnScreenControl"    type="checkbox" class="custom-control-input" >
+                <label class="custom-control-label" for="btnScreenControl" style="padding:3px 0px;">Show Screen/UI </label>
+            </span>  
+        </div>
+        <div class='col-2'>
+            <span class="userSwitchtoryDiagram  custom-control custom-switch">
+                <input id="btnActiveSCControl" type="checkbox" class="custom-control-input" >
+                <label class="custom-control-label" for="btnActiveSCControl" style="padding:3px 0px;">Only Active Story Card(s)</label>
+            </span>
+            <br>
+            <span class="userSwitchtoryDiagram  custom-control custom-switch">
+                <input id="btnCardDetailsControl"    type="checkbox" class="custom-control-input" >
+                <label class="custom-control-label" for="btnCardDetailsControl" style="padding:3px 0px;">Show Card Details</label>
+            </span>  
+        </div>
+        <div class='col-2'>
+            <b style='font-size:12px;'>(Story Card) x</b> 
+            <select class='form-control1' id="sad-diagram-api-satcolumn" 
+                    onchange='SourcedActivityDiagram.Filter.SetStoryCardColumnCount(this)'
+                    style='border: solid 0px;width: 50px;background-color: transparent;padding: 0px 0px;border-radius: 5px; margin-left: 20px;' 
+                    title="Story Cards">
+                <option value ="1" selected>1</option>
+                <option value ="2">2</option>
+                <option value ="3">3</option>
+                <option value ="4">4</option>
+            </select>
+            <br>
+            <b style='font-size:12px;'>(Right API)  &nbsp; x</b> 
+            <select class='form-control1' id="sad-diagram-api-outcolumn" 
+                    onchange='SourcedActivityDiagram.Filter.SetAPIRightColumnCount(this)'
+                    style='border: solid 0px;width: 50px;background-color: transparent;padding: 0px 0px;border-radius: 5px; margin-left: 20px;' 
+                    title="Out API Columns">
+                <option value ="1" selected>1</option>
+                <option value ="2">2</option>
+                <option value ="3">3</option>
+                <option value ="4">4</option>
+
+            </select>
+        </div>
+        <div class='col-1'>
+            <span style="mergin-top:-300px;" class="userSwitchtoryDiagram  custom-control custom-switch">
+                <a href="#" onclick="SourcedActivityDiagram.Reset()" >Reset</a> 
+
+            </span>
+        </div>
+
+
+        <div class="AddUserStoryDiagramEntity" onclick="addUserStoryNewModal()">
+            <i class="fas fa-plus"></i>
+
+        </div>
+        <div class=" zm-main-new" >
+            <a class="zmBtnSection zmPlus" onclick="zoomDocIn()"><i class="fa fa-plus" onclick="zoomDocIn" aria-hidden="true"></i></a>
+            <a class="zmBtnSection zmOut" onclick="zoomDocOut()"><i class="fa fa-minus"  aria-hidden="true"></i></a>
+            <a class="zmBtnSection zmRefresh " onclick="zoomDocReset4SAD()"><i class="fa fa-arrows-alt" onclick="zoomDocReset" aria-hidden="true"></i></a>
+
+
+        </div>
+    </div>
+    <div class=" text-left"  id='sadMainPage'  style="padding: 260px 10px 10px 150px; padding1-left:30%;zoom: 65%; background-color:#D3E0E5;width:10000px;">
+
+        <div class="responsive sourced-activity-diagram-main" id='sadMainPage1'   style="background-color:#D3E0E5;  height:10000px;width:10000px;padding-left:200px;;">
+            <div class=" sadiagram-entityleft" ></div>
+            <div class="emptyDivCol"></div>
+            <div class="sadiagram-apileft" style="z-index: 1000;" ></div>
+            <div class="emptyDivCol"></div>
+
+            <div class="sadiagram-story-card-general sadiagram-story-card sadiagram-story-card-1  sadiagram-story-card-core-1" style="z-index: 1000;"></div>
+            <div class="sadiagram-story-card-general emptyDivCol sadiagram-story-card-1 "></div>
+            <div class="sadiagram-story-card-general sadiagram-story-card sadiagram-story-card-2   sadiagram-story-card-core-2" 
+                 style="padding-top:100px;display: none; z-index: 1000;"></div>
+            <div class="sadiagram-story-card-general emptyDivCol sadiagram-story-card-2 " style="display: none;z-index: 1000;"></div>
+            <div class="sadiagram-story-card-general sadiagram-story-card sadiagram-story-card-3   sadiagram-story-card-core-3" 
+                 style="display: none; z-index: 1000;"></div>
+            <div class="sadiagram-story-card-general emptyDivCol sadiagram-story-card-3 " style="display: none;z-index: 1000;"></div>
+            <div class="sadiagram-story-card-general sadiagram-story-card sadiagram-story-card-4   sadiagram-story-card-core-4" 
+                 style="padding-top:100px;display: none; z-index: 1000;"></div>
+            <div class="sadiagram-story-card-general emptyDivCol sadiagram-story-card-4 " style="display: none;z-index: 1000;"></div>
+
+            <div class=" sadiagram-apiright-general  sadiagram-apiright sadiagram-apiright-1 sadiagram-apiright-core-1"
+                 style="z-index: 1000;" ></div>
+            <div class=" sadiagram-apiright-general  emptyDivCol sadiagram-apiright-1"></div>
+            <div class=" sadiagram-apiright-general   sadiagram-apiright sadiagram-apiright-2  sadiagram-apiright-core-2" 
+                 style="padding-top:120px;display: none; z-index: 1000;" ></div>
+            <div class=" sadiagram-apiright-general  emptyDivCol sadiagram-apiright-2" style="display: none; "></div>
+            <div class=" sadiagram-apiright-general   sadiagram-apiright sadiagram-apiright-3  sadiagram-apiright-core-3" 
+                 style="display: none;z-index: 1000;" ></div>
+            <div class=" sadiagram-apiright-general  emptyDivCol sadiagram-apiright-3" style="display: none; "></div>
+            <div class="  sadiagram-apiright-general  sadiagram-apiright sadiagram-apiright-4  sadiagram-apiright-core-4" 
+                 style="padding-top:120px;display: none;z-index: 1000;" ></div>
+            <div class=" sadiagram-apiright-general  emptyDivCol sadiagram-apiright-4" style="display: none; " >></div>
+            <div class=" sadiagram-entityright"></div>
+
+        </div>
+    </div>
+</div>

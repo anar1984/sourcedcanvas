@@ -1,0 +1,438 @@
+
+.contBackground{
+    background-color:#D3E0E5 ;  
+    position: relative;
+    width: 5000px;  
+    background-attachment: fixed;
+
+
+
+}
+#tablePreview{
+    padding-top: 120px;
+}
+.selectedLine{
+    border: 1px solid black;
+}
+.topMenuDataBAseSection{
+   
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 3000;
+    padding: 10px 50px;
+    display: flex;
+}
+.databaseNameeditbtn{
+    width: 24px;
+    height: 24px;
+    padding: 0px ;
+}
+
+/*ar*/
+.TableNameH5{
+    word-wrap: break-word ;
+    max-width: 300px;    
+}
+
+
+.zoomBtnDataBase {
+    width: 25px;
+    height: 25px;
+    background: #eef;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #005bac;
+    padding-top: 1px ;
+    top:90vh;
+    left: 40px;
+    position: fixed;
+    text-align: center;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 500;
+
+}
+.tdHeader:hover .tabledragButton{
+
+    visibility: visible;
+}
+
+.tabledragButton{
+    position: absolute;
+    left: 10px;
+    visibility: hidden;
+}
+
+.zoomPlusDb{
+    bottom: 100px;
+    margin-top: -70px;
+    box-shadow: 0px 1px 8px #8b8b8e;
+}
+.zoomOutDb{
+    bottom: 120px;
+    margin-top: -34px;
+    box-shadow: 0px 1px 8px #8b8b8e;
+}
+
+.zoomRefreshDb{
+    bottom: 60px;
+
+
+    box-shadow: 0px 1px 8px #8b8b8e;
+}
+
+
+.feildNamespan{
+    word-wrap: break-word;
+    font-size:14px;
+}
+
+.deletePopUp{
+    display: none;
+}
+.DeletePopUpBody{
+    display: flex;
+    flex-direction: column;
+    left: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - 120px);
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    width: 350px;
+    z-index: 4030;
+    transition: opacity 0.2s ease 0s;
+    background-color: #ffffff;
+    padding: 20px;
+
+
+}
+.acceptDeletdatabase{
+    margin-top: 20px;
+}
+.deletePopupBackGround{
+    bottom: 0px;
+    left: 0px;
+    opacity: 1;
+    pointer-events: initial;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 4000;
+    background: rgba(9, 30, 66, 0.54);
+    transition: 0.4s;
+}
+.dataBaseName{
+    position: relative;
+
+
+}
+.tableRename{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+}
+.DatabaseNameH4{
+    width: 44rem;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+#testLine{
+    z-index: 1;
+}
+#inputTableName{
+    text-align: center;
+}
+#inputFAildName{
+    text-align: center;
+}
+.tdSeqment {
+    position: relative;
+    z-index: 400; 
+    min-width:  200px;
+    height: 80px;
+    border-radius: 3px;
+    padding: 0px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.31) 0px 0px 1px;
+    vertical-align: initial;
+    background-color: rgba(255, 255, 255, 0.767);
+} 
+
+.tdSeqmentEmpty {
+    position: relative;
+    /*    z-index: 400; */
+    min-width:  200px;
+    height: 80px;
+    /*border-radius: 3px;*/
+    padding: 0px;
+    /*box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.31) 0px 0px 1px;*/
+    vertical-align: initial;
+    /*background-color: rgba(255, 255, 255, 0.767);*/
+} 
+
+/*.tableDataBase tr:nth-child(even) {
+
+
+    visibility: hidden;
+}
+.tableDataBase td:nth-child(even) {
+
+    pointer-events: none;
+    visibility: hidden;
+}*/
+
+
+.tableDataBase{
+
+
+    border-collapse: initial;
+
+}
+.tableNameEditInput{
+    position: absolute;
+    top: -6px;
+    left: 5px;
+    width: 210px;
+    text-align: center;
+    z-index: 5;
+    display: none;
+}
+
+.feildEditMenu{
+
+    display: flex ;
+    flex-wrap: wrap;
+    width: 74px;
+    height: 74px;
+    background-color: #ffffff;
+    z-index: 20;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.31) 0px 0px 1px;
+
+    padding: 3px;
+    display: none;
+}
+.editBtnFeild{
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    border-radius: 2px;
+    padding-top: 5px;
+
+}
+.deleteFeildSection{
+    color: rgb(241, 104, 104);
+}
+
+.removeFieldLink{
+    color: rgb(241, 104, 104);
+}
+
+.editBtnFeild:hover{
+    background-color: rgba(243, 239, 239, 0.815);;
+}
+.Addfiledbtn{
+    width: 100%;
+    color: #393e44;
+    font-size: 15px;
+    padding-top: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tdOpenedBtn{
+    border-radius:50% ;
+    border: 1px solid black;
+    margin-top: 10%;
+
+}
+.tdBody{
+
+    text-align: center;
+}
+.over{
+    border: 1px dashed black;
+}
+.tdHeader{
+    text-align: center;
+    border-bottom: 1px solid rgba(173, 172, 172, 0.699);
+    min-height: 25px;
+    position: relative;
+
+}
+
+.customSpanNameTag{
+    visibility: hidden;
+    position: absolute;
+    background-color: rgb(42, 42, 42);
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: -15px;
+    opacity: 1;
+    margin-top: 10px;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    padding: 7px 9px;
+    left: 31px;
+    top: 28px;
+}
+.columnSelectMenu:hover .customSpanNameTag{
+    visibility: visible;
+}
+.selectDataBaseName:hover .customSpanNameTag{
+    visibility: visible;
+}
+.tdHeader:hover .TableEditSection{
+    visibility: visible;
+}
+.TableEditSection{
+    float: right;
+    position: absolute;
+    top: -10px;
+    right: 3px;
+    visibility: hidden;
+}
+.TableAdder{
+    text-align: center;
+}
+.popUpTable{
+    width: 230px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    padding: 7px;
+
+
+    box-shadow: rgba(9, 30, 66, 0.35) 0.5px 0.5px 0.5px 0.5px;
+    transition: opacity 0.2s ease 0s;
+
+}
+.popUpFeild{
+    width: 220px;
+    background-color: #ffffff;
+    padding: 7px;
+    transition: opacity 0.2s ease 0s;
+}
+#inputFAildName{
+    border: none;
+    background-color: #ffe4a17a;
+}
+.newtableBtn{
+    height: 32px;
+    width: 30px;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    padding-top: 5px;
+    padding-left: 7px;
+    border-radius: 3px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.31) 0px 0px 1px;
+}
+#AcceptTableNew{
+    color: rgb(102, 197, 102);
+}
+#CancelTableNew{
+    color: rgb(197, 53, 53);
+}
+.feildSection{
+    width: 200px;
+    min-height: 35px;
+    padding: 3px 3px 3px 3px;
+    margin: 5px 10px 5px 10px;
+    background-color: #ffe4a17a;
+    border-radius: 2px;
+    /*box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.31) 0px 0px 1px;*/
+    display: flex;
+    position: relative;
+}
+
+.tdConnectArrow{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 5;
+    visibility: hidden;
+    cursor: pointer;
+}
+.FeildEditSection{
+    position: absolute;
+    right: 20px;
+    top: -1px;
+    visibility: hidden;
+    width: 10px;
+    height: 10px;
+}
+.feildSection:hover  .FeildEditSection{
+    visibility: visible;
+}
+.feildSection:hover  .tdConnectArrow{
+    visibility: visible;
+}
+.Feild-child{
+    width: 100%;
+    position: relative;
+    background-color: #ffe4a100 ;
+}
+.feildEditInput{
+    position: absolute;
+    left: 2px;
+    text-align: center;
+    background-color: #ffe4a1;
+    display: none;
+    z-index: 3;
+    width: 190px;
+}
+
+/* zoom section  */
+.zmBtnSection {
+    width: 25px;
+    height: 25px;
+    background: #eef;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #005bac;
+    padding-top: 1px ;
+    top:90vh;
+    left: 20px;
+    position: fixed;
+    text-align: center;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 500;
+
+}
+
+.zmPlus{
+    bottom: 100px;
+    margin-top: -70px;
+    box-shadow: 0px 1px 8px #8b8b8e;
+}
+.zmOut{
+    bottom: 120px;
+    margin-top: -34px;
+    box-shadow: 0px 1px 8px #8b8b8e;
+}
+
+.zmRefresh{
+    bottom: 60px;
+
+
+    box-shadow: 0px 1px 8px #8b8b8e;
+}

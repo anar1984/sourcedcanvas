@@ -1,0 +1,458 @@
+<style>
+    /* horizontal panel*/
+
+    .panel-container {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid silver;
+        overflow: hidden;
+
+    }
+
+    .panel-left-code {
+        flex: 0 0 auto;
+        padding: 0px;
+        width: 300px;
+        min-height: 100%;
+        width: 50%;
+        white-space: nowrap;
+        color: white;
+    }
+
+    .splitter-code {
+        flex: 0 0 auto;
+        width: 18px;
+        background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
+        min-height: 200px;
+        cursor: col-resize;
+    }
+
+    .panel-right-code {
+        flex: 1 1 auto;
+        /* resizable */
+        padding: 0px;
+        width: 50%;
+        height: 100%;
+        background: #eee;
+    }
+
+    /* vertical panel */
+
+    .panel-container-vertical {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border: 1px solid silver;
+        overflow: hidden;
+    }
+
+    .panel-top-code {
+        flex: 0 0 auto;
+        /* only manually resize */
+        padding: 0px;
+        width: 100%;
+        white-space: nowrap;
+
+        color: white;
+    }
+
+    .splitter-horizontal {
+        flex: 0 0 auto;
+        height: 18px;
+        background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/hsizegrip.png) center center no-repeat #535353;
+        cursor: row-resize;
+    }
+
+    .panel-bottom-code {
+        background-color: white;
+        flex: 1 1 auto;
+        /* resizable */
+        padding: 2px;
+        min-height: 200px;
+    }
+
+    .html-code-editor::after {
+        content: "HTML";
+        color: black;
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        border-radius: 6px;
+        border: 1px solid black;
+        padding: 2px 5px;
+        font-size: 11px;
+        background: #ffc107;
+        font-weight: bold;
+    }
+
+    .js-code-editor::after {
+        content: "JS";
+        color: black;
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        border-radius: 6px;
+        border: 1px solid black;
+        padding: 2px 5px;
+        font-size: 11px;
+        background: #dc3545;
+        font-weight: bold;
+    }
+
+    .css-code-editor::after {
+        content: "CSS";
+        color: black;
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        border-radius: 6px;
+        border: 1px solid black;
+        padding: 2px 5px;
+        font-size: 11px;
+        background: #17a2b8;
+        font-weight: bold;
+    }
+
+    .panel-bottom-code-view {
+        color: black;
+        z-index: 10;
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        border-radius: 6px;
+        padding: 2px 5px;
+        font-size: 11px;
+        background: #82eebc;
+        font-weight: bold;
+    }
+
+    .panel-bottom-code:hover .panel-bottom-code-view {
+        display: none;
+    }
+
+    .panel-bottom-code-size {
+        color: black;
+        z-index: 10;
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        border-radius: 6px;
+        padding: 2px 5px;
+        font-size: 11px;
+        background: #82eebc;
+        font-weight: bold;
+        display: none;
+    }
+
+    .panel-bottom-code:hover .panel-bottom-code-size {
+        display: block;
+    }
+
+    .display-block {
+        display: block !important;
+    }
+
+    .cs-col-Ceckbox {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .display-n {
+        display: none;
+    }
+
+    .result-code-editor-inp-div {
+        padding-left: 30px;
+        width: 100%;
+        height: 40px;
+        display: none;
+    }
+    .responsible-panel-box{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .result-code-editor-style {
+       
+        width: 95%;
+        background-color: #eeeeee;
+        height: 95%;
+    }
+
+    .with-100 {
+        width: 100%;
+
+    }
+
+    .with-0 {
+        width: 0px;
+
+    }
+
+    #result-code-width-inp {
+        margin-left: 20px;
+        margin-right: 10px;
+        width: 75px;
+        height: 25px;
+        border-radius: 5px;
+        padding-left: 5px;
+    }
+    #result-code-height-inp
+    {
+        margin-left: 10px;
+        width: 75px;
+        height: 25px;
+        border-radius: 5px;
+        padding-left: 5px;
+    }
+
+    #element-result-code-editor{
+        height: 70%;
+        
+    }
+</style>
+<div style="position: relative;" class="d-flex justify-content-center align-items-center storecard-header-nav-section">
+
+    <div class=" cs-col-Ceckbox"></label><span>from Live Prototipe HTML</span>
+        <label class="switch " style="right: 0px; margin: 10px;">
+            <input type="checkbox" id="cs-col-Ceckbox-id" class="">
+            <span class="slider round"></span>
+    </div>
+
+    <div class="d-flex justify-content-center cspagename-col-" style="padding-right:10px;">
+        <div class="mm-col">
+            <span class="mm-title"></span>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center cs-col-project">
+        <div class="mm-col">
+            <span class="mm-title">Project</span>
+        </div>
+        <div class="mm-col">
+            <select class="form-control  projectList_codeground_storycard" data-live-search="true" name=""
+                id="project-list-codeground">
+            </select>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center cs-col-storecard">
+        <div class="mm-col">
+            <span class="mm-title">Story Card</span>
+        </div>
+        <div class="mm-col">
+            <select class="form-control code-select-picker" name="" data-live-search="true"
+                id="storyCardListSelectBox4CodeGround">
+            </select>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center cs-col-storecard">
+        <div class="mm-col">
+            <span class="mm-title">Theme</span>
+        </div>
+        <div class="mm-col">
+            <select class="form-control code-select-picker" name="" id="change-editor-theme-monaco">
+                <option value="vs">Light</option>
+                <option value="vs-dark">Dark</option>
+                <option value="hc-black">Black</option>
+            </select>
+        </div>
+    </div>
+    <div class="cs-col-storecard-general-setting">
+        <button class="btn ml-1 mr-1 btn-success btn-sm" id="run-code-ground-btn" title="Run">
+            Run
+        </button>
+    </div>
+    <div class="cs-col-storecard-general-setting mr-1">
+        <button class="btn btn-info btn-sm " id="save-code-ground-btn" title="Save">
+            Save
+        </button>
+    </div>
+    <div class="cs-col-storecard-general-setting mr-1">
+        <button class="btn btn-danger btn-sm " id="js-toggle-ground-btn" title="Toggle-js">
+           <i class="far fa-eye"> </i> JS
+        </button>
+    </div>
+    <div class="cs-col-storecard-general-setting mr-1">
+        <button class="btn btn-danger btn-sm" id="html-toggle-ground-btn" title="Toggle-js">
+            <i class="far fa-eye fa-eye-slash "> </i> HTML
+        </button>
+    </div>
+    <div class="cs-col-storecard-general-setting mr-1">
+        <button class="btn btn-danger btn-sm " id="css-toggle-ground-btn" title="Toggle-js">
+            <i class="far fa-eye fa-eye-slash"> </i> CSS
+
+        </button>
+    </div>
+
+
+</div>
+<div style="height:calc(100vh - 45px);" class="page-container ">
+
+    <div class="panel-container h-100">
+
+        <div class="panel-left-code">
+            <div class="panel-container-vertical">
+
+                <div style="height: 40%;" class="panel-top-code html-code-editor display-n">
+                    <div class="w-100 h-100 " id="html-code-editor">
+
+                    </div>
+                </div>
+
+
+                <div style="height: 60%; position: relative;" class="panel-bottom-code js-code-editor">
+                    <div class="w-100 h-100" id="js-code-editor">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="panel-right-code ">
+            <div class="panel-container-vertical">
+
+                <div style="height: 45%;" class="panel-top-code css-code-editor display-n">
+                    <div class="w-100 h-100 " id="css-code-editor">
+
+                    </div>
+                </div>
+
+                <div style="height: 55%; position: relative;" class="panel-bottom-code">
+                    <div class="result-code-editor-inp-div">
+                      <div class="responsible-panel-box">
+                          
+                        <select class="" name="res-panel-select" id="res-panel-select" style="margin-left: -20px;">
+                         <option width="1400" height="700" value="Responsible">Responsible</option>
+                          <option width="360" height="640" value="Moto">Moto G-4</option>
+                          <option width="360" height="640" value="galaxy">galaxy S5</option>
+                          <option width="411" height="731" value="Pixel">Pixel 2</option>
+                          <option width="411" height="823" value="Pixel-2XL">Pixel 2XL</option>
+                          <option width="320" height="568" value="Iphone-5/SE">Iphone 5/S</option>
+                          <option width="375" height="667" value="Iphone-6/7/8">Iphone 6/7/8</option>
+                          <option width="414" height="736" value="Iphone-6/7/8-PLUS">Iphone 6/7/8 PLUS</option>
+                          <option width="375" height="812" value="Iphone-X">Iphone X</option>
+                          <option width="768" height="1024" value="Ipad">Ipad</option>
+                          <option width="1024" height="1366" value="Ipad-Pro">Ipad Pro</option>
+                          <option width="540" height="720" value="Surface-Duo">Surface Duo</option>
+                          <option width="280" height="653" value="Galaxy-Fold">Galaxy Fold</option>
+                          <option width="1024" height="600" value="Nest-Hub">Nest Hub</option>
+                          <option width="1280" height="800" value="Nest-Hub-Max">Nest Hub Max</option>
+                         </select>
+                      
+                               
+                            <input  id="result-code-width-inp" type="text" name="width"> <span>X</span>
+                            <input   id="result-code-height-inp" type="text" name="height">
+                               
+                         
+                    
+                      </div>  
+                    </div>
+                    <button class="panel-bottom-code-size btn btn-sm">Size</button>
+
+                    <span class="panel-bottom-code-view btn btn-sm">VIEW</span>
+                    <div class="m-auto result-code-editor-style" style="overflow: scroll;"id="result-code-editor">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $('#css-toggle-ground-btn').click(function () {
+        $('#css-toggle-ground-btn').children("i").toggleClass("fa-eye-slash")
+        $(".css-code-editor").toggleClass('display-n');
+    })
+
+    $('#html-toggle-ground-btn').click(function () {
+        $('#html-toggle-ground-btn').children("i").toggleClass("fa-eye-slash")
+        $(".html-code-editor").toggleClass('display-n');
+        if ($(".js-code-editor").hasClass("display-n") && $(".html-code-editor").hasClass("display-n")) {
+            $(".panel-right-code").addClass("with-100")
+            $(".panel-left-code").addClass("with-0")
+        } else {
+            $(".panel-right-code").removeClass("with-100")
+            $(".panel-left-code").removeClass("with-0")
+        }
+    })
+
+    $('#js-toggle-ground-btn').click(function() {
+         $('#js-toggle-ground-btn').children("i").toggleClass("fa-eye-slash")
+        $(".js-code-editor").toggleClass('display-n');
+        if ($(".js-code-editor").hasClass("display-n") && $(".html-code-editor").hasClass("display-n")) {
+            $(".panel-right-code").addClass("with-100")
+            $(".panel-left-code").addClass("with-0")
+        } else {
+            $(".panel-right-code").removeClass("with-100")
+            $(".panel-left-code").removeClass("with-0")
+        }
+    })
+
+
+    $(".panel-left-code").resizable({
+        handles: 'e',
+        resizeHeight: false
+    });
+
+     $(".panel-top-code").resizable({
+        handles: 's',
+        resizeWidth: false
+    });
+
+    // responsib panel
+
+    $(".panel-bottom-code-size").click(function () {
+        $(".result-code-editor-inp-div").toggleClass("display-block")
+        $("#result-code-width-inp").val(1200 + " px")
+        $(".panel-right-code").toggleClass("with-100")
+        $(".panel-left-code").addClass("with-0")
+        $("#result-code-editor").height("90%")
+
+        let width_editor = Math.round($("#result-code-editor").width())
+        $("#result-code-width-inp").val(width_editor)
+
+        let height_editor = Math.round($("#result-code-editor").height())
+        $("#result-code-height-inp").val(height_editor)
+
+        $("#result-code-editor").resizable({
+            handles: 'e, s',
+            resize: function (event, ui) {
+                $("#result-code-width-inp").val(Math.round(ui.size.width))
+                $("#result-code-height-inp").val(Math.round(ui.size.height))
+            }
+        });
+    })
+
+    
+    $(document).on("change","#result-code-width-inp",function(){
+        var with_inp=$("#result-code-width-inp").val() 
+        $("#result-code-editor").width(with_inp)
+    })
+
+    $(document).on("change","#result-code-height-inp",function(){
+        var height_inp=$("#result-code-height-inp").val() 
+        $("#result-code-editor").height(height_inp)
+    })
+
+
+
+    $(document).on("change","#res-panel-select",function(){
+        var with_selct=$("#res-panel-select > option:selected").attr("width") 
+        var height_select=$("#res-panel-select > option:selected").attr("height") 
+        $("#result-code-editor").width(with_selct)
+        $("#result-code-editor").height(height_select)
+        $("#result-code-width-inp").val(with_selct)
+        $("#result-code-height-inp").val(height_select)
+    })
+
+   
+</script>

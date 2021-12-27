@@ -1,0 +1,1093 @@
+body {
+    background-color: rgba(199, 199, 199, 0);
+}
+
+.bodybg{
+    background-color: rgb(245, 245, 245);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 0.5cm;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                          supported by Chrome, Edge, Opera and Firefox */
+}
+
+.menubtn{
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    color: #202124;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: .2px;
+    padding: 2px 6px;
+    margin-left: 7px;
+
+}
+.menubtn:hover{
+    background-color: rgba(231, 229, 229, 0.445);
+}
+.lastUpdateTimeSection{
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: text-bottom;
+    white-space: nowrap;
+    font-size: 14px;
+    font-size: var(--docs-material-font-size-normal,14px);
+    text-decoration: underline;
+    margin-left: 40px;
+}
+.dropdown1 {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 11.5rem;
+    top: 0;
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown1:hover .dropdown-content {display: block;}
+
+
+
+.NavbarSection{
+    display: flex;
+    padding: 10px;
+    padding-left: 45px;
+    top: 0px;
+    opacity: 1;
+    height: 63px;
+    position: fixed;
+    flex: 1 1 auto;
+    background-color: #ffffff;
+    width: 100%;
+    z-index: 900;
+    border-bottom: 1px solid grey;
+}
+.docs-title-input-label-inner{
+    font-size: 18px;
+    font-variant-ligatures: no-contextual;
+    line-height: 22px;
+    width: auto;
+
+    text-overflow: ellipsis;
+    top: 0px;
+    white-space: pre;
+    z-index: 1;
+    margin: 0px;
+    margin-top: 7px;
+    overflow: hidden;
+    padding: 2px 8px;
+
+}
+.docs-title-input-label{
+    position: relative;
+
+}
+.documentLogoImg{
+    width: 40px;
+    height: 44px;
+}
+.docs-title-input{
+    position: absolute;
+    font-size: 18px;
+    font-variant-ligatures: no-contextual;
+    height: 20px;
+    line-height: 22px;
+    min-width: 1px;
+    visibility: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    margin: 0px;
+    top: 0px;
+    border-radius: 2px !important;
+}
+.IconEdit{
+    float: right;
+    margin-left: 10px;
+    height: 26px;
+    width: 26px;
+    font-size: 16px;
+    padding: 3px 8px 8px 3px ;
+    cursor: pointer;
+    border-radius: 2px ;
+    padding-left: 5px;
+
+
+    color: rgba(56, 55, 55, 0.712);
+
+
+
+}
+.IconEdit:hover .PagebtnInfo{
+    visibility: visible;
+}
+
+.IconEdit:hover{
+    background-color: rgb(218, 220, 224);
+}
+
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+    position: relative;
+    margin-top: 2cm;
+    padding: 20px;
+}
+page[size="A4"] {  
+    width: 21cm;
+    min-height: 29.7cm ; 
+}
+
+
+.box {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+}
+
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+    border-bottom: 1px solid #f4f4f4;
+    margin-bottom: 10px;
+}
+
+.box-tools {
+    position: absolute;
+    right: 45%;
+    top: 370px;
+    display: none;    
+
+}
+
+.CustomButton{
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.Activebtn{
+    background-color: #0073b1;
+    color: white;
+}
+
+.box-body{
+    height:400px;
+    overflow: hidden;
+    display: none;
+}
+#imgDrag{
+    transition: width 0.5s;
+}
+
+
+#imgDrag:hover{
+    box-shadow:  0 0 10px rgb(77, 77, 77);
+}
+
+
+.dropzone-wrapper {
+
+    color: #92b0b3;
+    position: relative;
+    height: 250px;
+    background: #ecf0f5;
+}
+
+.dropzone-desc {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 40%;
+    top: 50px;
+    font-size: 46px;
+
+}
+
+.dropzone,
+.dropzone:focus {
+    position: absolute;
+    outline: none !important;
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.dropzone-wrapper:hover,
+.dropzone-wrapper.dragover {
+    background: #ecf0f5;
+}
+
+.preview-zone {
+    text-align: center;
+}
+
+.preview-zone .box {
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+
+.imagefileuploadOpen{
+    margin-bottom: 16px;
+    height: 50px;
+    background-color: #fff;
+    border-bottom: 2px dashed rgba(0,0,0,.1);
+    position: relative;
+}
+.imagefileUpload{
+    display: none;
+}
+.imagefileupEnabled{
+    position: absolute;
+    top: 34px;
+    left: 21rem;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: 167ms;
+    align-items: center;
+    border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    display: inline-flex;
+    justify-content: center;
+    min-width: 6.4rem;
+    max-width: 480px;
+    overflow: hidden;
+    text-align: center;
+    transition-property: background-color,box-shadow,color;
+    vertical-align: middle;
+}
+.imagefileupEnabled:focus{
+    border: none;
+    outline: none;
+}
+.imageFiledisabled{
+    color: #004b7c;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    transition: all 167ms;
+    z-index: 3;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50%;
+    visibility: hidden;
+}
+.imageFiledisabled:hover{
+    background-color: #caedff;
+}
+
+.imagefileUpload:hover .imageFiledisabled{
+    display: block;
+    visibility: visible;
+}
+.imagefileuploadOpen{
+    display: block;
+}
+
+.post-container{
+    position: relative;
+
+    box-sizing: content-box;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+.paragraphAddButton{
+    background-color: #fff;
+    border-radius: 3px 0 0 3px;
+    border: 1px solid #d8d8d8;
+    color: #546e7a;
+    height: 38px;
+}
+.SavePanel{
+    position: fixed;
+    display: flex;
+    right: 20px;
+}
+.SaveClassPage{
+    margin: 8px;
+    cursor: pointer;
+}
+.Savebtn{
+
+    background-color: #f57c00;
+    border-radius: 3px;
+    border: none;
+    color: #fff;
+    height: 38px;
+    margin-left: 16px;
+}
+
+#headerPost{
+    border: none;
+    padding: 0;
+    overflow: auto;
+    outline: 0;
+    box-shadow: none;
+    color: rgba(0,0,0,.9);
+    font-weight: 600;
+    font-size: 42px;
+
+
+
+
+    resize: none;
+}
+
+
+
+.contentHeaderClass{
+    border: none;
+    outline: none;
+}
+.contentComment{
+
+    position: relative;
+}
+
+.hr-sect {
+    position: absolute;
+    display: flex;
+    flex-basis: 100%;
+    width: 96%;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.35);
+
+    z-index: 200;
+
+}
+.hr-sect::before,
+.hr-sect::after {
+    content: "";
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 8px;
+
+} 
+.dropdown-item{
+    cursor: pointer;
+}
+
+
+.HeaderLabelFirst{
+
+    margin-left: 10px;
+
+}
+
+
+.contentComment-Seqment{
+
+    position: absolute;
+
+    right: -17rem;
+    top: -10px;
+
+}
+.UserStoryContainer-body{
+    position: relative;
+
+}
+
+.itemComment{
+    padding-bottom: 12px;
+    min-height: 36px;
+    padding: 8px;
+    border: 1px solid rgb(221, 221, 221);
+    background-color: #ffffff;
+    cursor: pointer;
+    direction: ltr;
+    position: relative;
+    width: 240px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+.comment-seqment-body{
+    padding: -30px;
+}
+
+.comment-seqment-open{
+    border-radius: 50%;
+    color: #333333;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+}
+.comment-seqment-header{
+    padding: 10px;
+    width: 250px !important;
+}
+#commentWriteInputarticle{
+    margin-bottom: 10px;
+
+}
+
+.dateCommentPart{
+    color: rgb(60, 64, 67);
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.3px;
+}
+.itemCommentHeader{
+    display: flex;
+}
+.nameCommentPart{
+
+    color: rgb(60, 64, 67);
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+    margin-top: 0px;
+}
+#itemCommentimg{
+    width: 36px;
+    height: 36px;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+.commentAddArticle{
+    position: absolute;
+    z-index: 250;
+    right: 14rem;
+}
+.dragButton{
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0!important;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    vertical-align: bottom;
+    color: #000;
+    margin: 0;
+    z-index: 6000;
+}
+#ToolBarRightOpened{
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0!important;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    vertical-align: bottom;
+    color: #000;
+    margin: 0;
+    z-index: 6000;
+    margin-left: 75px;
+}
+.class2 thead tr th, .class2 tbody tr td  {
+    border-style: none;
+}
+.class1 thead tr th, .class1 tbody tr td  {
+    border-style: dashed;
+}
+
+#ToolBarRightOpened:focus{
+    background-color: rgba(163, 159, 159, 0.384);
+}
+.dragButton:hover{
+    outline: none;
+    background-color: rgba(163, 159, 159, 0.384);
+}
+.dragButton:focus{
+    outline: none;
+    background-color: rgba(121, 118, 118, 0.384);
+}
+.ToolBarRightFloat{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    display: none;
+    width: 114px;
+    z-index: 5000;
+    padding: 3px 3px 0;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    -webkit-box-shadow: 0 3px 15px -3px rgba(13,20,33,.13);
+    box-shadow: 0 3px 15px -3px rgba(13,20,33,.13);
+    border-radius: 4px;
+
+}
+.RightFloat{
+    visibility: hidden;
+
+    float: right;
+    position: relative;
+
+}
+
+.contentComment:hover .RightFloat{
+    visibility: visible;
+
+}
+.editorPageBtnGroup{
+    display: flex;
+}
+.EditPage{
+
+    height: 26px;
+    width: 24px;
+    font-size: 18px;
+
+    cursor: pointer;
+    border-radius: 2px ;
+    margin: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 5px;
+    color: rgba(56, 55, 55, 0.712);
+    align-items: center;
+    margin-right: 7px;
+}
+
+.EditPage:hover{
+
+    background-color: rgb(218, 220, 224);
+
+}
+
+.PagebtnInfo{
+    visibility: hidden;
+    background-color: rgb(42, 42, 42);
+    color: rgb(255, 255, 255);
+
+
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: -15px;
+    opacity: 1;
+
+
+
+    margin-top: 10px;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    padding: 7px 9px;
+}
+.EditPage:hover > .PagebtnInfo{
+    visibility: visible;
+}
+
+
+
+.UserStoryContainer{
+
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(234, 235, 238);
+    min-height: 60px;
+    position: relative;
+}
+.UserStoryContainer:hover .FloatRightUserStoryCont-openBtn {
+
+
+    display: block;
+}
+.editorUserStoryContent{
+    width: 200px;
+    min-height: 50px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    padding: 11px 11px;
+    /* margin-top: 7px; */
+    box-shadow: rgba(9, 30, 66, 0.35) 0.5px 0.5px 0.5px 0.5px;
+    transition: opacity 0.2s ease 0s;
+    margin: 15px
+}
+
+.FloatRightUserStoryCont{
+
+
+    position: absolute;
+
+    right: -17rem;
+    top: 0px;
+    background-color: rgb(234, 235, 238);
+    transition: visibility 0s, opacity 0.5s linear;
+    border-radius: 3px;
+    display: none;
+
+}
+.FloatRightUserStoryCont-openBtn{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 5px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+
+    display: none;
+}
+.FloatRightUserStoryCont-openBtn:hover{
+
+
+    color: rgba(56, 55, 55, 0.712);
+}
+
+
+/* sava as popup */
+.saveAsPopUpBackG{
+    bottom: 0px;
+    left: 0px;
+    opacity: 1;
+    pointer-events: initial;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 1600;
+    background: rgba(9, 30, 66, 0.54);
+    transition: opacity 220ms ease 0s;
+}
+.saveAspopUpBody{
+
+
+    height: calc(100% - 119px);
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - 120px);
+    top: 80px;
+    width: 400px;
+    z-index: 1610;
+    padding: 30px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(9, 30, 66, 0.08) 0px 0px 0px 1px, rgba(9, 30, 66, 0.08) 0px 2px 1px, rgba(9, 30, 66, 0.31) 0px 0px 20px -6px;
+
+
+    height: auto;
+    max-height: 100%;
+    pointer-events: auto;
+    border-radius: 3px;
+    outline: 0px;
+
+}
+
+.SaveAsPopUp{
+    display: none;
+}
+#removeDocument{
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    float: right;
+}
+.documentsSeqment{
+    width: auto;
+}
+.dropdown-item{
+    display: flex;
+
+}
+
+
+/* story car popup  */
+
+.userStoryPopUpBackG{
+    bottom: 0px;
+    left: 0px;
+    opacity: 1;
+    pointer-events: initial;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 5000;
+    background: rgba(9, 30, 66, 0.54);
+    transition: opacity 220ms ease 0s;
+}
+.ChooseSpan{
+    position: fixed;
+    top: 15px;
+    width: 900px;
+    display: block;
+    align-items: center;
+    color: rgb(32, 33, 36);
+    background-color: rgb(255, 255, 255);
+    height: 96px;
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    z-index: 1;
+    padding: 0px 16px;
+    border-bottom: 1px solid rgb(218, 220, 224);
+    border-top: 1px solid rgb(218, 220, 224);
+    border-left: none;
+    border-right: none;
+
+
+}
+.updateAllPopUpbody{
+    top: 15px;
+    height: 500px !important;
+    left: 16%;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 3px 1px -2px, rgba(0, 0, 0, 0.2) 0px 1px 5px 0px;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    position: fixed;
+
+
+    width: 900px;
+    outline: none;
+    z-index: 5010;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.updateAllPopUpbodyHeader{
+    position: fixed;
+    top: 15px;
+    width: 900px;
+    display: flex;
+    align-items: center;
+    color: rgb(32, 33, 36);
+    background-color: rgb(255, 255, 255);
+    height: 46px;
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    z-index: 1;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgb(218, 220, 224);
+    border-top: 1px solid rgb(218, 220, 224);
+    border-left: none;
+    border-right: none;
+
+}
+.userSwitchtory{
+    margin: 4px;
+}
+.ChooseSpan> div >  .btn-outline-secondary{
+    margin-left: 80px;
+    height: 30px !important;
+    padding: 3px;
+}
+.switchSeqment{
+    padding: 4px !important;
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.seqmentSelectUserst{
+    width: 400px;
+}
+#btncheckAll{
+    width: 36px !important;
+    height: 13px !important;
+}
+.ContentPopUpBody{
+    margin: 56px;
+}
+.contentUserCardUptade{
+    margin-bottom: 5px;
+}
+.Choose-userstory-popUpClosed{
+    background-color: transparent;
+    cursor: pointer;
+    height: 32px;
+    margin-left: auto;
+    margin-right: 0px;
+    position: relative;
+    float: right;
+    text-align: center;
+
+    width: 32px;
+    border-radius: 50%;
+    padding: 6px 8px 8px 8px;
+    border-width: initial !important;
+    border-style: none !important;
+    border-color: initial !important;
+    border-image: initial !important;
+}
+.UpdateAllpopUpClosed{
+    background-color: transparent;
+    cursor: pointer;
+    height: 32px;
+    margin-left: auto;
+    margin-right: 0px;
+    position: relative;
+    float: right;
+    text-align: center;
+
+    width: 32px;
+    border-radius: 50%;
+    padding: 6px 8px 8px 8px;
+    border-width: initial !important;
+    border-style: none !important;
+    border-color: initial !important;
+    border-image: initial !important;
+}
+.chooseSpanHeader{
+    padding: 5px;
+    display: flex;
+}
+
+.Choose-userstory-popUpClosed:hover{
+    background-color: rgb(218, 220, 224);
+}
+.Choose-userstory-popUpClosed:focus{
+    outline: none;
+}
+.UpdateAllpopUpClosed:hover{
+    background-color: rgb(218, 220, 224);
+}
+.UpdateAllpopUpClosed:focus{
+    outline: none;
+}
+
+.userStoryChoose-body{
+    top: 15px;
+    height: 500px !important;
+    left: 16%;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 3px 1px -2px, rgba(0, 0, 0, 0.2) 0px 1px 5px 0px;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    position: fixed;
+
+
+    width: 900px;
+    outline: none;
+    z-index: 5010;
+    flex-direction: column;
+    overflow: scroll;
+}
+.appendStoryCard{
+    top: 500px;
+    padding: 10px;
+    padding-left: 30px;
+    z-index: 300;
+    position: fixed;
+    background-color: #ffffff;
+    width: 900px;
+    border-top: 1px solid grey;
+}
+.treeViewBody{
+
+    padding-top: 116px;
+    padding-bottom: 60px;
+    overflow-y: scroll;
+}
+
+/* tree view css */
+
+.hummingbird-treeview,
+.hummingbird-treeview *
+{
+    list-style: none;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.hummingbird-treeview label {
+    font-weight: normal;
+    display: flex;
+}
+
+
+.hummingbird-treeview input[type=checkbox] {
+    width : 20px;
+    height :20px;
+    padding: 0px;
+
+    margin: 0px;
+    display: block;
+    margin-right: 7px;
+}
+
+.hummingbird-treeview ul:not(.hummingbird-base) {
+    display: none;
+
+}
+
+.hummingbird-treeview .fa {
+    font-style: normal;
+    cursor: pointer;
+    float: left;
+    margin-right: 7px;
+}
+
+.hummingbird-treeview .fas {
+    font-style: normal;
+    cursor: pointer;
+}
+
+.hummingbird-base {
+    white-space:nowrap;
+}
+
+
+/* zoom section  */
+.zoomBtnSection {
+    width: 25px;
+    height: 25px;
+    background: #eef;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #005bac;
+    padding-top: 1px ;
+    top:90vh;
+    position: fixed;
+    text-align: center;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 500;
+
+}
+
+.zoomPlus{
+    bottom: 100px;
+    margin-top: -70px;
+    box-shadow: 0px 1px 8px #8b8b8e;
+}
+.zoomOut{
+    bottom: 120px;
+    margin-top: -34px;
+    box-shadow: 0px 1px 8px #8b8b8e;
+}
+
+.zoomRefresh{
+    bottom: 60px;
+
+
+    box-shadow: 0px 1px 8px #8b8b8e;
+}
+
+@media print {
+    html{
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 21cm !important;
+    } 
+
+    body {
+        width: 21cm !important;
+
+        margin: 0 !important; 
+        padding: 0 !important;
+    }
+    .doc-ed-us-containter{
+        padding: 0;
+        margin: 0;
+    }
+    .hr-sect{
+        display: none;
+    }
+    body, page {
+        margin-top: 0 !important;
+        margin: 0 !important;
+        box-shadow: 0 !important;
+        width: 21cm !important;
+        float: right;
+
+
+
+
+    }
+    .gv-gui-design{
+        margin: 0px;
+    }
+
+
+
+} 
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<!--<div class="modal fade" id="insertNewTaskType" tabindex="-1" role="dialog" aria-hidden="true">-->
+    <div class="modal-dialog modal-lg" style="width: 95%;max-width: 95%" role="document">
+        <div class="modal-content" style="min-height: 100%;">
+            <div class="modal-header text-center" style="display:block;">
+                <h5 class="modal-title">Task Type</h5>
+                
+            </div>
+            <div class="modal-body">
+                <div class="row" style="font-size:13px;">
+
+                    <!--burdan asagi hisse olacaqdir-->
+
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-8 flexbox">
+                                <div class="search">
+                                    <div>
+                                    <input type="text"onchange="new TaskType().searchTaskType(this)"  id="newTaskTypeNameSearch" placeholder="Search . . ." required>
+                                    </div>
+                                </div>
+                             </div>
+    
+                            <div class="col-4 text-right new-user-add">
+                                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal7">
+                                    <a href="#" onclick="new TaskType().toggleFields()"><i class="fa fa-plus-circle"></i><span
+                                        style="font-size: 14px;"> New Task Type</span></a>          
+                                </button>
+                                <!--<input type="checkbox" onchange="new TaskType().toggleFields()"><span style="font-size: 14px;">Add New TaskType</span>-->
+                            </div>
+                        </div>
+
+                        <div class='col-12 table-responsive tasktype-list'>
+                            <table class="table table-hover project-table-list tasktype-table-list" id="tblTaskTypeList">
+                                <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Type name</th>
+                                        <th>Status</th>
+                                        <th>Description</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody style="cursor:pointer">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                  
+
+                </div>
+            </div>
+
+<!--            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>-->
+        </div>
+    </div>
+<!--</div>-->
+

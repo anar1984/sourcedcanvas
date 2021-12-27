@@ -1,0 +1,409 @@
+<div class="col-12 us-half-div" id="main_div_of_backlog_info_kanban_view">
+    <div class="row us-half-div-row">
+        <!--        <div class="col-1 text-left toggleUSPanel" style="padding:4px;  ">
+                    <a href="#" class="add-userstory-button1"
+                       onclick="new UserStory().showUserStoryPanelMain(this)">
+                        <i class="fa fa-angle-double-right" style="font-size:24px;"></i>
+                    </a>
+                </div>-->
+        <div class="col-12 text-center" style="padding:4px;">
+            <h4>User Story Management</h4>
+        </div>
+        <!--By G.R-->
+        <div class="TaskPanel col-12" >
+            <div class="taskPanel " style="margin: auto;">
+                <div class="category-kanban">
+                    <div class="searchSeqment ">
+                        <div class="col-lg-4">
+                            <select class="form-control prmanage-mgmt-filter-select" data-live-search="true" data-actions-box="true"
+                                    style="text-overflow: ellipsis"  id='story_mn_filter_project_id'
+                                    data-type="project_id" multiple title="Project"></select>
+                        </div>
+                        <div class="col-lg-3">
+                            <select class="form-control " data-live-search="true" data-actions-box="true"
+                                    style="text-overflow: ellipsis"  id='story_mn_filter_updated_id'
+                                    data-type="updated_id" multiple title="Updated By"></select>
+                        </div>
+                        <div class="col-lg-3">
+                            <select class="form-control " data-live-search="true" data-actions-box="true"
+                                    style="text-overflow: ellipsis"  id='story_mn_filter_assigne_id'
+                                    data-type="assigne_id" multiple title="Assignee"></select>
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="text" placeholder="search"  class="form-control" name="" id="search-us-managmenet">
+
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="dropdown">
+                                <button class="dropdown-toggle1 btn btn-light "  data-toggle="dropdown">Label</button> 
+                                <div id="general" class="">
+                                    <i>
+                                        <span class="badge">0</span>
+                                    </i>
+                                </div>
+
+
+                                <div class="dropdown-menu drop-label-menu " style="width: 360px;">
+                                    <span>
+                                        <a class="new-label-modal" title="New Label" data-toggle="modal" href="#" style="padding:0px;width: 20px;font-weight: 600;vertical-align: -webkit-baseline-middle; font-size: 12px; color:#727D91; margin-top: 5px;"
+                                           data-target="#insertNewLabel" >
+
+                                            Add Label
+
+                                        </a>
+                                    </span>
+                                    <span class="newlabelspan" style="cursor: pointer;" onclick="new UserStory().clearAndShowAll(this)">Clear</span>
+
+
+                                    <div class="dropdown-divider" style="padding:0px;">
+
+                                    </div>
+                                    <div id="tasklabellist"
+                                         class="tasklabellist"
+
+                                         style='height: 250px;overflow-y: auto; overflow-x: hidden;'>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 text-center" >
+                            <div class="dropdown">
+                                <!-- btn btn-primary   sildim -->      
+                                <button class="dropdown-toggle1  btn btn-light"  data-toggle="dropdown" style="cursor: pointer;margin-left: -6px;">
+
+                                    Sprint</button> 
+
+                                <div id="general3" class="">
+                                    <i>
+                                        <span class="badge">0</span>
+                                    </i>
+                                </div>
+
+
+                                <div class="dropdown-menu drop-label-menu " style="width: 360px;">
+                                    <span>
+
+                                        <a class="dropdown-item" data-toggle="modal" href="#" data-target="#insertNewSprint" 
+                                           f="" 
+                                           style="padding:0px;width: 20px;font-weight: 600;vertical-align: -webkit-baseline-middle; 
+                                           font-size: 12px; color:#727D91; margin-top: 5px;" >
+                                            New Sprint</a>
+                                    </span>
+                                    <span class="newlabelspan" style="cursor: pointer;" onclick="new UserStory().clearAndShowAll(this)">Clear</span>
+
+
+                                    <div class="dropdown-divider" style="padding:0px;">
+
+                                    </div>
+                                    <div id="sprintlist"
+                                         class="sprintlist"
+                                         style='height: 250px;overflow-y: auto; overflow-x: hidden;'>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-1">
+                            <span>Is Api</span>
+                            <input type="checkbox" class="us-mngm-is-api" >
+                        </div>
+                        <div class="col-lg-1">
+                            <button style="color:lightgreen;" onclick="addUserStoryNewModalWithProject()" class="btn btn-sm">
+                                <i class="fas fa-plus-circle" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+
+                        <div class="sprint dropdown" style="margin-left: 10px;" >
+
+                        </div>
+
+                        <div class="col-3">
+
+                            <div class="input-group date" id="datetimepicker6"><input type="text" placeholder="Update Time "  class="form-control form-control-sm   tame-range-picker-comp" id="date_timepicker_start_end-usmn"><span class="input-group-append" role="right-icon"><button
+                                        class=" btn btn-sm  border-left-0" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button></span></div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="task-panel" style="margin: auto;width: 95%;">
+                <div class="task-column draft" status="draft">
+
+                    <div draggable="true" class="task-column-header" >
+                        <input type="checkbox" name="" data-st='draft' class='all-check-us-mngm' id="alcheck-draft-us-mng">
+
+                        <span class="headerInputColumn">Draft <b><span class="counterkanban" id="kanban_view_draft_count">0</span></b></span>
+                        <!--                            <div class="column-header-edit">
+                                                        <i class="fas fa-ellipsis-h"></i>
+                                                    </div>
+                                                    <div class="Column header-choose">
+                                                        <div class="col-12 choosebtn">
+                                                            <span class=" limitSet">Limit Set Column</span>
+                                                        </div>
+                        
+                        
+                        
+                                                    </div>-->
+                        <button id="multi-edit-menu-btn-us" class="btn btn-sm invisible btn-light" data-toggle="modal" data-target="#multieditpopUpUs" > <i class="fas fa-edit"></i></button>
+
+                        <button data-status='draft' class="btn btn-sm btn-light next-large-modal-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+<!--                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>-->
+                    <div  class="miniStoryCard">
+                        <h5>New Story Card</h5>
+                        <input  class="miniStoryInput form-control" 
+                                type="text">
+                        <div class="TextHeader " onclick="insertNewUserStory(this, 'draft')" id="AcceptStory" style="color: green;">
+                            <i class="fas fa-check" ></i>
+
+                        </div>
+                        <div class="TextHeader "  id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i> 
+                        </div>
+                    </div>
+
+                    <div class="task-column-body main_div_of_backlog_info_kanban_view_table_draft" id="draft">
+                        <div draggable="true" class="content-drag"></div>  
+
+
+
+                    </div>
+
+                </div>
+                <div class="task-column new" status="new">
+
+                    <div draggable="true" class="task-column-header" >
+                        <input type="checkbox" name="" data-st='new' class='all-check-us-mngm' id="alcheck-new-us-mng">
+
+                        <span class="headerInputColumn">New <b><span class="counterkanban" id="kanban_view_new_count">0</span></b></span>
+                        <!--                            <div class="column-header-edit">
+                                                        <i class="fas fa-ellipsis-h"></i>
+                                                    </div>
+                                                    <div class="Column header-choose">
+                                                        <div class="col-12 choosebtn">
+                                                            <span class=" limitSet">Limit Set Column</span>
+                                                        </div>
+                        
+                        
+                        
+                                                    </div>-->
+                        <button id="multi-edit-menu-btn-us" class="btn btn-sm invisible btn-light" data-toggle="modal" data-target="#multieditpopUpUs" > <i class="fas fa-edit"></i></button>
+
+                        <button data-status='new' class="btn btn-sm btn-light next-large-modal-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+<!--                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>-->
+                    <div  class="miniStoryCard">
+                        <h5>New Story Card</h5>
+                        <input  class="miniStoryInput form-control" 
+                                type="text">
+                        <div class="TextHeader " onclick="insertNewUserStory(this, 'new')" id="AcceptStory" style="color: green;">
+                            <i class="fas fa-check" ></i>
+
+                        </div>
+                        <div class="TextHeader "  id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i> 
+                        </div>
+                    </div>
+
+                    <div class="task-column-body main_div_of_backlog_info_kanban_view_table_new" id="new">
+                        <div draggable="true" class="content-drag"></div>  
+
+
+
+                    </div>
+
+                </div>
+                <div class="task-column  on-going" status="ongoing" >
+                    <div class="task-column-header">
+                        <input type="checkbox" name="" data-st='ongoing' class='all-check-us-mngm' id="alcheck-ongoing-us-mng">
+
+                        <span class="headerInputColumn">Ongoing <b><span class="counterkanban" id="kanban_view_ongoing_count">0</span></b></span>
+                        <!--                            <div class="column-header-edit">
+                                                        <i class="fas fa-ellipsis-h"></i>
+                                                    </div>
+                                                    <div class="Column header-choose">
+                                                        <div class="col-12 choosebtn">
+                                                            <span class=" limitSet">Limit Set Column</span>
+                                                        </div>
+                        
+                        
+                        
+                                                    </div>-->
+                        <button id="multi-edit-menu-btn-us" class="btn btn-sm invisible btn-light" data-toggle="modal" data-target="#multieditpopUpUs" > <i class="fas fa-edit"></i></button>
+
+                        <button data-status='ongoing' class="btn btn-sm btn-light next-large-modal-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                    <div class="miniStoryCard">
+                        <h5>New Story Card</h5>
+                        <input  class="miniStoryInput form-control"  type="text">
+                        <div class="TextHeader " onclick="insertNewUserStory(this, 'ongoing')" id="AcceptStory" style="color: green;">
+                            <i class="fas fa-check" ></i>
+
+                        </div>
+                        <div class="TextHeader "  id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i> 
+                        </div>
+                    </div>
+<!--                    <div class="CardContentAdd">
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+                    </div>-->
+
+                    <div class="task-column-body main_div_of_backlog_info_kanban_view_table_ongoing" id="ongoing">
+                        <div class="content-drag"></div>      
+
+
+                    </div>
+
+
+                </div>
+                <div class="task-column closed"  status="closed" >
+                    <div class="task-column-header">
+                        <input type="checkbox" name="" data-st='closed' class='all-check-us-mngm' id="alcheck-closed-us-mng">
+
+                        <span class="headerInputColumn">Closed 
+                            <b><span class="counterkanban" id="kanban_view_closed_count">0</span></b>
+                        </span>
+                        <!--                            <div class="column-header-edit">
+                                                        <i class="fas fa-ellipsis-h"></i>
+                                                    </div>
+                                                    <div class="Column header-choose">
+                                                        <div class="col-12 choosebtn">
+                                                            <span class=" limitSet">Limit Set Column</span>
+                                                        </div>
+                        
+                        
+                        
+                                                    </div>-->
+                        <button id="multi-edit-menu-btn-us" class="btn btn-sm invisible btn-light" data-toggle="modal" data-target="#multieditpopUpUs" > <i class="fas fa-edit"></i></button>
+
+                        <button data-status='closed' class="btn btn-sm btn-light next-large-modal-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                    <div class="miniStoryCard">
+                        <h5>New Story Card</h5>
+                        <input  class="miniStoryInput form-control"  type="text">
+                        <div class="TextHeader " id="AcceptStory" onclick="insertNewUserStory(this, 'closed')" style="color: green;">
+                            <i class="fas fa-check" ></i>
+
+                        </div>
+                        <div class="TextHeader "  id="DeleteStory" style="color: red;">
+                            <i class="fas fa-times"></i> 
+                        </div>
+                    </div>
+<!--                    <div class="CardContentAdd">
+
+                        <img class="contentAdImg" src="resource/img/plus-icon.png" alt="">
+
+                    </div>-->
+
+                    <div class="task-column-body main_div_of_backlog_info_kanban_view_table_closed" id="closed">
+                        <div class="content-drag"></div>       
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="multieditpopUpUs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Multi Change</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body  row" >
+                <div class='col-12 row'>
+
+                    <div class="col-lg-4 " >
+
+                        <select class="form-control" data-actions-box="true" 
+                                data-type="priority" onchange="" id='priority-change-story-card-multi' title="Priority">
+                            <option value=''>None</option>
+                            <option value='1'>1- Lowest</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            <option value='6'>6</option>
+                            <option value='7'>7</option>
+                            <option value='8'>8</option>
+                            <option value='9'>9 - Highest</option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="task-ongoing-large-history" style="z-index: 1045;" tabindex="-1" role="dialog" aria-labelledby=""    aria-hidden="true">
+    <div class="modal-dialog modal-lg"  style="max-width: 100%; max-height: 100%; margin: 0px;height: 100%;" role="document">
+        <div class="modal-content" style="width: 100%; height: 100%;">
+            <div class="modal-header" >
+                <h5 class="modal-title" >History</h5>
+                <div class="float-right">
+
+                </div>
+
+                <button type="button" class="close" data-dismiss="modal"  aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body histroy-and-dashboard" style="background-color: rgb(244, 245, 247);height: 90vh;overflow: auto; position: relative;">
+                <!--<form>-->
+                <div class="row" >
+                    <div class="table-content " style="overflow-y: auto; height: 80vh;">
+
+
+                        <table id="history-main-table-backlogst" style="width: max-content;min-width: 100%;" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                    <td>Project </td>
+                                    <td>Backlog</td>
+                                    <td>Input</td>
+                                    <td>Description</td>
+                                    <td>New Value</td>
+                                    <td>Old Value</td>
+                                    <td>Action Type</td>
+                                    <td>Time & Date</td> 
+                                    <td>Created</td>
+
+                                </tr>  
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

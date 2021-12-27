@@ -1,0 +1,53 @@
+<div class="row main_body_class" id="main_body_class_projectpreview" style="margin-top:0vh;;">
+    <div class="col-12 us-half-div-row1" style="padding: 10px 10px;">
+        <div class="col-12" id="projectpreviewDiv">
+            <div class="row">
+                
+                <div class="col-3" id="projectpreview_sidebar_id" style="height: 95vh;box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+                     overflow-y: scroll; overflow-x: hidden;">
+                    <input onchange="ProjectPreview.showDetails()" class="project_view_search"
+                           id="project_view_search">
+                    <i class="fa fa-search" aria-hidden="true" onclick="ProjectPreview.showDetails()"
+                       style="size:14px;cursor:pointer;"></i>
+                    <i class="fa fa-times" aria-hidden="true"
+                       onclick="document.getElementById('project_view_search').value = ''"
+                       style="size:14px;cursor:pointer;"></i>
+
+                    <div id="MainMenu">
+
+                        <div class="list-group panel" id="projectpreview_sidebar_id_main">
+                            <div style="padding:30px;text-align:center;">
+                                <h5>
+                                    <i class="fa fa-cubes" style="font-size:30px"></i>
+                                </h5>
+                                <h5> No User Story have been found or created on this project
+                                </h5>
+                                <p>All User Story searched or created on this project will appear here</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--                                    <div class="col-1">
+                                                            </div>-->
+                <div class="col-9 text-center"
+                     style="padding:10px 0px 0px 80px;height: 95vh;overflow-y: scroll; overflow-x: hidden">
+                    <h4 id="projectpreview_gui_design_title" class=""></h4>
+                    <div class="row">
+                        <div class="col-10 text-left gui-design1 redirectClass4CSS redirectClass"
+                             id="projectpreview_gui_design_new">
+                            <div class="col" style="padding:30px;text-align:center">
+                                <h5><i class="fa fa-cubes" style="font-size:30px"></i></h5>
+                                <h5> No User Story have been selected or created on this project</h5>
+                                <p>All Pages related to the User Story on this project will appear here</p>
+                                <p>Please Select User Story</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--                                    <div class="col-1">
+                                                            </div>-->
+            </div>
+        </div>
+    </div>
+</div>
