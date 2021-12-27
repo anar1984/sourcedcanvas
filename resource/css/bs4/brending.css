@@ -5062,11 +5062,13 @@ ul.mtree {
   ul.mtree.transit.mtree-active:before {
     content: "-";
     color: #525596;
+    display: none;
   }
   ul.mtree.transit:before {
     content: "+";
     position: absolute;
     right: 28px;
+    display: none;
   }
   ul.mtree.transit ul > li:first-child {
     margin-top: 1px;
@@ -5204,8 +5206,16 @@ ul.mtree {
   .nav-scroll-page {
     position: absolute;
     right: 0;
-    top: 30%;
+    top: 150px;
     width: 200px;
+    background: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 18%);
+    padding: 10px;
+    margin-right: -200px;
+    transition: all .5s ease-in-out;
+  }
+  .nav-scroll-page.open {
+    margin-right: 0px;
   }
   .nav-scroll-page ul {
     padding: 0;
@@ -5226,4 +5236,15 @@ ul.mtree {
     font-size: 20px;
     color: #525596;
     padding-left: 20px;
+  }
+  .nav-scroll-page-btn {
+      cursor: pointer;
+    background: #525596;
+    color: #fff;
+    padding: 5px 0px;
+    font-size: 17px;
+    writing-mode: vertical-rl;
+    position: absolute;
+    left: -25px;
+    transform: rotate(180deg);
   }

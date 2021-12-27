@@ -1512,6 +1512,13 @@
                                 </div>
                               
                           
+                                <div class="col-12 pt-3 mb-3">
+                                    <div class="cs-headline-box">
+                                        <div class="cs-headline-title">
+                                            <img height=' 50px' src="resource/img/panerobank.png" /><br>
+                                        </div>
+                                    </div>
+                                </div>
 
                             <div class="redirectClass container h-100" id="mainBodyDivForAll" onwheel="documentOnwhile(event)">
 
@@ -10050,7 +10057,9 @@
         <input type="file">
     </nav>
  
+  
     <div class="nav-scroll-page">
+        <div class="nav-scroll-page-btn">Topics </div>
         <ul>
             <li>
                 <a href="#hello-history" class="">Intro</a>
@@ -10088,6 +10097,9 @@
   $(document).on('click', '.mtree .mtree-node a', function (e) {
     $('.mtree .mtree-node').toggleClass('mtree-open');
     $(this).closest('.mtree').toggleClass('mtree-active');
+  });
+  $(document).on('click', '.nav-scroll-page-btn', function (e) {
+    $('.nav-scroll-page').toggleClass('open');
   });
 
 </script>
