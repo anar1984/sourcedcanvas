@@ -5256,16 +5256,16 @@ ul.mtree {
     width: 100%;
     text-align: left;
     font: bold 16px sans-serif;
-  
-    padding: 55px 50px;
-    margin-top: 80px;
+    padding: 20px 1px;
+    margin-bottom: 92px;
+    margin-top: 75px;
   }
   
   .footer-distributed .footer-left,
   .footer-distributed .footer-center,
   .footer-distributed .footer-right {
     display: inline-block;
-    vertical-align: top;
+    /* vertical-align: top; */
   }
   
   /* Footer left */
@@ -5290,7 +5290,7 @@ ul.mtree {
   
   .footer-distributed .footer-links {
     color: #ffffff;
-    margin: 20px 0 12px;
+    /* margin: 20px 0 12px; */
     padding: 0;
   }
   
@@ -5355,6 +5355,7 @@ ul.mtree {
   
   .footer-distributed .footer-right {
     width: 20%;
+    /* margin-bottom: 85px; */
   }
   
   .footer-distributed .footer-company-about {
@@ -5374,7 +5375,7 @@ ul.mtree {
   }
   
   .footer-distributed .footer-icons {
-    margin-top: 25px;
+    /* margin-top: 25px; */
   }
   
   .footer-distributed .footer-icons a {
@@ -5415,3 +5416,6 @@ ul.mtree {
     }
   }
   
+  .convertedTextAreaLinesItem{
+      font-size: 11px;
+  }
