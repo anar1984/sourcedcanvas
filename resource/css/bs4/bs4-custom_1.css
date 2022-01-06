@@ -4036,12 +4036,13 @@ img.sc-IbsAh.kqHqhS {
             background: #525596;
             position: absolute; }
           .about__left-article > p {
-            font-family: San Francisco;
+          
             font-size: 16px;
             line-height: 24px;
             text-align: justify;
             color: #000000;
-            padding: 20px 50px; }
+            padding: 20px 50px;
+            }
           .about__left-article-img {
             position: absolute;
             right: 15px;
